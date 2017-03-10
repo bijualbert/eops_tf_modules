@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.7] - 2017-03-10
+### Add
+- add settings for runtime, memmory, and timeout
+### Removed
+- Remove VPC setup for now
+
 ## [0.1.6] - 2017-03-10
 ### Changed
 - Update variables (lists) for aws account core data data provider 
@@ -43,9 +49,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial commit
 
-[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.6...HEAD
-[0.1.4]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.5...v0.1.6
-[0.1.4]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.4...v0.1.5
+[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.7..HEAD
+[0.1.7]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.6...v0.1.7
+[0.1.6]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.5...v0.1.6
+[0.1.5]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.1...v0.1.2
