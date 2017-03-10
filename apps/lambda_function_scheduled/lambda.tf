@@ -4,7 +4,7 @@ resource "aws_lambda_function" "app" {
   role = "${aws_iam_role.iam_for_app.arn}"
   handler = "${var.handler}"
   vpc_config = {
-    subnet_ids = "${var.private == true ? ${module.aws_core_data.private_subnets} : ${concat(module.aws_core_data.private_subnets,module.aws_core_data.public_subnets)}}"
+    subnet_ids = "${var.private} == true ? ${module.aws_core_data.private_subnets} : ${concat(module.aws_core_data.private_subnets,module.aws_core_data.public_subnets)}}"
     security_group_ids = ["${aws_security_group.sg_for_app.id}"]
   }
   count            = "${var.enabled}"
