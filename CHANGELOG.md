@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.1] - 2017-03-10
+### Changed
+- updated all the git repo references for the handover to ap
+### Added
+- added aws lambda function scheduled via cloudwatch template
+
 ## [0.1.0] - 2017-03-04
 ### Added
 - This CHANGELOG file.
@@ -17,5 +23,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial commit
 
-[Unreleased]: https://github.com/zorancco/eops_tf_modules/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/zorancco/eops_tf_modules/compare/v0.0.1...v0.1.0
+[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/albumprinter/eops_tf_modules/compare/v0.0.1...v0.1.0

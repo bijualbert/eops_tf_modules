@@ -9,7 +9,7 @@ as a jenkins infra terraform multi aws account lifecycles project.
 
 ```hcl-terraform
 module "app_name" {
-  source             = "git@github.com:zorancco/eops_tf_modules.git//apps/sample_loadbalanced_application?ref=v0.1.0"
+  source             = "git@github.com:albumprinter/eops_tf_modules.git//apps/sample_loadbalanced_application?ref=v0.1.0"
   description        = "Terraform Demo"
   environment        = "dev"
   application_name   = "app_name"
@@ -21,6 +21,6 @@ module "app_name" {
 To get access to the core-infrastructure data (vpc's, subnets, regions, tags):
 ```hcl-terraform
 module "aws_account_core_data" {
-  source = "git@github.com:zorancco/eops_tf_modules.git//data_providers/aws_account_core_data"
+  source = "git@github.com:albumprinter/eops_tf_modules.git//data_providers/aws_account_core_data"
 }
 ```

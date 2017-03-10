@@ -3,7 +3,7 @@
 main.tf
 ```hcl-terraform
 module "aws_account_core_data" {
-  source = "git@github.com:zorancco/eops_tf_modules.git//data_providers/aws_account_core_data"
+  source = "git@github.com:albumprinter/eops_tf_modules.git//data_providers/aws_account_core_data"
 }
 
 # SG for the loadbalancer to the instance traffic
