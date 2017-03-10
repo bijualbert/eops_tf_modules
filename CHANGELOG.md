@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.4] - 2017-03-10
+### Changed
+- Update all the version references
+
 ## [0.1.3] - 2017-03-10
 ### Changed
 - Fixed invalid tertiary statement
@@ -31,7 +35,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial commit
 
-[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.3...HEAD
+[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.4...HEAD
+[0.1.4]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.0...v0.1.1
