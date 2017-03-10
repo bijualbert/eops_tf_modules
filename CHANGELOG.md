@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+
+## [0.1.2] - 2017-03-10
+### Changed
+- updated all the git repo references
+
 ## [0.1.1] - 2017-03-10
 ### Changed
 - updated all the git repo references for the handover to ap
@@ -23,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial commit
 
-[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/albumprinter/eops_tf_modules/compare/v0.0.1...v0.1.0
