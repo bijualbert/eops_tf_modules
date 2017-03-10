@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.6] - 2017-03-10
+### Changed
+- Update variables (lists) for aws account core data data provider 
+
 ## [0.1.5] - 2017-03-10
 ### Changed
 - Update the reference to aws_account_core_data
@@ -39,7 +43,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial commit
 
-[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.5...HEAD
+[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.6...HEAD
+[0.1.4]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.5...v0.1.6
 [0.1.4]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.2...v0.1.3

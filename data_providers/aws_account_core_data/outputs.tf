@@ -3,15 +3,15 @@ output "vpc_id" {
 }
 
 output "availability_zones" {
-  value = ["${data.aws_availability_zones.available.names}"]
+  value = "${data.aws_availability_zones.available.names}"
 }
 
 output "public_subnets" {
-  value = ["${data.terraform_remote_state.terraform-ap.public_subnets}"]
+  value = "${data.terraform_remote_state.terraform-ap.public_subnets}"
 }
 
 output "private_subnets" {
-  value = ["${data.terraform_remote_state.terraform-ap.private_subnets}"]
+  value = "${data.terraform_remote_state.terraform-ap.private_subnets}"
 }
 
 output "account_id" {
