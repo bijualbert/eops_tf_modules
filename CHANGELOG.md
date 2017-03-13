@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+
+## [0.1.9] - 2017-03-13
+### Changed
+- Use the public_subnet ids list as Jeroen intended :)
 
 ## [0.1.8] - 2017-03-13
 ### Changed
