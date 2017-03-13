@@ -6,9 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.8] - 2017-03-13
+### Changed
+- Renable the VPC setup, convert the comma separated strings back into lists
+
 ## [0.1.7] - 2017-03-10
 ### Add
-- add settings for runtime, memmory, and timeout
+- Add settings for runtime, memory, and timeout
 ### Removed
 - Remove VPC setup for now
 
@@ -26,30 +30,31 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.1.3] - 2017-03-10
 ### Changed
-- Fixed invalid tertiary statement
+- Fix invalid tertiary statement
 
 ## [0.1.2] - 2017-03-10
 ### Changed
-- updated all the git repo references
+- Update all the git repo references
 
 ## [0.1.1] - 2017-03-10
 ### Changed
-- updated all the git repo references for the handover to ap
+- Update all the git repo references for the handover to ap
 ### Added
-- added aws lambda function scheduled via cloudwatch template
+- Add aws lambda function scheduled via cloudwatch template
 
 ## [0.1.0] - 2017-03-04
 ### Added
 - This CHANGELOG file.
 - README files now contains basic usage
-- aws core-infra data_provider to read out the account's core infrastructure terraform.tfstate file with example usage in README
-- sample simple application with example usage in it's README file
+- Aws core-infra data_provider to read out the account's core infrastructure terraform.tfstate file with example usage in README
+- Sample simple application with example usage in it's README file
 
 ## [0.0.1] - 2017-03-04
 ### Added
 - Initial commit
 
-[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.7..HEAD
+[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.8..HEAD
+[0.1.8]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.7...v0.1.8
 [0.1.7]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.6...v0.1.7
 [0.1.6]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.4...v0.1.5

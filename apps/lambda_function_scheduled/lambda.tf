@@ -6,10 +6,10 @@ resource "aws_lambda_function" "app" {
   runtime = "${var.runtime}"
   memory_size = "${var.memory_size}"
   timeout = "${var.timeout}"
-//  vpc_config = {
-//    subnet_ids = "${var.private} == true ? ${module.aws_core_data.private_subnets} : ${concat(module.aws_core_data.private_subnets,module.aws_core_data.public_subnets)}}"
-//    security_group_ids = ["${aws_security_group.sg_for_app.id}"]
-//  }
+  vpc_config = {
+    subnet_ids = "${var.private} == true ?  ${split(",", module.aws_core_data.private_subnets)} : ${concat(split(",",module.aws_core_data.private_subnets),split(",",module.aws_core_data.public_subnets))}"
+    security_group_ids = ["${aws_security_group.sg_for_app.id}"]
+  }
   count            = "${var.enabled}"
 }
 
