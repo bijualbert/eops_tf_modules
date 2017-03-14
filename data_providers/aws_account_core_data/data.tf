@@ -1,4 +1,5 @@
 # Data sources
+
 data "terraform_remote_state" "terraform-ap" {
   backend = "s3"
 
@@ -9,6 +10,14 @@ data "terraform_remote_state" "terraform-ap" {
     acl    = "bucket-owner-full-control"
   }
 }
+
+// For local development:
+//data "terraform_remote_state" "terraform-ap" {
+//  backend = "local"
+//  config {
+//    path = "${path.cwd}/data_providers/aws_account_core_data/dataterraform.tfstate"
+//  }
+//}
 
 data "aws_availability_zones" "available" {}
 

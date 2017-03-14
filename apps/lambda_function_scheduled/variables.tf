@@ -24,8 +24,6 @@ variable "variables" {
   default = ""
 }
 
-variable "iam_policy_document" {}
-
 variable "schedule_expression" {
   default = "rate(5 minutes)"
 }
@@ -38,6 +36,31 @@ variable "timeout" {
 variable "enabled" {
   default = 1
 }
-variable "private" {
-  default = false
+
+variable "iam_policy_document" {
+  default =<<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+        },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateNetworkInterface"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}
+EOF
 }
