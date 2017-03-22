@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.1] - 2017-03-22
+### Added
+- Added vpc cidr output
+
 ## [0.2.0] - 2017-03-14
 ### Added
 - A separate template for a lambda function in a default vpc
@@ -67,7 +71,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial commit
 
-[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.2.0..HEAD
-[0.1.8]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.10...v0.2.0
-[0.1.8]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.0...v0.1.10
+[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.2.1..HEAD
+[0.2.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.2.0...v0.2.1
+[0.2.0]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.10...v0.2.0
+[0.1.10]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.0...v0.1.10
 [0.1.0]: https://github.com/albumprinter/eops_tf_modules/compare/v0.0.1...v0.1.0
