@@ -5,7 +5,7 @@ An example terraform module to build simple application as aws lambda function t
 
 ```hcl-terraform
 module "lambda_app" {
-  source = "git@github.com:albumprinter/eops_tf_modules.git//apps/lambda_function_scheduled_vpc?ref=v0.2.1"
+  source = "git@github.com:albumprinter/eops_tf_modules.git//apps/lambda_function_scheduled_vpc??ref={TAG_VERSION}" # for eg. {TAG_VERSION} = v0.3.0
   app_name = "sample_name"
   description = "My App description"
   handler = "myHandler"

@@ -9,7 +9,7 @@ as a jenkins infra terraform multi aws account lifecycles project.
 
 ```hcl-terraform
 module "app_name" {
-  source             = "git@github.com:albumprinter/eops_tf_modules.git//apps/sample_loadbalanced_application?ref=v0.1.10"
+  source             = "git@github.com:albumprinter/eops_tf_modules.git//apps/sample_loadbalanced_application?ref={TAG_VERSION}" # for eg. {TAG_VERSION} = v0.2.1
   description        = "Terraform Demo"
   environment        = "dev"
   application_name   = "app_name"
@@ -20,7 +20,7 @@ module "app_name" {
 ### Supported Usage Examples:
 ```hcl-terraform
 module "scheduled_lambda_app" {
-  //  source = "git@github.com:albumprinter/eops_tf_modules.git//apps/lambda_function_scheduled?ref=v0.2.1"
+  //  source = "git@github.com:albumprinter/eops_tf_modules.git//apps/lambda_function_scheduled?ref={TAG_VERSION}" # for eg. {TAG_VERSION} = v0.2.1
   source = "../eops_tf_modules/apps/lambda_function_scheduled"
   app_name = "lambda-cloudwatch-sample"
   description = "lambda-cloudwatch-sample"
@@ -38,7 +38,7 @@ module "scheduled_lambda_app" {
 }
 
 module "scheduled_lambda_app_vpc" {
-  //  source = "git@github.com:albumprinter/eops_tf_modules.git//apps/lambda_function_scheduled_vpc?ref=v0.2.1"
+  //  source = "git@github.com:albumprinter/eops_tf_modules.git//apps/lambda_function_scheduled_vpc?ref={TAG_VERSION}" # for eg. {TAG_VERSION} = v0.3.0
   source = "../eops_tf_modules/apps/lambda_function_scheduled_vpc"
   app_name = "lambda-cloudwatch-sample-vpc"
   description = "lambda-cloudwatch-sample-in-vpc"
