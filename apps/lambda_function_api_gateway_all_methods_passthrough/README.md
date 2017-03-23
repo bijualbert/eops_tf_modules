@@ -9,7 +9,6 @@ module "lambda_app" {
   app_name = "sample_name"
   description = "My App description"
   handler = "myHandler"
-  filename = "filename.zip"
   variables = "" // optional
   runtime = "dotnetcore1.0" // optional default:nodejs | nodejs4.3 | java8 | python2.7 | dotnetcore1.0 | nodejs4.3-edge
   memory_size = "128" //optional
