@@ -1,6 +1,6 @@
 resource "aws_lambda_function" "app" {
   s3_bucket = "cd-pipeline-${var.tags_team}-${var.account_type}"
-  s3_object_version = "$LATEST"
+//  s3_object_version = "$LATEST"
   s3_key = "builds/lambda/${var.app_name}.zip"
   function_name = "${var.app_name}"
   description = "${var.description}"
