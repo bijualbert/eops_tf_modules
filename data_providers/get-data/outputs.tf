@@ -2,6 +2,10 @@ output "vpc_id" {
   value = "${data.terraform_remote_state.terraform-ap.vpc_id}"
 }
 
+output "vpc_cidr" {
+  value = "${data.terraform_remote_state.terraform-ap.vpc_cidr}"
+}
+
 output "public_subnets" {
   value = ["${data.terraform_remote_state.terraform-ap.public_subnets}"]
 }
