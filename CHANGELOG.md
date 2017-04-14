@@ -5,10 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-### Changed
+
+## [0.6.0] - 2017-04-14
+### Added
 - Added the elasticache module
 - Added additional outputs for the api gateway passthru proxy and rds_mysql modules
-
 
 ## [0.5.1] - 2017-04-13
 ### Added
@@ -114,7 +115,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial commit
 
-[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.5.1..HEAD
+[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.0..HEAD
+[0.5.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.5.1...v0.6.0
 [0.5.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/albumprinter/eops_tf_modules/compare/v0.4.4...v0.5.0
 [0.4.3]: https://github.com/albumprinter/eops_tf_modules/compare/v0.4.3...v0.4.4
