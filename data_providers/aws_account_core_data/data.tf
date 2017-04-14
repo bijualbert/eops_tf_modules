@@ -4,8 +4,7 @@ data "terraform_remote_state" "terraform-ap" {
   backend = "s3"
 
   config {
-//    bucket = "${var.terraform_bucket}"
-    bucket = "eops-sandbox"
+    bucket = "${var.terraform_bucket}"
     key    = "${data.aws_caller_identity.current.account_id}/core-infra/terraform.tfstate"
     region = "eu-west-1"
     acl    = "bucket-owner-full-control"
