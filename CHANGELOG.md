@@ -5,6 +5,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Added the elasticache module
+- Added additional outputs for the api gateway passthru proxy and rds_mysql modules
+
+
+## [0.5.1] - 2017-04-13
+### Added
+- Add variable map for the all passthrough gateway lambda function
+- Add password output to the RDS TF setup
 
 
 ## [0.5.1] - 2017-04-13
