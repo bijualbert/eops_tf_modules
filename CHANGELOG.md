@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.6.2] - 2017-04-14
+### Changed
+- Revert change to hardcoded bucket name completely
+
 ## [0.6.1] - 2017-04-14
 ### Changed
 - Revert change to hardcoded bucket name
@@ -119,7 +123,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial commit
 
-[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.1..HEAD
+[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.2..HEAD
+[0.5.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.1...v0.6.2
 [0.5.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.0...v0.6.1
 [0.5.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.5.0...v0.6.0
 [0.4.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.4.0...v0.5.0
