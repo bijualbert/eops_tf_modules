@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.6.3] - 2017-04-21
+### Added
+- Added variable for overriding the destruction of the rds resource flag protection
+- Added the name for the rds_mysql rds resource
+
+### Changed
+- Change the conditional from boolean to integer for deciding whether the lambda function is public or private
+- Cleanup base permissions for the lambda role
+
 ## [0.6.2] - 2017-04-14
 ### Changed
 - Revert change to hardcoded bucket name completely
@@ -23,7 +32,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Add variable map for the all passthrough gateway lambda function
 - Add password output to the RDS TF setup
-
 
 ## [0.5.1] - 2017-04-13
 ### Added
@@ -123,12 +131,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial commit
 
-[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.2..HEAD
-[0.5.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.1...v0.6.2
-[0.5.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.0...v0.6.1
-[0.5.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.5.0...v0.6.0
-[0.4.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.4.0...v0.5.0
+[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.3..HEAD
+[0.6.3]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.2...v0.6.3
+[0.6.2]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.1...v0.6.2
+[0.6.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.0...v0.6.1
+[0.6.0]: https://github.com/albumprinter/eops_tf_modules/compare/v0.5.0...v0.6.0
+[0.5.0]: https://github.com/albumprinter/eops_tf_modules/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/albumprinter/eops_tf_modules/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/albumprinter/eops_tf_modules/compare/v0.2.1...v0.3.0
-[0.2.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.0...v0.2.1
+[0.2.0]: https://github.com/albumprinter/eops_tf_modules/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/albumprinter/eops_tf_modules/compare/v0.0.1...v0.1.0
