@@ -1,5 +1,6 @@
 resource "aws_lambda_function" "app" {
-  filename         = "${var.filename}"
+  filename = "${var.filename}"
+  source_code_hash = "${base64sha256(file(var.filename))}"
   function_name = "${var.app_name}"
   description = "${var.description}"
   role = "${aws_iam_role.iam_for_app.arn}"
@@ -7,16 +8,16 @@ resource "aws_lambda_function" "app" {
   runtime = "${var.runtime}"
   memory_size = "${var.memory_size}"
   timeout = "${var.timeout}"
-  count            = "${var.enabled}"
+  count = "${var.enabled}"
 }
 
 resource "aws_lambda_permission" "cloudwatch" {
-  statement_id  = "AllowExecutionFromCloudWatch"
-  action        = "lambda:InvokeFunction"
+  statement_id = "AllowExecutionFromCloudWatch"
+  action = "lambda:InvokeFunction"
   function_name = "${aws_lambda_function.app.arn}"
-  principal     = "events.amazonaws.com"
-  source_arn    = "${aws_cloudwatch_event_rule.app.arn}"
-  count         = "${var.enabled}"
+  principal = "events.amazonaws.com"
+  source_arn = "${aws_cloudwatch_event_rule.app.arn}"
+  count = "${var.enabled}"
 }
 
 resource "aws_iam_role" "iam_for_app" {
