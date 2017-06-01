@@ -24,6 +24,10 @@ variable "variables" {
   default = ""
 }
 
+variable "lambda_bucket_name" {
+  default = ""
+}
+
 variable "event_pattern" {
   default =<<EOF
 {
