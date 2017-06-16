@@ -1,9 +1,9 @@
 resource "aws_lambda_function" "app" {
-//  filename = "${var.filename}"
-//  source_code_hash = "${base64sha256(file("${var.lambda_bucket_name}/builds/lambda/${var.app_name}.zip))}"
-  s3_bucket = "${var.lambda_bucket_name}"
+  filename = "${var.filename}"
+  source_code_hash = "${base64sha256(file("${var.lambda_bucket_name}/builds/lambda/${var.app_name}.zip))}"
+//  s3_bucket = "${var.lambda_bucket_name}"
   //  s3_object_version = "$LATEST"
-  s3_key = "builds/lambda/${var.app_name}.zip"
+//  s3_key = "builds/lambda/${var.app_name}.zip"
   function_name = "${var.app_name}"
   description = "${var.description}"
   role = "${aws_iam_role.iam_for_app.arn}"
@@ -12,6 +12,10 @@ resource "aws_lambda_function" "app" {
   memory_size = "${var.memory_size}"
   timeout = "${var.timeout}"
   count = "${var.enabled}"
+
+  environment {
+    variables = "${var.lambda_env}"
+  }
 }
 
 resource "aws_lambda_permission" "cloudwatch" {

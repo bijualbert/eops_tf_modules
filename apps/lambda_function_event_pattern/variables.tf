@@ -17,6 +17,13 @@ variable "filename" {
   default = ""
 }
 
+variable "lambda_env" {
+  type = "map"
+  default = {
+    foo = "bar"
+  }
+}
+
 variable "runtime" {
   default = "nodejs4.3"
 }
