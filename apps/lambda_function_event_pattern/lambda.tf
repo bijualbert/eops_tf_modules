@@ -3,7 +3,7 @@ resource "aws_lambda_function" "app" {
 //  source_code_hash = "${base64sha256(file(${var.lambda_bucket_name}/builds/lambda/${var.app_name}.zip))}"
   s3_bucket = "${var.lambda_bucket_name}"
   //  s3_object_version = "$LATEST"
-  s3_key = "builds/lambda/${var.app_name}.zip"
+  s3_key = "builds/lambda/${var.app_name}/lambda.zip"
   function_name = "${var.app_name}"
   description = "${var.description}"
   role = "${aws_iam_role.iam_for_app.arn}"
