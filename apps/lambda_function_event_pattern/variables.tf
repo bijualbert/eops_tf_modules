@@ -20,7 +20,7 @@ variable "filename" {
 variable "lambda_env" {
   type = "map"
   default = {
-
+    env = ""
   }
 }
 
