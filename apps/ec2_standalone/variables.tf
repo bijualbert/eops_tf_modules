@@ -14,6 +14,9 @@ variable "app_name" {
   default = "ec2-instance"
 }
 
+variable "number_servers" {
+  default = 1
+}
 variable "enabled" {
   default = 1
 }
