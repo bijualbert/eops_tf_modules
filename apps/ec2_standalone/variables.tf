@@ -70,3 +70,5 @@ variable "key_name" {
 variable "public_key" {
   default = "Must set"
 }
+
+variable "subnet_id" {}
