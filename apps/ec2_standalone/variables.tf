@@ -5,6 +5,10 @@ variable "account_type" {
   default = "sandbox"
 }
 
+variable "ams_office" {
+  default = "77.60.83.148/32"
+}
+
 variable "app_name" {
   description = "A value to append to the EC2 identifer to create a unique name"
   default = "ec2-instance"
