@@ -40,3 +40,11 @@ variable "sg_name" {
 variable "sg_description" {
   default = "purpose of security group"
 }
+
+## Keys
+variable "relay_key_name" {
+  default = "Must Set"
+}
+variable "relay_key" {
+  default = "Must set"
+}
