@@ -8,9 +8,9 @@ module "aws_account_core_data" {
   //  source = "../../data_providers/aws_account_core_data"
 }
 
-resource "aws_key_pair" "relay" {
-  key_name   = "${var.relay_key_name}"
-  public_key = "${var.relay_key}"
+resource "aws_key_pair" "ec2_key_pair" {
+  key_name   = "${var.key_name}"
+  public_key = "${var.public_key}"
 }
 
 # SG for ssh access
@@ -48,7 +48,7 @@ resource "aws_security_group" "security_group" {
   }
 
   tags {
-    Name            = "${var.relay_key_name}"
+    Name            = "${var.key_name}"
     "Business Unit" = "${var.tags_business_unit}"
     "Cost Center"   = "${var.tags_cost_center}"
     Team            = "${var.tags_team}"
@@ -64,7 +64,7 @@ resource "aws_instance" "ec_instance" {
   instance_type          = "${var.instance_type}"
   vpc_security_group_ids = ["${aws_security_group.security_group.id}"]
   subnet_id              = "${module.aws_account_core_data.public_subnets[0]}"
-  key_name               = "${var.relay_key_name}"
+  key_name               = "${var.key_name}"
   user_data              = "${var.user_data}"
   associate_public_ip_address = true
 

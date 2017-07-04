@@ -64,9 +64,9 @@ variable "sg_description" {
 }
 
 ## Keys
-variable "relay_key_name" {
+variable "key_name" {
   default = "Must Set"
 }
-variable "relay_key" {
+variable "public_key" {
   default = "Must set"
 }
