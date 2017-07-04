@@ -14,6 +14,20 @@ variable "enabled" {
   default = 1
 }
 
+variable "user_data" {
+  default = ""
+}
+
+## EC2 specification
+variable "ami_id" {
+  default = ""
+}
+variable "instance_type" {
+  default = "t2.nano"
+}
+variable "application_name" {
+  default = "Change this"
+}
 ## Tags
 variable "description" {
   default = "default description - you should have set this in your stack"
