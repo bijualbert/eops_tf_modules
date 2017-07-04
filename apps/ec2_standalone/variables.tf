@@ -27,7 +27,8 @@ variable "user_data" {
 
 ## EC2 specification
 variable "ami_id" {
-  default = ""
+  # 091716275804/Ubuntu 16.04
+  default = "ami-ab5e0ed8"
 }
 variable "instance_type" {
   default = "t2.nano"
