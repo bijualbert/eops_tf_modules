@@ -68,7 +68,7 @@ resource "aws_instance" "ec_instance" {
   user_data              = "${var.user_data}"
   associate_public_ip_address = true
 
-  count = "${var.servers}"
+  count = "${var.number_servers}"
 
   tags {
     Name            = "${module.aws_account_core_data.account_id}-${var.application_name}-${count.index}"
