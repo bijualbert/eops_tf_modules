@@ -20,7 +20,7 @@ variable "instance_type" {
 variable "number_servers" {
   default = 1
 }
-variable "associtate_public_id"{
+variable "associtate_public_ip"{
   default = false
 }
 variable "subnet_id" {}
