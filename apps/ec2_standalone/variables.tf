@@ -64,12 +64,12 @@ variable "sg_name" {
 }
 
 ### Security group rule
-variable "ingress_protocol" {}
-variable "ingress_to_port" {}
-variable "ingress_from_port" {}
-variable "egress_protocol" {}
-variable "egress_to_port" {}
-variable "egress_from_port" {}
+//variable "ingress_protocol" {}
+//variable "ingress_to_port" {}
+//variable "ingress_from_port" {}
+//variable "egress_protocol" {}
+//variable "egress_to_port" {}
+//variable "egress_from_port" {}
 
 variable "sg_description" {
   default = "purpose of security group"
