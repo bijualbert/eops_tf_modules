@@ -63,7 +63,7 @@ resource "aws_instance" "ec_instance" {
   ami                    = "${var.ami_id}"
   instance_type          = "${var.instance_type}"
   vpc_security_group_ids = ["${aws_security_group.security_group.id}"]
-  subnet_id              = "${module.aws_account_core_data.private_subnets[0]}"
+  subnet_id              = "${var.subnet_id}"
   key_name               = "${var.key_name}"
   user_data              = "${var.user_data}"
   associate_public_ip_address = true
