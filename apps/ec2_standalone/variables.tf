@@ -72,3 +72,7 @@ variable "public_key" {
 }
 
 variable "subnet_id" {}
+
+variable "associtate_public_id"{
+  default = false
+}

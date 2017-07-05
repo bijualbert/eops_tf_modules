@@ -66,9 +66,13 @@ resource "aws_instance" "ec_instance" {
   subnet_id              = "${var.subnet_id}"
   key_name               = "${var.key_name}"
   user_data              = "${var.user_data}"
-  associate_public_ip_address = true
+  associate_public_ip_address = "${var.associtate_public_id}"
 
   count = "${var.number_servers}"
+
+  root_block_device {
+    delete_on_termination = true
+  }
 
   tags {
     Name            = "${module.aws_account_core_data.account_id}-${var.application_name}-${count.index}"
