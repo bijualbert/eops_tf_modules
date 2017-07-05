@@ -63,6 +63,14 @@ variable "sg_name" {
   default = "default_security_group_name"
 }
 
+### Security group rule
+variable "ingress_protocol" {}
+variable "ingress_to_port" {}
+variable "ingress_from_port" {}
+variable "egress_protocol" {}
+variable "egress_to_port" {}
+variable "egress_from_port" {}
+
 variable "sg_description" {
   default = "purpose of security group"
 }
@@ -75,6 +83,7 @@ variable "public_key" {
   default = "Must set"
 }
 
+#
 variable "subnet_id" {}
 
 variable "associtate_public_id"{

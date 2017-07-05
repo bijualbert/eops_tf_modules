@@ -15,37 +15,25 @@ resource "aws_key_pair" "ec2_key_pair" {
 
 # SG for ssh access
 resource "aws_security_group" "security_group" {
-  name        = "${var.sg_name}"
+  name = "${var.sg_name}"
   description = "${var.sg_description}"
-  vpc_id      = "${module.aws_account_core_data.vpc_id}"
+  vpc_id = "${module.aws_account_core_data.vpc_id}"
+}
 
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["${var.ams_office}"]
-  }
+resource "aws_security_group_rule" "ingress_security_rule" {
+  security_group_id = "${aws_security_group.security_group.id}"
+  protocol = "${var.ingress_protocol}"
+  to_port = "${var.ingress_to_port}"
+  from_port = "${var.ingress_from_port}"
+  type = "ingress"
+}
 
-  ingress {
-    from_port   = 514
-    to_port     = 514
-    protocol    = "tcp"
-    cidr_blocks = ["${module.aws_account_core_data.vpc_cidr}"]
-  }
-
-  egress {
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  egress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+resource "aws_security_group_rule" "egress_security_rule" {
+  security_group_id = "${aws_security_group.security_group.id}"
+  protocol = "${var.egress_protocol}"
+  to_port = "${var.egress_to_port}"
+  from_port = "${var.egress_from_port}"
+  type = "egress"
 
   tags {
     Name            = "${var.tags_name}"
