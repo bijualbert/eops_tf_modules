@@ -72,7 +72,7 @@ resource "aws_instance" "ec_instance" {
   }
 
   tags {
-    Name            = "${module.aws_account_core_data.account_id}-${var.application_name}-${count.index}"
+    Name            = "${var.application_name}-${count.index}"
     "Business Unit" = "${var.tags_business_unit}"
     "Cost Center"   = "${var.tags_cost_center}"
     Team            = "${var.tags_team}"
