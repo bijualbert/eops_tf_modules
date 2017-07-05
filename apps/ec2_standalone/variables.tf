@@ -5,10 +5,6 @@ variable "account_type" {
   default = "sandbox"
 }
 
-variable "ams_office" {
-  default = "77.60.83.148/32"
-}
-
 variable "app_name" {
   description = "A value to append to the EC2 identifer to create a unique name"
   default = "ec2-instance"
@@ -34,15 +30,11 @@ variable "instance_type" {
   default = "t2.nano"
 }
 variable "application_name" {
-  default = "Change this"
+  default = "application_name Change this"
 }
 ## Tags
-variable "description" {
-  default = "default description - you should have set this in your stack"
-}
-variable "environment" {
-  default = "default environmetn - you should have set this in your stack"
-}
+variable "description" {}
+variable "environment" {}
 variable "tags_business_unit" {
   default = "Albumprinter"
 }
@@ -51,18 +43,13 @@ variable "tags_cost_center" {
 }
 variable "tags_team" {}
 variable "tags_purpose" {
-  default = ""
+  default = "development"
 }
 
-variable "tags_name" {
-  default = "CHANGE THIS"
-}
+variable "tags_name" {}
 
 ## Security group
-variable "sg_name" {
-  default = "default_security_group_name"
-}
-
+variable "sg_name" {}
 ### Security group rule
 //variable "ingress_protocol" {}
 //variable "ingress_to_port" {}
@@ -71,17 +58,11 @@ variable "sg_name" {
 //variable "egress_to_port" {}
 //variable "egress_from_port" {}
 
-variable "sg_description" {
-  default = "purpose of security group"
-}
+variable "sg_description" {}
 
 ## Keys
-variable "key_name" {
-  default = "Must Set"
-}
-variable "public_key" {
-  default = "Must set"
-}
+variable "key_name" {}
+variable "public_key" {}
 
 #
 variable "subnet_id" {}

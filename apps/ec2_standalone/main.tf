@@ -18,6 +18,15 @@ resource "aws_security_group" "security_group" {
   name = "${var.sg_name}"
   description = "${var.sg_description}"
   vpc_id = "${module.aws_account_core_data.vpc_id}"
+  tags {
+    Name            = "${var.tags_name}"
+    "Business Unit" = "${var.tags_business_unit}"
+    "Cost Center"   = "${var.tags_cost_center}"
+    Team            = "${var.tags_team}"
+    Purpose         = "${var.tags_purpose}"
+    Description     = "${var.description}"
+    Environment     = "${var.environment}"
+  }
 }
 
 //resource "aws_security_group_rule" "ingress_security_rule" {
