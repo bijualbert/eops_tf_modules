@@ -1,24 +1,36 @@
 # Description
-An example terraform module to create a stand-alone EC2 instance.
+An example terraform module to create a stand-alone EC2 instance.  This module will provide a *security group* but you will have to provide the rules in your stack.
 
-## requiried parameters
+## required parameters
 You should be looking to over-ride these parameters in your own stack module.
 
-sg_name = unique name of security group
+### tags
+- variable "tags_purpose" {}
+- variable "tags_cost_center" {}
+- variable "tags_team" {}
+- variable "tags_name" {}
+- variable "tags_contact" {}
 
-## Code Example
+### Used in tags...and other places
+- variable "description" {}
+- variable "environment" {}
+- variable "application_name" {}
 
+### Security group
+- variable "sg_name" {}
+- variable "sg_description" {}
 
-```hcl-terraform
-module "rds" {
-  source = "git@github.com:albumprinter/eops_tf_modules.git//apps/rds_mysql?ref=EOPS-3610"
-//  source = "../eops_tf_modules/apps/rds_mysql"
-  app_name = "rds"
-  tags_cost_center = "CC443100"
-  tags_team = "eops"
-  description = "The rds for some app"
-  enabled = 1
-  account_type = "${var.account_type}"
-  environment = "${var.environment}"
-}
-```
+### Keys
+You should specify a *public* key for connection to the EC2 instance(s). Use OpenSSH or putty to brew up a key pair.  If you use putty remember to convert to OpenSSH format.
+- variable "key_name" {}
+- variable "public_key" {}
+
+### EC2 specification
+you may wish to override the *ami* to a newer or AP release.
+- variable "ami_id" {}
+
+you may also want to override the instance_type.  This is best done in your stack definition in the <env>.tfvars so that you can size to the environment.
+- variable "instance_type" {}
+
+Want more servers?  Override this setting in your stack.  Again, this should be done in your <env>.tfvars so that the stack is sized correctly.
+- variable "number_servers" {}
