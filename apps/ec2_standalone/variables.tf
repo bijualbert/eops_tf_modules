@@ -54,6 +54,10 @@ variable "tags_purpose" {
   default = ""
 }
 
+variable "tags_name" {
+  default = "CHANGE THIS"
+}
+
 ## Security group
 variable "sg_name" {
   default = "default_security_group_name"

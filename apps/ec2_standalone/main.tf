@@ -48,7 +48,7 @@ resource "aws_security_group" "security_group" {
   }
 
   tags {
-    Name            = "${var.key_name}"
+    Name            = "${var.tags_name}"
     "Business Unit" = "${var.tags_business_unit}"
     "Cost Center"   = "${var.tags_cost_center}"
     Team            = "${var.tags_team}"
