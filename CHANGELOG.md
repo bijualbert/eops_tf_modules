@@ -5,6 +5,71 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+## [0.7.0] - 2017-07-10
+### Changed
+- New cluster module with chefprovisioner and loadbalancer 
+- incl their security groups
+
+## [0.6.6] - 2017-06-21
+### Changed
+- Generalize bucket name parameter in API Gateway
+- Add environment variables for Lambda event pattern
+
+## [0.6.5] - 2017-05-05
+### Changed
+- remove duplicate entries in the default policy for all methods passthru
+
+## [0.6.4] - 2017-05-03
+### Changed
+- Renamed improperly named file in the elasticache_redis module
+- Updated main.tf in all modules to follow the same structure
+- Added iam role arn output for all the lambda modules
+#### Added
+- added plain lambda function module
+
+## [0.6.3] - 2017-04-21
+### Added
+- Added variable for overriding the destruction of the rds resource flag protection
+- Added the name for the rds_mysql rds resource
+
+### Changed
+- Change the conditional from boolean to integer for deciding whether the lambda function is public or private
+- Cleanup base permissions for the lambda role
+
+## [0.6.2] - 2017-04-14
+### Changed
+- Revert change to hardcoded bucket name completely
+
+## [0.6.1] - 2017-04-14
+### Changed
+- Revert change to hardcoded bucket name
+
+## [0.6.0] - 2017-04-14
+### Added
+- Added the elasticache module
+- Added additional outputs for the api gateway passthru proxy and rds_mysql modules
+
+## [0.5.1] - 2017-04-13
+### Added
+- Add variable map for the all passthrough gateway lambda function
+- Add password output to the RDS TF setup
+
+## [0.5.1] - 2017-04-13
+### Added
+- Add variable map for the all passthrough gateway lambda function
+- Add password output to the RDS TF setup
+
+## [0.5.0] - 2017-04-07
+### Added
+- Add the template for mysql rds setup
+
+## [0.4.4] - 2017-04-04
+### Changed
+- update the apigateway integration type to aws_proxy 
+
+## [0.4.3] - 2017-04-04
+### Changed
+- update the trust relationship from the apigateway to lambda 
 
 ## [0.6.6] - 2017-06-21
 ### Changed
@@ -148,7 +213,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial commit
 
-[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.6..HEAD
+[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.0..HEAD
+[0.7.0]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.6...v0.7.0
 [0.6.6]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.5...v0.6.6
 [0.6.5]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.4...v0.6.5
 [0.6.4]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.3...v0.6.4
