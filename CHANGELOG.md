@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+## [0.7.1] - 2017-07-12
+### Changed
+- Added Readme with information and samples in the cluster module
+
 ## [0.7.0] - 2017-07-10
 ### Changed
 - New cluster module with chefprovisioner and loadbalancer 
@@ -213,7 +217,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial commit
 
-[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.0..HEAD
+[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.1..HEAD
+[0.7.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.6...v0.7.0
 [0.6.6]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.5...v0.6.6
 [0.6.5]: https://github.com/albumprinter/eops_tf_modules/compare/v0.6.4...v0.6.5
