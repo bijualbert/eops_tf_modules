@@ -39,6 +39,7 @@ variable "enabled" {
 
 variable "s3_bucket" {}
 variable "s3_key" {}
+variable "lambda_bucket_name" {}
 
 variable "iam_policy_document" {
   default =<<EOF
