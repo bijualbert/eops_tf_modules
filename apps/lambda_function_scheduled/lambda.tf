@@ -8,6 +8,8 @@ resource "aws_lambda_function" "app" {
   memory_size = "${var.memory_size}"
   timeout = "${var.timeout}"
   count            = "${var.enabled}"
+  s3_bucket = "${var.lambda_bucket_name}"
+  s3_key = "builds/lambda/${var.app_name}/lambda.zip"
 }
 
 resource "aws_lambda_permission" "cloudwatch" {
