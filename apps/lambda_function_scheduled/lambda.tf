@@ -1,5 +1,4 @@
-resource "aws_lambda_function" "app" {
-  filename         = "${var.filename}"
+resource "aws_lambda_function" "app" {  
   function_name = "${var.app_name}"
   description = "${var.description}"
   role = "${aws_iam_role.iam_for_app.arn}"
