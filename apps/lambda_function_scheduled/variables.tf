@@ -13,7 +13,6 @@ variable "tags_purpose" {
 }
 variable "description" {}
 variable "app_name" {}
-variable "filename" {}
 
 variable "runtime" {
   default = "nodejs4.3"
