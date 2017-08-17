@@ -37,6 +37,9 @@ variable "enabled" {
   default = 1
 }
 
+variable "s3_bucket" {}
+variable "s3_key" {}
+
 variable "iam_policy_document" {
   default =<<EOF
 {
