@@ -3,3 +3,6 @@
 *.tfstate.backup
 .terraform\
 
+.idea
+.idea/*
+
