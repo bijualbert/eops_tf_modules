@@ -20,6 +20,6 @@ resource "aws_security_group" "app" {
     Team            = "${var.tags_team}"
     Purpose         = "${var.tags_purpose}"
     Description     = "${var.description}"
-    Environment     = "${var.environment}"sdfaasdf
+    Environment     = "${var.environment}"
   }
 }
