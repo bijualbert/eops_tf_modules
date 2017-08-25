@@ -23,3 +23,28 @@ resource "aws_security_group" "app" {
     Environment     = "${var.environment}"
   }
 }
+
+resource "aws_iam_instance_profile" "app" {
+  name = "${var.app_name}"
+  role = "${aws_iam_role.app.id}"
+}
+
+resource "aws_iam_role" "app" {
+  name = "${var.app_name}"
+
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "Service": "ec2.amazonaws.com"
+      },
+      "Effect": "Allow",
+      "Sid": ""
+    }
+  ]
+}
+EOF
+}
