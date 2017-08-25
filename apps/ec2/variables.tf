@@ -11,13 +11,16 @@ variable "tags_cost_center" {
   default = "CC443100"
 }
 variable "tags_team" {}
+
 variable "tags_purpose" {
   default = ""
 }
 variable "description" {}
+
 variable "app_name" {}
 
 variable "environment" {}
+
 variable "variables" {
   default = ""
 }
