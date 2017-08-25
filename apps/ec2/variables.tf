@@ -73,3 +73,19 @@ variable "availability_zone" {
 variable "chef_run_list" {
   type = "list"
 }
+
+variable "tags_AutoOffOn" {
+  default = "false"
+}
+
+variable "tags_AutoOnDays" {
+  default = "0"
+}
+
+variable "tags_AutoOn" {
+  default = ""
+}
+
+variable "tags_AutoOff" {
+  default = ""
+}
