@@ -70,10 +70,6 @@ variable "availability_zone" {
   default = "eu-west-1a"
 }
 
-variable "chef_run_list" {
-  type = "list"
-}
-
 variable "tags_AutoOffOn" {
   default = "false"
 }
