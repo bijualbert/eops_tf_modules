@@ -26,19 +26,19 @@ resource "aws_autoscaling_group" "asg" {
   //enabled_metrics           = ["${compact(var.enabled_metrics)}"]
   //force_delete              = "${var.force_delete}"
 
-//  tags {
-//    Name            = "${var.app_name}"
-//    "Business Unit" = "${var.tags_business_unit}"
-//    "Cost Center"   = "${var.tags_cost_center}"
-//    Team            = "${var.tags_team}"
-//    Purpose         = "${var.tags_purpose}"
-//    Description     = "${var.description}"
-//    Environment     = "${var.environment}"
-//    AutoOnOff       = "${var.tags_AutoOffOn}"
-//    AutoOn          = "${var.tags_AutoOn}"
-//    AutoOff         = "${var.tags_AutoOff}"
-//    AutoOnDays      = "${var.tags_AutoOnDays}"
-//  }
+  tags {
+    Name            = "${var.app_name}"
+    "Business Unit" = "${var.tags_business_unit}"
+    "Cost Center"   = "${var.tags_cost_center}"
+    Team            = "${var.tags_team}"
+    Purpose         = "${var.tags_purpose}"
+    Description     = "${var.description}"
+    Environment     = "${var.environment}"
+    AutoOnOff       = "${var.tags_AutoOffOn}"
+    AutoOn          = "${var.tags_AutoOn}"
+    AutoOff         = "${var.tags_AutoOff}"
+    AutoOnDays      = "${var.tags_AutoOnDays}"
+  }
 }
 
 resource "aws_launch_configuration" "launch_config" {
