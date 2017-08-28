@@ -16,7 +16,7 @@ resource "aws_security_group" "app" {
 
 resource "aws_iam_instance_profile" "app" {
   name = "${var.app_name}"
-  role = "${aws_iam_role.app.id}"
+  roles = ["${aws_iam_role.app.id}"]
 }
 
 resource "aws_iam_role" "app" {
