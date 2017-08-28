@@ -7,7 +7,7 @@ resource "aws_instance" "app" {
   security_groups = ["${aws_security_group.app.id}"]
   subnet_id = "${element(module.aws_core_data.private_subnets,count.index)}"
   tags {
-    Name            = "${var.app_name}"
+    Name            = "${var.app_name}${count.index + 1}"
     "Business Unit" = "${var.tags_business_unit}"
     "Cost Center"   = "${var.tags_cost_center}"
     Team            = "${var.tags_team}"
