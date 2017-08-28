@@ -42,7 +42,7 @@ resource "aws_autoscaling_group" "asg" {
 }
 
 resource "aws_launch_configuration" "launch_config" {
-  name          = "autoOnOff_test_launch_config"
+  name          = "OMG this has to be F32king unique~!autoOnOff_test_launch_config"
   image_id      = "${var.ami}"
   instance_type = "${var.instance_type}"
 }
