@@ -10,7 +10,7 @@ resource "aws_autoscaling_group" "asg" {
   max_size                  = "${var.max_size}"
   min_size                  = "${var.min_size}"
   name                      = "${var.app_name}"
-  roles                     = ["${aws_iam_role.app.id}"]
+//  roles                     = ["${aws_iam_role.app.id}"]
 
   //  count = "${length(var.min_elb_capacity) > 0 || length(var.wait_for_elb_capacity) > 0 ? 0 : 1}"
   //  metrics_granularity       = "${var.metrics_granularity}"
