@@ -12,7 +12,7 @@ resource "aws_autoscaling_group" "asg" {
   name                      = "${var.app_name}"
   availability_zones  = ["eu-west-1b", "eu-west-1a"]
 //  roles  = ["${aws_iam_role.asg.id}"]
-  role  = "${aws_iam_role.asg.id}"
+//  role  = "${aws_iam_role.asg.id}"
 
   //  count = "${length(var.min_elb_capacity) > 0 || length(var.wait_for_elb_capacity) > 0 ? 0 : 1}"
   //  metrics_granularity       = "${var.metrics_granularity}"

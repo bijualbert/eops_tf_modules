@@ -17,7 +17,7 @@ resource "aws_security_group" "asg" {
 resource "aws_iam_instance_profile" "asg" {
   name = "${var.app_name}-asg"
 //  roles = ["${aws_iam_role.asg.id}"]
-  role = "${aws_iam_role.asg.id}"
+//  role = "${aws_iam_role.asg.id}"
 }
 
 resource "aws_iam_role" "asg" {
