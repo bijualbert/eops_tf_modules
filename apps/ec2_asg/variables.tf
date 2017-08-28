@@ -87,7 +87,7 @@ variable "tags_AutoOff" {
 }
 
 # Security group
-variable "roles" {}
+//variable "roles" {}
 
 # AutoscalingGroup
 variable "default_cooldown" {

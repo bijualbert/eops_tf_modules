@@ -1,5 +1,5 @@
 # SG for instance
-resource "aws_security_group" "app" {
+resource "aws_security_group" "asg" {
   name        = "SG-${var.app_name}"
   description = "Allow inbound traffic for ${var.app_name}"
   vpc_id      = "${module.aws_core_data.vpc_id}"
@@ -14,12 +14,12 @@ resource "aws_security_group" "app" {
   }
 }
 
-resource "aws_iam_instance_profile" "app" {
+resource "aws_iam_instance_profile" "asg" {
   name = "${var.app_name}-asg"
-  roles = ["${aws_iam_role.app.id}"]
+  roles = ["${aws_iam_role.asg.id}"]
 }
 
-resource "aws_iam_role" "app" {
+resource "aws_iam_role" "asg" {
   name = "${var.app_name}-asg"
 
   assume_role_policy = <<EOF
