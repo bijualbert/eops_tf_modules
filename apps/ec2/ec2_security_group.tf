@@ -15,12 +15,12 @@ resource "aws_security_group" "app" {
 }
 
 resource "aws_iam_instance_profile" "app" {
-  name = "${var.app_name}"
+  name = "${var.app_name}-test"
   roles = ["${aws_iam_role.app.id}"]
 }
 
 resource "aws_iam_role" "app" {
-  name = "${var.app_name}"
+  name = "${var.app_name}-test"
 
   assume_role_policy = <<EOF
 {
