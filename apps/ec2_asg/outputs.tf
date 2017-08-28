@@ -6,3 +6,7 @@ output "asg_security_group" {
 output "asg_profile"{
   value = "${aws_iam_instance_profile.asg.id}"
 }
+
+output "asg_iam_role" {
+  value = "${aws_iam_role.asg.id}"
+}
