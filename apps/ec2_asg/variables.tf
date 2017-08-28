@@ -104,5 +104,5 @@ variable "max_size" {
 }
 
 variable "hc_grace_period" {
-  defauilt = 300
+  default = 300
 }
