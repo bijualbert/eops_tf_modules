@@ -24,6 +24,7 @@ resource "aws_autoscaling_group" "asg" {
     AutoOn          = "${var.tags_AutoOn}"
     AutoOff         = "${var.tags_AutoOff}"
     AutoOnDays      = "${var.tags_AutoOnDays}"
+    propagate_at_launch = true
   }
 }
 
