@@ -1,6 +1,6 @@
 # SG for instance
 resource "aws_security_group" "app" {
-  name        = "SG-${var.app_name}"
+  name        = "EC2-${var.app_name}"
   description = "Allow inbound traffic for ${var.app_name}"
   vpc_id      = "${module.aws_core_data.vpc_id}"
   tags {
@@ -15,12 +15,12 @@ resource "aws_security_group" "app" {
 }
 
 resource "aws_iam_instance_profile" "app" {
-  name = "${var.app_name}-test"
+  name = "EC2-${var.app_name}"
   roles = ["${aws_iam_role.app.id}"]
 }
 
 resource "aws_iam_role" "app" {
-  name = "${var.app_name}-test"
+  name = "EC2-${var.app_name}"
 
   assume_role_policy = <<EOF
 {
