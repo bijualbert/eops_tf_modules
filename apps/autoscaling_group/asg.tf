@@ -11,20 +11,6 @@ resource "aws_autoscaling_group" "asg" {
   min_size                  = "${var.min_size}"
   name                      = "${var.app_name}"
   availability_zones  = ["eu-west-1b", "eu-west-1a"]
-//  roles  = ["${aws_iam_role.asg.id}"]
-//  role  = "${aws_iam_role.asg.id}"
-
-  //  count = "${length(var.min_elb_capacity) > 0 || length(var.wait_for_elb_capacity) > 0 ? 0 : 1}"
-  //  metrics_granularity       = "${var.metrics_granularity}"
-  //  placement_group           = "${var.placement_group}"
-  //  protect_from_scale_in     = "${var.protect_from_scale_in}"
-  //  suspended_processes       = ["${compact(var.suspended_processes)}"]
-  //  target_group_arns         = ["${compact(var.target_group_arns)}"]
-  //  termination_policies      = ["${compact(var.termination_policies)}"]
-  //  vpc_zone_identifier       = ["${compact(var.subnets)}"]
-  //  wait_for_capacity_timeout = "${length(var.wait_for_capacity_timeout) > 0 ? var.wait_for_capacity_timeout : "10m"}"
-  //enabled_metrics           = ["${compact(var.enabled_metrics)}"]
-  //force_delete              = "${var.force_delete}"
 
   tags {
     Name            = "${var.app_name}"
@@ -42,7 +28,7 @@ resource "aws_autoscaling_group" "asg" {
 }
 
 resource "aws_launch_configuration" "launch_config" {
-  name          = "OMG this has to be F32king unique~!autoOnOff_test_launch_config"
+  name          = "${var.app_name}"
   image_id      = "${var.ami}"
   instance_type = "${var.instance_type}"
 }
@@ -52,15 +38,15 @@ resource "aws_security_group" "asg" {
   name        = "SG-${var.app_name}"
   description = "Allow inbound traffic for ${var.app_name}"
   vpc_id      = "${module.aws_core_data.vpc_id}"
-  tags {
-    Name            = "${var.app_name}"
-    "Business Unit" = "${var.tags_business_unit}"
-    "Cost Center"   = "${var.tags_cost_center}"
-    Team            = "${var.tags_team}"
-    Purpose         = "${var.tags_purpose}"
-    Description     = "${var.description}"
-    Environment     = "${var.environment}"
-  }
+//  tags {
+//    Name            = "${var.app_name}"
+//    "Business Unit" = "${var.tags_business_unit}"
+//    "Cost Center"   = "${var.tags_cost_center}"
+//    Team            = "${var.tags_team}"
+//    Purpose         = "${var.tags_purpose}"
+//    Description     = "${var.description}"
+//    Environment     = "${var.environment}"
+//  }
 }
 
 resource "aws_iam_instance_profile" "asg" {
