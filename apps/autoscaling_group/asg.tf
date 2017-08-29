@@ -37,6 +37,36 @@ resource "aws_autoscaling_group" "asg" {
     value               = "${var.tags_purpose}"
     propagate_at_launch = true
   }
+  tag {
+    key                 = "Description"
+    value               = "${var.description}"
+    propagate_at_launch = true
+  }
+  tag {
+    key                 = "Environment"
+    value               = "${var.environment}"
+    propagate_at_launch = true
+  }
+  tag {
+    key                 = "AutoOnOff"
+    value               = "${var.tags_AutoOffOn}"
+    propagate_at_launch = true
+  }
+  tag {
+    key                 = "AutoOn"
+    value               = "${var.tags_AutoOn}"
+    propagate_at_launch = true
+  }
+  tag {
+    key                 = "AutoOff"
+    value               = "${var.tags_AutoOff}"
+    propagate_at_launch = true
+  }
+  tag {
+    key                 = "AutoOnDays"
+    value               = "${var.tags_AutoOnDays}"
+    propagate_at_launch = true
+  }
 
 }
 
