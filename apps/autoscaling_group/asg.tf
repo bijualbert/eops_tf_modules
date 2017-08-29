@@ -12,20 +12,32 @@ resource "aws_autoscaling_group" "asg" {
   name                      = "${var.app_name}"
   availability_zones  = ["eu-west-1b", "eu-west-1a"]
 
-  tags {
-    Name            = "${var.app_name}"
-    "Business Unit" = "${var.tags_business_unit}"
-    "Cost Center"   = "${var.tags_cost_center}"
-    Team            = "${var.tags_team}"
-    Purpose         = "${var.tags_purpose}"
-    Description     = "${var.description}"
-    Environment     = "${var.environment}"
-    AutoOnOff       = "${var.tags_AutoOffOn}"
-    AutoOn          = "${var.tags_AutoOn}"
-    AutoOff         = "${var.tags_AutoOff}"
-    AutoOnDays      = "${var.tags_AutoOnDays}"
+  tag {
+    key                 = "Name"
+    value               = "${var.app_name}"
     propagate_at_launch = true
   }
+  tag {
+    key                 = "Business Unit"
+    value               = "${var.tags_business_unit}"
+    propagate_at_launch = true
+  }
+  tag {
+    key                 = "Cost Center"
+    value               = "${var.tags_cost_center}"
+    propagate_at_launch = true
+  }
+  tag {
+    key                 = "Team"
+    value               = "${var.tags_team}"
+    propagate_at_launch = true
+  }
+  tag {
+    key                 = "Purpose"
+    value               = "${var.tags_purpose}"
+    propagate_at_launch = true
+  }
+
 }
 
 resource "aws_launch_configuration" "launch_config" {
