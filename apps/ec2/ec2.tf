@@ -15,7 +15,7 @@ resource "aws_instance" "app" {
     Purpose         = "${var.tags_purpose}"
     Description     = "${var.description}"
     Environment     = "${var.environment}"
-    AutoOnOff       = "${var.tags_AutoOffOn}"
+    AutoOffOn       = "${var.tags_AutoOffOn}"
     AutoOn          = "${var.tags_AutoOn}"
     AutoOff         = "${var.tags_AutoOff}"
     AutoOnDays      = "${var.tags_AutoOnDays}"
