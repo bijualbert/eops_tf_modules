@@ -71,6 +71,6 @@ variable "chef_run_list" {
   type = "list"
 }
 
-variable "peer_owner_id"{}
+variable "peer_owner_id" {}
 variable "source_vpc_id" {}
 variable "target_vpc_id" {}

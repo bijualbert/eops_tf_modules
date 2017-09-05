@@ -1,7 +1,7 @@
 resource "aws_vpc_peering_connection" "vpc_peering" {
     peer_owner_id = "${var.peer_owner_id}"
-    peer_vpc_id   = "${var.source_vpc_id}"
-    vpc_id        = "${var.target_vpc_id}"
+    peer_vpc_id   = "${var.target_vpc_id}"
+    vpc_id        = "${module.aws_core_data.vpc_id}"
 
     accepter {
       allow_remote_vpc_dns_resolution = true
