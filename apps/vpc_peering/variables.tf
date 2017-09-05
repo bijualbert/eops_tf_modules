@@ -67,10 +67,6 @@ variable "availability_zone" {
   default = "eu-west-1a"
 }
 
-variable "chef_run_list" {
-  type = "list"
-}
-
 variable "allow_remote_vpc_dns_resolution" {
   default = true
 }
