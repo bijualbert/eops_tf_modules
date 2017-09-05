@@ -71,6 +71,9 @@ variable "chef_run_list" {
   type = "list"
 }
 
+variable "allow_remote_vpc_dns_resolution" {
+  default = true
+}
 variable "peer_owner_id" {}
 variable "source_vpc_id" {}
 variable "target_vpc_id" {}
