@@ -35,38 +35,6 @@ variable "response_template" {
   }
 }
 
-variable "instance_count" {
-  default = 1
-}
-variable "iam_policy_document" {
-  default =<<EOF
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Action": "sts:AssumeRole",
-            "Principal": {
-               "Service": "ec2.amazonaws.com"
-            },
-            "Effect": "Allow",
-            "Sid": ""
-        }
-    ]
-}
-EOF
-}
-variable "ami" {
-  default = "ami-971238f1"
-}
-
-variable "instance_type" {
-  default = "t2.medium"
-}
-
-variable "availability_zone" {
-  default = "eu-west-1a"
-}
-
 variable "allow_remote_vpc_dns_resolution" {
   default = true
 }
