@@ -1,6 +1,6 @@
 resource "aws_vpc_peering_connection_accepter" "vpc_peering_accepter" {
     provider                  = "aws.peer"
-    vpc_peering_connection_id = "${aws_vpc_peering_connection.peer.id}"
+    vpc_peering_connection_id = "${db_vpc_id}"
     auto_accept               = true
 
   tags {
