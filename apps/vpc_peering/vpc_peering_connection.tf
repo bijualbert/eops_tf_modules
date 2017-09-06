@@ -1,6 +1,6 @@
 resource "aws_vpc_peering_connection" "vpc_peering" {
-    peer_vpc_id   = "${var.target_vpc_id}"
-    vpc_id        = "${module.aws_core_data.vpc_id}"
+    peer_vpc_id   = "${{ecom1_vpc_id}"
+    vpc_id        = "${db_vpc_id}"
 
     accepter {
       allow_remote_vpc_dns_resolution = true
