@@ -28,13 +28,6 @@ variable "private" {
   default = false
 }
 
-variable "response_template" {
-  type = "map"
-  default ={
-    "application/json" = ""
-  }
-}
-
 variable "allow_remote_vpc_dns_resolution" {
   default = true
 }
