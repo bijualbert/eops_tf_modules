@@ -1,5 +1,5 @@
 resource "aws_vpc_peering_connection" "vpc_peering" {
-    peer_vpc_id   = "${{ecom1_vpc_id}"
+    peer_vpc_id   = "${ecom1_vpc_id}"
     vpc_id        = "${db_vpc_id}"
 
     accepter {
