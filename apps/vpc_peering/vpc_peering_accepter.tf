@@ -1,31 +1,24 @@
 provider "aws" {
   region = "eu-west-1"
-  //  profile = "db-sandbox"
-  alias = "db-sb"
+  //  profile = "ecom1-sandbox"
+  alias = "ecom1-sb"
   version = "~> 0.1"
   assume_role {
-    role_arn = "arn:aws:iam::${var.db_sb_account_id}:role/main_provisioner"
+    role_arn = "arn:aws:iam::${var.ecom1_sb_account_id}:role/main_provisioner"
   }
 }
 
-data "aws_vpc" "db_vpc_id" {
-  provider = "aws.db-sb"
+data "aws_vpc" "ecom1_vpc_id" {
+  provider = "aws.ecom1-sb"
   tags {
     Name = "main"
   }
 }
 
-resource "aws_vpc_peering_connection" "vpc_peering" {
-    peer_vpc_id   = "${ecom1_vpc_id}"
-    vpc_id        = "${db_vpc_id}"
+resource "aws_vpc_peering_connection_accepter" "vpc_peering_accepter" {
+  vpc_peering_connection_id = "${db_vpc_id}"
+  auto_accept               = true
 
-    accepter {
-      allow_remote_vpc_dns_resolution = true
-    }
-
-    requester {
-      allow_remote_vpc_dns_resolution = true
-    }
   tags {
     Name            = "${var.app_name}"
     "Business Unit" = "${var.tags_business_unit}"
