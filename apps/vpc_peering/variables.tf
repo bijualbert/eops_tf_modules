@@ -38,6 +38,12 @@ variable "response_template" {
 variable "allow_remote_vpc_dns_resolution" {
   default = true
 }
-//variable "peer_owner_id" {}
-variable "source_vpc_id" {}
-variable "target_vpc_id" {}
+
+variable "ecom1_sb_account_id" {
+  description = "ecom1 sandbox account id"
+  default = "047710374887"
+}
+variable "db_sb_account_id" {
+  description = "db sandbox account id"
+  default = "714256216940"
+}
