@@ -3,5 +3,4 @@ output "ecom1_vpc_id" {
 }
 output "db_vpc_id" {
   value = "${data.aws_vpc.db_vpc_main.id}"
-  value = "${module.vpc_peering.}"
 }
