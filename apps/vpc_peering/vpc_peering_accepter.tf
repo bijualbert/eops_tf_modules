@@ -16,7 +16,9 @@ data "aws_vpc" "ecom1_vpc_id" {
 }
 
 resource "aws_vpc_peering_connection_accepter" "vpc_peering_accepter" {
-  vpc_peering_connection_id = "${db_vpc_id}"
+  provider = "aws.ecom1-sb"
+
+  vpc_peering_connection_id = "${data.aws_vpc.db_vpc_id.id}"
   auto_accept               = true
 
   tags {

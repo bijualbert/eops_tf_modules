@@ -16,16 +16,19 @@ data "aws_vpc" "db_vpc_id" {
 }
 
 resource "aws_vpc_peering_connection" "vpc_peering" {
-    peer_vpc_id   = "${data.aws_vpc.ecom1_vpc_id.id}"
-    vpc_id        = "${data.aws_vpc.db_vpc_id.id}"
+  provider = "aws.db-sb"
 
-    accepter {
-      allow_remote_vpc_dns_resolution = true
-    }
+  peer_vpc_id   = "${data.aws_vpc.ecom1_vpc_id.id}"
+  vpc_id        = "${data.aws_vpc.db_vpc_id.id}"
 
-    requester {
-      allow_remote_vpc_dns_resolution = true
-    }
+  accepter {
+    allow_remote_vpc_dns_resolution = true
+  }
+
+  requester {
+    allow_remote_vpc_dns_resolution = true
+  }
+
   tags {
     Name            = "${var.app_name}"
     "Business Unit" = "${var.tags_business_unit}"
