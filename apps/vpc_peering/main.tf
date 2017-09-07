@@ -31,10 +31,10 @@ data "aws_route_table" "db_vpc_route_table" {
     name = "vpc-id"
     values = ["vpc-5ddcd639"]
   }
-//  filter {
-//    name = "association.main"
-//    values = [true]
-//  }
+  filter {
+    name = "association.main"
+    values = [true]
+  }
 }
 
 provider "aws" {
