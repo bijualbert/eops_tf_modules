@@ -22,3 +22,11 @@ resource "aws_vpc_peering_connection" "vpc_peering" {
     Environment     = "${var.environment}"
   }
 }
+
+resource "aws_route_table" "db_vpc_route_table" {
+  vpc_id = "${data.aws_vpc.db_vpc_main.id}"
+
+  route {
+    cidr_block = "${data.aws_vpc.ecom1_vpc_main.cidr_block}"
+  }
+}
