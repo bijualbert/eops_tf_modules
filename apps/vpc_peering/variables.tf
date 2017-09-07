@@ -34,6 +34,7 @@ variable "allow_remote_vpc_dns_resolution" {
 
 //variable "vpc_id" {}
 //variable "peer_vpc_id" {}
+
 variable "ecom1_sb_account_id" {
   description = "ecom1 sandbox account id"
   default = "047710374887"
