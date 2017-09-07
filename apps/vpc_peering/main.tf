@@ -28,7 +28,7 @@ data "aws_route_table" "db_vpc_route_table" {
   provider = "aws.db-sb"
   filter {
     name   = "VPC"
-    values = "${data.aws_vpc.db_vpc_main.id}"
+    values = ["${data.aws_vpc.db_vpc_main.id}"]
   }
 }
 
