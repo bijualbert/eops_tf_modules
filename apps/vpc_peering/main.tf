@@ -27,10 +27,10 @@ data "aws_vpc" "db_vpc_main" {
 data "aws_route_table" "db_vpc_route_table" {
   provider = "aws.db-sb"
 
-  filter {
-    name = "vpc-id"
-    values = ["${data.aws_vpc.db_vpc_main.id}"]
-  }
+//  filter {
+//    name = "vpc-id"
+//    values = ["${data.aws_vpc.db_vpc_main.id}"]
+//  }
   filter {
     name = "association.main"
     values = [true]
@@ -57,10 +57,10 @@ data "aws_vpc" "ecom1_vpc_main" {
 data "aws_route_table" "ecom1_vpc_route_table" {
   provider = "aws.ecom1-sb"
 
-  filter {
-    name = "vpc-id"
-    values = ["${data.aws_vpc.ecom1_vpc_main.id}"]
-  }
+//  filter {
+//    name = "vpc-id"
+//    values = ["${data.aws_vpc.ecom1_vpc_main.id}"]
+//  }
   filter {
     name = "association.main"
     values = [true]
