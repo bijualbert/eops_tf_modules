@@ -8,7 +8,7 @@ provider "aws" {
   }
 }
 
-data "aws_vpc" "db_vpc_id" {
+data "aws_vpc" "db_vpc_main" {
   provider = "aws.db-sb"
   tags {
     Name = "main"
@@ -18,8 +18,8 @@ data "aws_vpc" "db_vpc_id" {
 resource "aws_vpc_peering_connection" "vpc_peering" {
   provider = "aws.db-sb"
 
-  peer_vpc_id   = "${data.aws_vpc.ecom1_vpc_id.id}"
-  vpc_id        = "${data.aws_vpc.db_vpc_id.id}"
+  peer_vpc_id   = "${data.aws_vpc.ecom1_vpc_main.id}"
+  vpc_id        = "${data.aws_vpc.db_vpc_main.id}"
 
   accepter {
     allow_remote_vpc_dns_resolution = true

@@ -8,7 +8,7 @@ provider "aws" {
   }
 }
 
-data "aws_vpc" "ecom1_vpc_id" {
+data "aws_vpc" "ecom1_vpc_main" {
   provider = "aws.ecom1-sb"
   tags {
     Name = "main"
@@ -18,7 +18,7 @@ data "aws_vpc" "ecom1_vpc_id" {
 resource "aws_vpc_peering_connection_accepter" "vpc_peering_accepter" {
   provider = "aws.ecom1-sb"
 
-  vpc_peering_connection_id = "${data.aws_vpc.db_vpc_id.id}"
+  vpc_peering_connection_id = "${data.aws_vpc.db_vpc_main.id}"
   auto_accept               = true
 
   tags {
