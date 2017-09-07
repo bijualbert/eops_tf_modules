@@ -1,20 +1,3 @@
-provider "aws" {
-  region = "eu-west-1"
-  //  profile = "db-sandbox"
-  alias = "db-sb"
-  version = "~> 0.1"
-  assume_role {
-    role_arn = "arn:aws:iam::${var.db_sb_account_id}:role/main_provisioner"
-  }
-}
-
-data "aws_vpc" "db_vpc_main" {
-  provider = "aws.db-sb"
-  tags {
-    Name = "main"
-  }
-}
-
 resource "aws_vpc_peering_connection" "vpc_peering" {
   provider = "aws.db-sb"
 

@@ -1,20 +1,3 @@
-provider "aws" {
-  region = "eu-west-1"
-  //  profile = "ecom1-sandbox"
-  alias = "ecom1-sb"
-  version = "~> 0.1"
-  assume_role {
-    role_arn = "arn:aws:iam::${var.ecom1_sb_account_id}:role/main_provisioner"
-  }
-}
-
-data "aws_vpc" "ecom1_vpc_main" {
-  provider = "aws.ecom1-sb"
-  tags {
-    Name = "main"
-  }
-}
-
 resource "aws_vpc_peering_connection_accepter" "vpc_peering_accepter" {
   provider = "aws.ecom1-sb"
 
