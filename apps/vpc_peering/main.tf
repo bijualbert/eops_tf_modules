@@ -28,7 +28,7 @@ data "aws_route_table" "db_vpc_route_table" {
   provider = "aws.db-sb"
 
   filter {
-    name = "vpc_peering_connection_id"
+    name = "VpcId"
     values = ["${data.aws_vpc.db_vpc_main.id}"]
   }
   filter {
