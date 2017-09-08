@@ -23,7 +23,7 @@ resource "aws_vpc_peering_connection" "vpc_peering" {
   }
 }
 
-resource "aws_route_table" "db_vpc_route_table" {
+resource "aws_route_table" "db_vpc_peer_route_table" {
   vpc_id = "${data.aws_vpc.db_vpc_main.id}"
 
   route {
