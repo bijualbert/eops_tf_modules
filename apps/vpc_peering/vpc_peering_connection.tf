@@ -28,5 +28,16 @@ resource "aws_route_table" "db_vpc_route_table" {
 
   route {
     cidr_block = "${data.aws_vpc.ecom1_vpc_main.cidr_block}"
+    vpc_peering_connection_id = "${aws_vpc_peering_connection.vpc_peering.id}"
+  }
+
+  tags {
+    Name            = "${var.app_name}-route"
+    "Business Unit" = "${var.tags_business_unit}"
+    "Cost Center"   = "${var.tags_cost_center}"
+    Team            = "${var.tags_team}"
+    Purpose         = "${var.tags_purpose}"
+    Description     = "${var.description}"
+    Environment     = "${var.environment}"
   }
 }

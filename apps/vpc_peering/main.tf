@@ -29,11 +29,11 @@ data "aws_route_table" "db_vpc_route_table" {
 
   filter {
     name = "vpc_id"
-    values = ["vpc-5ddcd639"]
+    values = ["${data.aws_vpc.db_vpc_main.id}"]
   }
   filter {
     name = "association.main"
-    values = [true]
+    values = ["true"]
   }
 }
 
@@ -61,8 +61,8 @@ data "aws_route_table" "ecom1_vpc_route_table" {
     name = "vpc_id"
     values = ["${data.aws_vpc.ecom1_vpc_main.id}"]
   }
-//  filter {
-//    name = "association.main"
-//    values = [true]
-//  }
+  filter {
+    name = "association.main"
+    values = ["true"]
+  }
 }

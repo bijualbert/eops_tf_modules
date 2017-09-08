@@ -13,3 +13,7 @@ output "db_vpc_id" {
 output "db_vpc_route_table" {
   value = "${data.aws_route_table.db_vpc_route_table.id}"
 }
+
+output "peer_connection_id" {
+  value = "${aws_vpc_peering_connection.vpc_peering.id}"
+}
