@@ -1,5 +1,6 @@
 resource "aws_vpc_peering_connection_accepter" "vpc_peering_accepter" {
   provider = "aws.target_provider"
+  depends_on = ["aws_vpc_peering_connection.vpc_peering"]
 
   vpc_peering_connection_id = "${aws_vpc_peering_connection.vpc_peering.id}"
   auto_accept               = true
@@ -17,6 +18,7 @@ resource "aws_vpc_peering_connection_accepter" "vpc_peering_accepter" {
 
 resource "aws_route_table" "target_vpc_peer_route_table" {
   provider = "aws.target_provider"
+  depends_on = ["aws_vpc_peering_connection.vpc_peering"]
 
   vpc_id = "${data.aws_vpc.source_vpc_main.id}"
 
