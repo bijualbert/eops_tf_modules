@@ -33,10 +33,10 @@ variable "allow_remote_vpc_dns_resolution" {
 }
 
 variable "peer_target_account_id" {
-//  description = "ecom1 sandbox account id"
-//  default = "047710374887"
+  description = "ecom1 sandbox account id"
+  default = "047710374887"
 }
 variable "peer_source_account_id" {
-//  description = "db sandbox account id"
-//  default = "714256216940"
+  description = "db sandbox account id"
+  default = "714256216940"
 }
