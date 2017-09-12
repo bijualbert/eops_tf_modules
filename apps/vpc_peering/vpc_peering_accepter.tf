@@ -7,10 +7,6 @@ resource "aws_vpc_peering_connection_accepter" "vpc_peering_accepter" {
     allow_remote_vpc_dns_resolution = true
   }
 
-  requester {
-    allow_remote_vpc_dns_resolution = true
-  }
-
   auto_accept = true
 
   tags {
