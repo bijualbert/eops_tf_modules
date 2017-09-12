@@ -1,28 +1,35 @@
 resource "aws_vpc_peering_connection_accepter" "vpc_peering_accepter" {
   provider = "aws.target_provider"
-  depends_on = ["aws_vpc_peering_connection.vpc_peering"]
+  depends_on = [
+    "aws_vpc_peering_connection.vpc_peering"]
 
-//  vpc_id        = "${data.aws_vpc.target_vpc_main.id}"
-//  peer_vpc_id = "${data.aws_vpc.source_vpc_main.id}"
+  //  vpc_id        = "${data.aws_vpc.target_vpc_main.id}"
+  //  peer_vpc_id = "${data.aws_vpc.source_vpc_main.id}"
   vpc_peering_connection_id = "${aws_vpc_peering_connection.vpc_peering.id}"
 
 
-  auto_accept               = true
+  accepter {
+    allow_remote_vpc_dns_resolution = true
+  }
+
+  auto_accept = true
 
   tags {
-    Name            = "${var.app_name}"
+    Name = "${var.app_name}"
     "Business Unit" = "${var.tags_business_unit}"
-    "Cost Center"   = "${var.tags_cost_center}"
-    Team            = "${var.tags_team}"
-    Purpose         = "${var.tags_purpose}"
-    Description     = "${var.description}"
-    Environment     = "${var.environment}"
+    "Cost Center" = "${var.tags_cost_center}"
+    Team = "${var.tags_team}"
+    Purpose = "${var.tags_purpose}"
+    Description = "${var.description}"
+    Environment = "${var.environment}"
   }
 }
 
 resource "aws_route_table" "target_vpc_peer_route_table" {
   provider = "aws.target_provider"
-  depends_on = ["aws_vpc_peering_connection.vpc_peering", "aws_vpc_peering_connection_accepter.vpc_peering_accepter"]
+  depends_on = [
+    "aws_vpc_peering_connection.vpc_peering",
+    "aws_vpc_peering_connection_accepter.vpc_peering_accepter"]
 
   vpc_id = "${data.aws_vpc.target_vpc_main.id}"
 
@@ -32,12 +39,12 @@ resource "aws_route_table" "target_vpc_peer_route_table" {
   }
 
   tags {
-    Name            = "${var.app_name}-route"
+    Name = "${var.app_name}-route"
     "Business Unit" = "${var.tags_business_unit}"
-    "Cost Center"   = "${var.tags_cost_center}"
-    Team            = "${var.tags_team}"
-    Purpose         = "${var.tags_purpose}"
-    Description     = "${var.description}"
-    Environment     = "${var.environment}"
+    "Cost Center" = "${var.tags_cost_center}"
+    Team = "${var.tags_team}"
+    Purpose = "${var.tags_purpose}"
+    Description = "${var.description}"
+    Environment = "${var.environment}"
   }
 }
