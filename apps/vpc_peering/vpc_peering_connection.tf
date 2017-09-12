@@ -1,8 +1,8 @@
 resource "aws_vpc_peering_connection" "vpc_peering" {
   provider = "aws.db-sb"
 
-  peer_vpc_id   = "${data.aws_vpc.ecom1_vpc_main.id}"
-  vpc_id        = "${data.aws_vpc.db_vpc_main.id}"
+  peer_vpc_id   = "${data.aws_vpc.target_vpc_main.id}"
+  vpc_id        = "${data.aws_vpc.source_vpc_main.id}"
 
   accepter {
     allow_remote_vpc_dns_resolution = true
@@ -24,10 +24,10 @@ resource "aws_vpc_peering_connection" "vpc_peering" {
 }
 
 resource "aws_route_table" "db_vpc_peer_route_table" {
-  vpc_id = "${data.aws_vpc.db_vpc_main.id}"
+  vpc_id = "${data.aws_vpc.source_vpc_main.id}"
 
   route {
-    cidr_block = "${data.aws_vpc.ecom1_vpc_main.cidr_block}"
+    cidr_block = "${data.aws_vpc.target_vpc_main.cidr_block}"
     vpc_peering_connection_id = "${aws_vpc_peering_connection.vpc_peering.id}"
   }
 

@@ -10,15 +10,15 @@ module "aws_core_data" {
 provider "aws" {
   region = "eu-west-1"
   //  profile = "db-sandbox"
-  alias = "db-sb"
+  alias = "source_provider"
   version = "~> 0.1"
   assume_role {
-    role_arn = "arn:aws:iam::${var.db_sb_account_id}:role/main_provisioner"
+    role_arn = "arn:aws:iam::${var.peer_source_account_id}:role/main_provisioner"
   }
 }
 
-data "aws_vpc" "db_vpc_main" {
-  provider = "aws.db-sb"
+data "aws_vpc" "source_vpc_main" {
+  provider = "aws.source_provider"
   tags {
     Name = "main"
   }
@@ -27,15 +27,15 @@ data "aws_vpc" "db_vpc_main" {
 provider "aws" {
   region = "eu-west-1"
   //  profile = "ecom1-sandbox"
-  alias = "ecom1-sb"
+  alias = "target_provider"
   version = "~> 0.1"
   assume_role {
-    role_arn = "arn:aws:iam::${var.ecom1_sb_account_id}:role/main_provisioner"
+    role_arn = "arn:aws:iam::${var.peer_target_account_id}:role/main_provisioner"
   }
 }
 
-data "aws_vpc" "ecom1_vpc_main" {
-  provider = "aws.ecom1-sb"
+data "aws_vpc" "target_vpc_main" {
+  provider = "aws.target_provider"
   tags {
     Name = "main"
   }
