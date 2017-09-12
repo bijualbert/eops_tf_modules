@@ -7,6 +7,19 @@ module "aws_core_data" {
 //  source = "../../data_providers/aws_account_core_data"
 //}
 
+data "aws_caller_identity" "current" {}
+
+//data "terraform_remote_state" "terraform-ap" {
+//  backend = "s3"
+//
+//  config {
+//    bucket = "${var.tf-remote-state-bucket-name}"
+//    key    = "${data.aws_caller_identity.current.account_id}/vpcPeering_DB-ecom1/terraform.tfstate"
+//    region = "eu-west-1"
+//    acl    = "bucket-owner-full-control"
+//  }
+//}
+
 provider "aws" {
   region = "eu-west-1"
   //  profile = "db-sandbox"

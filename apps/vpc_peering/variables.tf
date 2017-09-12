@@ -4,6 +4,11 @@ variable "region" {
 variable "account_type" {
   default = "sandbox"
 }
+
+variable "tf-remote-state-bucket-name" {
+  default = "terraform-ap"
+}
+
 variable "tags_business_unit" {
   default = "Albumprinter"
 }
