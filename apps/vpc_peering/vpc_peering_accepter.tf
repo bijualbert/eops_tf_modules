@@ -2,7 +2,7 @@ resource "aws_vpc_peering_connection_accepter" "vpc_peering_accepter" {
   provider = "aws.target_provider"
   depends_on = ["aws_vpc_peering_connection.vpc_peering"]
 
-  vpc_peering_connection_id = "${aws_vpc_peering_connection.vpc_peering.id}"
+  vpc_peering_connection_id = "${data.peer_connection_id}"
   auto_accept               = true
 
   tags {
@@ -20,7 +20,7 @@ resource "aws_route_table" "target_vpc_peer_route_table" {
   provider = "aws.target_provider"
   depends_on = ["aws_vpc_peering_connection.vpc_peering"]
 
-  vpc_id = "${data.aws_vpc.target_vpc_main.id}"
+  vpc_id = "${data.peer_connection_id}"
 
   route {
     cidr_block = "${data.aws_vpc.source_vpc_main.cidr_block}"
