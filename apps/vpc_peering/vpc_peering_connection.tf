@@ -5,9 +5,9 @@ resource "aws_vpc_peering_connection" "vpc_peering" {
   vpc_id = "${data.aws_vpc.source_vpc_main.id}"
   peer_owner_id = "${data.aws_caller_identity.target_account.account_id}"
 
-//  requester {
-//    allow_remote_vpc_dns_resolution = "${aws_vpc_peering_connection_accepter.vpc_peering_accepter.accept_status == "active" ? true : false}"
-//  }
+  requester {
+    allow_remote_vpc_dns_resolution = "${aws_vpc_peering_connection_accepter.vpc_peering_accepter.accept_status != "active" ? false : true}"
+  }
 
   tags {
     Name = "${var.app_name}"
