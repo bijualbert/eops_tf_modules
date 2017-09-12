@@ -1,5 +1,5 @@
 resource "aws_vpc_peering_connection" "vpc_peering" {
-  provider = "aws.db-sb"
+  provider = "aws.source_provider"
 
   peer_vpc_id   = "${data.aws_vpc.target_vpc_main.id}"
   vpc_id        = "${data.aws_vpc.source_vpc_main.id}"
@@ -23,7 +23,9 @@ resource "aws_vpc_peering_connection" "vpc_peering" {
   }
 }
 
-resource "aws_route_table" "db_vpc_peer_route_table" {
+resource "aws_route_table" "source_vpc_peer_route_table" {
+  provider = "aws.source_provider"
+
   vpc_id = "${data.aws_vpc.source_vpc_main.id}"
 
   route {
@@ -41,3 +43,4 @@ resource "aws_route_table" "db_vpc_peer_route_table" {
     Environment     = "${var.environment}"
   }
 }
+
