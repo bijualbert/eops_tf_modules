@@ -1,14 +1,13 @@
 resource "aws_vpc_peering_connection_accepter" "vpc_peering_accepter" {
   provider = "aws.target_provider"
-  depends_on = [
-    "aws_vpc_peering_connection.vpc_peering"]
-
-  //  vpc_id        = "${data.aws_vpc.target_vpc_main.id}"
-  //  peer_vpc_id = "${data.aws_vpc.source_vpc_main.id}"
   vpc_peering_connection_id = "${aws_vpc_peering_connection.vpc_peering.id}"
 
 
   accepter {
+    allow_remote_vpc_dns_resolution = true
+  }
+
+  requester {
     allow_remote_vpc_dns_resolution = true
   }
 
@@ -27,10 +26,6 @@ resource "aws_vpc_peering_connection_accepter" "vpc_peering_accepter" {
 
 resource "aws_route_table" "target_vpc_peer_route_table" {
   provider = "aws.target_provider"
-  depends_on = [
-    "aws_vpc_peering_connection.vpc_peering",
-    "aws_vpc_peering_connection_accepter.vpc_peering_accepter"]
-
   vpc_id = "${data.aws_vpc.target_vpc_main.id}"
 
   route {
