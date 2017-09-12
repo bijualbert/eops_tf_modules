@@ -3,10 +3,10 @@ resource "aws_vpc_peering_connection" "vpc_peering" {
 
   peer_vpc_id = "${data.aws_vpc.target_vpc_main.id}"
   vpc_id = "${data.aws_vpc.source_vpc_main.id}"
-  peer_owner_id = "${var.peer_target_account_id}"
+  peer_owner_id = "${data.aws_caller_identity.target_account.account_id}"
 
   requester {
-    allow_remote_vpc_dns_resolution = true
+    allow_remote_vpc_dns_resolution = "${aws_vpc_peering_connection.vpc_peering.accept_status == "active" ? true : false}"
   }
 
   tags {

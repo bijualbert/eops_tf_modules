@@ -24,6 +24,10 @@ data "aws_vpc" "source_vpc_main" {
   }
 }
 
+data "aws_caller_identity" "source_account" {
+  provider = "aws.source_provider"
+}
+
 provider "aws" {
   region = "eu-west-1"
   //  profile = "ecom1-sandbox"
@@ -39,4 +43,9 @@ data "aws_vpc" "target_vpc_main" {
   tags {
     Name = "main"
   }
+}
+
+
+data "aws_caller_identity" "target_account" {
+  provider = "aws.target_provider"
 }
