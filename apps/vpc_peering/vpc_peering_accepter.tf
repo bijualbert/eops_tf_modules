@@ -4,7 +4,7 @@ resource "aws_vpc_peering_connection_accepter" "vpc_peering_accepter" {
 
 //  vpc_id        = "${data.aws_vpc.target_vpc_main.id}"
 //  peer_vpc_id = "${data.aws_vpc.source_vpc_main.id}"
-  vpc_peering_connection_id = "pcx-a3ddbdca"
+  vpc_peering_connection_id = "${aws_vpc_peering_connection.vpc_peering.id}"
 
 
   auto_accept               = true
@@ -28,7 +28,7 @@ resource "aws_route_table" "target_vpc_peer_route_table" {
 
   route {
     cidr_block = "${data.aws_vpc.source_vpc_main.cidr_block}"
-    vpc_peering_connection_id = "pcx-a3ddbdca"
+    vpc_peering_connection_id = "${aws_vpc_peering_connection.vpc_peering.id}"
   }
 
   tags {
