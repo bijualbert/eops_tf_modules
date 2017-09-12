@@ -3,6 +3,7 @@ resource "aws_vpc_peering_connection_accepter" "vpc_peering_accepter" {
   depends_on = ["aws_vpc_peering_connection.vpc_peering"]
 
   vpc_peering_connection_id = "pcx-a3ddbdca"
+
   auto_accept               = true
 
   tags {
@@ -18,7 +19,7 @@ resource "aws_vpc_peering_connection_accepter" "vpc_peering_accepter" {
 
 resource "aws_route_table" "target_vpc_peer_route_table" {
   provider = "aws.target_provider"
-  depends_on = ["aws_vpc_peering_connection.vpc_peering"]
+  depends_on = ["aws_vpc_peering_connection.vpc_peering", "aws_vpc_peering_connection_accepter.vpc_peering_accepter"]
 
   vpc_id = "${data.aws_vpc.target_vpc_main.id}"
 
