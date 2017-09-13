@@ -7,7 +7,7 @@ module "aws_core_data" {
 //  source = "../../data_providers/aws_account_core_data"
 //}
 
-data "aws_caller_identity" "current" {}
+//data "aws_caller_identity" "current" {}
 
 //data "terraform_remote_state" "terraform-ap" {
 //  backend = "s3"
