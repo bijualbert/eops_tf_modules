@@ -4,11 +4,9 @@ variable "region" {
 variable "account_type" {
   default = "sandbox"
 }
-
 variable "tf-remote-state-bucket-name" {
   default = "terraform-ap"
 }
-
 variable "tags_business_unit" {
   default = "Albumprinter"
 }
@@ -21,7 +19,6 @@ variable "tags_purpose" {
 }
 variable "description" {}
 variable "app_name" {}
-
 variable "environment" {}
 variable "variables" {
   default = ""
@@ -32,16 +29,14 @@ variable "enabled" {
 variable "private" {
   default = false
 }
-
 variable "allow_remote_vpc_dns_resolution" {
   default = true
 }
-
 variable "peer_target_account_id" {
-  description = "ecom1 sandbox account id"
+  description = "account that will accept the peer request"
   default = "047710374887"
 }
 variable "peer_source_account_id" {
-  description = "db sandbox account id"
-  default = "714256216940"
+  description = "account that will make the peer request"
+  default = ""
 }

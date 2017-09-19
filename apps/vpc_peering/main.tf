@@ -22,7 +22,6 @@ module "aws_core_data" {
 
 provider "aws" {
   region = "eu-west-1"
-  //  profile = "db-sandbox"
   alias = "source_provider"
   version = "~> 0.1"
   assume_role {
@@ -43,7 +42,6 @@ data "aws_caller_identity" "source_account" {
 
 provider "aws" {
   region = "eu-west-1"
-  //  profile = "ecom1-sandbox"
   alias = "target_provider"
   version = "~> 0.1"
   assume_role {
