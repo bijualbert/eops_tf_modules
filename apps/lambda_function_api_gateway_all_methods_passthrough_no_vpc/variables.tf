@@ -42,9 +42,6 @@ variable "timeout" {
 variable "enabled" {
   default = 1
 }
-variable "private" {
-  default = false
-}
 
 variable "response_template" {
   type = "map"
