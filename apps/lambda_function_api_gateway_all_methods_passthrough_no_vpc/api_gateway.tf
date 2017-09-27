@@ -36,14 +36,6 @@ resource "aws_api_gateway_deployment" "app" {
   rest_api_id = "${aws_api_gateway_rest_api.app.id}"
   stage_name  = "Prod"
 }
-resource "aws_api_gateway_api_key" "app" {
-  name        = "${var.app_name}"
-
-  stage_key {
-    rest_api_id = "${aws_api_gateway_rest_api.app.id}"
-    stage_name  = "${aws_api_gateway_deployment.app.stage_name}"
-  }
-}
 
 resource "aws_api_gateway_integration" "app_integration" {
   http_method = "${aws_api_gateway_method.app.http_method}"
