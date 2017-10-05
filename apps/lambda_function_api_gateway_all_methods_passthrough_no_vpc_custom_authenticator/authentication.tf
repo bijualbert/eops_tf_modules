@@ -37,12 +37,12 @@ resource "aws_iam_role_policy" "invocation_policy" {
 EOF
 }
 
-resource "aws_api_gateway_authorizer" "app_authorizer" {
-  name                   = "${var.app_name}-authorizer"
-  rest_api_id            = "${aws_api_gateway_rest_api.app.id}"
-  authorizer_uri         = "${var.authorizer_uri}"
-  authorizer_credentials = "${aws_iam_role.invocation_role.arn}"
-  authorizer_result_ttl_in_seconds = "${var.authorize_cache_ttl}"
-  type = "${var.authorizer_type}"
-}
+# resource "aws_api_gateway_authorizer" "app_authorizer" {
+#   name                   = "${var.app_name}-authorizer"
+#   rest_api_id            = "${aws_api_gateway_rest_api.app.id}"
+#   authorizer_uri         = "${var.authorizer_uri}"
+#   authorizer_credentials = "${aws_iam_role.invocation_role.arn}"
+#   authorizer_result_ttl_in_seconds = "${var.authorize_cache_ttl}"
+#   type = "${var.authorizer_type}"
+# }
 
