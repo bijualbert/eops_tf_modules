@@ -23,6 +23,9 @@ variable "runtime" {
 variable "handler" {
   default = "exports.handler"
 }
+
+variable "lambda_bucket_name" {}
+
 variable "environment" {}
 variable "variables" {
   type = "map"
