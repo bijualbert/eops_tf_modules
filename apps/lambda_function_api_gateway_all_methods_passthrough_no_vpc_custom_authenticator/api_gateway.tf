@@ -14,7 +14,8 @@ resource "aws_api_gateway_method" "app" {
   rest_api_id = "${aws_api_gateway_rest_api.app.id}"
   resource_id = "${aws_api_gateway_resource.app.id}"
   http_method = "ANY"
-  authorization = "NONE"
+  authorization = "CUSTOM"
+
   request_parameters {
     //    "method.request.path.accountId" = true
   }

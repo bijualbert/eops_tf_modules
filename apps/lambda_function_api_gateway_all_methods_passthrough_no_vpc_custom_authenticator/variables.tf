@@ -29,6 +29,18 @@ variable "variables" {
   }
 }
 
+variable "authorizer_uri" {}
+
+variable "authorizer_arn" {}
+
+variable "authorizer_type" {
+  default = "TOKEN"
+}
+
+variable "authorize_cache_ttl" {
+  default = 300
+}
+
 variable "lambda_bucket_name" {
   default = ""
 }
