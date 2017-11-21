@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.7.4] - 2017-11-21
+### Added
+- Attach api key to usage plan to remove depreciation warning for api gateway all methods passthru
+
 ## [0.7.3] - 2017-07-26
 ### Added
 - Removed un-used variable for loadbalancer name
@@ -226,7 +230,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial commit
 
-[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.3..HEAD
+[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.4..HEAD
+[0.7.4]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.2...v0.7.4
 [0.7.3]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.2...v0.7.3
 [0.7.2]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.1...v0.7.2
 [0.7.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.0...v0.7.1

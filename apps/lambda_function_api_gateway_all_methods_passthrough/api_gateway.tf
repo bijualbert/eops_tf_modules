@@ -67,3 +67,12 @@ resource "aws_lambda_permission" "allow-api-gateway-parent-resource-get" {
   principal = "apigateway.amazonaws.com"
   source_arn = "arn:aws:execute-api:${var.region}:${module.aws_core_data.account_id}:${aws_api_gateway_rest_api.app.id}/*/${aws_api_gateway_method.app.http_method}${aws_api_gateway_resource.app.path}"
 }
+
+resource "aws_api_gateway_api_key" "app" {
+  name = "${var.app_name}"
+
+  stage_key {
+    rest_api_id = "${aws_api_gateway_rest_api.app.id}"
+    stage_name  = "${aws_api_gateway_deployment.app.stage_name}"
+  }
+}
