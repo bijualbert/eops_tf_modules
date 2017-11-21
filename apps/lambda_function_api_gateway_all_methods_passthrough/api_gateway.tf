@@ -76,3 +76,20 @@ resource "aws_api_gateway_api_key" "app" {
     stage_name  = "${aws_api_gateway_deployment.app.stage_name}"
   }
 }
+
+resource "aws_api_gateway_usage_plan" "app" {
+  name         = "${var.app_name}"
+  description  = "${var.description}"
+
+
+  api_stages {
+    api_id = "${aws_api_gateway_rest_api.app.id}"
+    stage  = "${aws_api_gateway_deployment.app.stage_name}"
+  }
+}
+
+resource "aws_api_gateway_usage_plan_key" "main" {
+  key_id        = "${aws_api_gateway_api_key.app.id}"
+  key_type      = "API_KEY"
+  usage_plan_id = "${aws_api_gateway_usage_plan.app.id}"
+}
