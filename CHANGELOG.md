@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+
 ## [0.7.15] - 2017-11-21
 ### Added
 - Attach api key to usage plan to remove depreciation warning for api gateway all methods passthru
@@ -229,6 +230,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.0.1] - 2017-03-04
 ### Added
 - Initial commit
+
 
 [Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.15..HEAD
 [0.7.15]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.2...v0.7.15
