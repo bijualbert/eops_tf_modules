@@ -40,15 +40,6 @@ resource "aws_iam_role" "iam_for_app" {
         "Service": "apigateway.amazonaws.com"
       },
       "Effect": "Allow"
-    },
-    {
-        "Effect": "Allow",
-        "Action": [
-          "ec2:DescribeNetworkInterfaces",
-          "ec2:CreateNetworkInterface",
-          "ec2:DeleteNetworkInterface"
-        ],
-        "Resource": "arn:aws:ec2:*:*:*"
     }
   ]
 }
