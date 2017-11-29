@@ -1,5 +1,5 @@
 resource "aws_sqs_queue" "lambda_error_queue" {
-  name                      = "${var.app_name}_ERROR"
+  name                      = "${var.app_name}-ERROR"
   delay_seconds             = 90
   max_message_size          = 2048
   message_retention_seconds = 1209600

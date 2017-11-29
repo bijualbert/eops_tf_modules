@@ -1,5 +1,5 @@
 resource "aws_sns_topic" "lambda_replay_sns" {
-  name = "${var.app_name}_REPLAY"
+  name = "${var.app_name}-REPLAY"
 }
 
 resource "aws_sns_topic_subscription" "lambda_replay_topic_subscription" {
