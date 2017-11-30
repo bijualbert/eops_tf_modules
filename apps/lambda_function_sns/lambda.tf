@@ -84,11 +84,3 @@ resource "aws_security_group" "sg_for_app" {
     Environment     = "${var.environment}"
   }
 }
-
-resource "aws_lambda_permission" "allow_sns_replay" {
-  statement_id   = "AllowExecutionFromSNS"
-  action         = "lambda:InvokeFunction"
-  function_name  = "${aws_lambda_function.app.function_name}"
-  principal      = "sns.amazonaws.com"  
-  source_arn     = "${aws_sns_topic.lambda_replay_sns.arn}"  
-}
