@@ -7,3 +7,9 @@ resource "aws_sns_topic_subscription" "lambda_replay_topic_subscription" {
   protocol  = "lambda"
   endpoint  = "${aws_lambda_function.app.arn}"
 }
+
+resource "aws_sns_topic_subscription" "lambda_event_topic_subscription" {
+  topic_arn = "${var.lambda_sns_subscription_arn}"
+  protocol  = "lambda"
+  endpoint  = "${aws_lambda_function.app.arn}"
+}

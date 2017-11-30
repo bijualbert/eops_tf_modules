@@ -102,3 +102,7 @@ variable "iam_policy_document" {
 }
 EOF
 }
+
+variable "lambda_sns_subscription_arn" {
+  default = ""
+}
