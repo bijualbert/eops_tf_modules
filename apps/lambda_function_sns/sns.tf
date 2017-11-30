@@ -9,7 +9,7 @@ resource "aws_sns_topic_subscription" "lambda_replay_topic_subscription" {
 }
 
 resource "aws_lambda_permission" "allow_sns_replay" {
-  statement_id   = "AllowExecutionFromSNS"
+  statement_id   = "AllowExecutionFromSNSReplay"
   action         = "lambda:InvokeFunction"
   function_name  = "${aws_lambda_function.app.function_name}"
   principal      = "sns.amazonaws.com"  
@@ -23,7 +23,7 @@ resource "aws_sns_topic_subscription" "lambda_event_topic_subscription" {
 }
 
 resource "aws_lambda_permission" "allow_sns_event" {
-  statement_id   = "AllowExecutionFromSNS"
+  statement_id   = "AllowExecutionFromSNSEvent"
   action         = "lambda:InvokeFunction"
   function_name  = "${aws_lambda_function.app.function_name}"
   principal      = "sns.amazonaws.com"  
