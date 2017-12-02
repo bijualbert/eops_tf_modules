@@ -18,7 +18,7 @@ resource "aws_lambda_function" "app" {
   }
   count            = "${var.enabled}"
   dead_letter_config = {
-    target_arn = "${aws_sns_topic.lambda_replay_sns.arn}"
+    target_arn = "${aws_sns_topic.lambda_error_sns.arn}"
   }
 }
 
