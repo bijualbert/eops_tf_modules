@@ -17,7 +17,6 @@ module "lambda_app" {
   tags_team = "WATSON"
   lambda_bucket_name = "${var.lambda_bucket_name}"
   lambda_sns_subscription_arn = "arn:aws:sns:eu-west-1:179698508378:Albumprinter-Authentication-Messaging-Messages-V1-EmailChanged"
-  lambda_error_web_hook = "https://hooks.slack.com/services/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"
   variables = {
     dummy = ""
   }

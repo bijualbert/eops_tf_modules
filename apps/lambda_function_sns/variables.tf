@@ -106,7 +106,3 @@ EOF
 variable "lambda_sns_subscription_arn" {
   default = ""
 }
-
-variable "lambda_error_web_hook" {
-  default = ""
-}
