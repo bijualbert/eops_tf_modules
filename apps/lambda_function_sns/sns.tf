@@ -44,4 +44,5 @@ resource "aws_sns_topic_subscription" "lambda_error_topic_https_subscription" {
   topic_arn = "${aws_sns_topic.lambda_error_sns.arn}"
   protocol  = "https"
   endpoint  = "${var.lambda_error_web_hook}"
+  endpoint_auto_confirms = true
 }
