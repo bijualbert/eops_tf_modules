@@ -85,3 +85,27 @@ variable "tags_AutoOn" {
 variable "tags_AutoOff" {
   default = ""
 }
+
+# Security group
+//variable "roles" {}
+
+# AutoscalingGroup
+variable "default_cooldown" {
+  default = 300
+}
+
+variable "desired_capacity" {
+  default = 2
+}
+
+variable "min_size" {
+  default = 2
+}
+
+variable "max_size" {
+  default = 2
+}
+
+variable "hc_grace_period" {
+  default = 300
+}

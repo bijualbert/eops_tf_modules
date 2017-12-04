@@ -20,22 +20,17 @@ variable "app_name" {}
 variable "runtime" {
   default = "nodejs4.3"
 }
-variable "handler" {
-  default = "exports.handler"
-}
-
-variable "lambda_bucket_name" {}
-
+variable "handler" {}
 variable "environment" {}
 variable "variables" {
   type = "map"
   default = {
-    ENCODING="utf-8"
-//    SUMO_ENDPOINT=""
-//    SOURCE_CATEGORY_OVERRIDE=""
-//    SOURCE_HOST_OVERRIDE=""
-//    SOURCE_NAME_OVERRIDE=""
+    env = ""
   }
+}
+
+variable "lambda_bucket_name" {
+  default = ""
 }
 
 variable "memory_size" {
@@ -46,6 +41,16 @@ variable "timeout" {
 }
 variable "enabled" {
   default = 1
+}
+variable "private" {
+  default = false
+}
+
+variable "response_template" {
+  type = "map"
+  default ={
+    "application/json" = ""
+  }
 }
 
 variable "iam_policy_document" {
@@ -89,26 +94,15 @@ variable "iam_policy_document" {
                 "kms:ListAliases",
                 "ec2:DescribeVpcs",
                 "ec2:DescribeSubnets",
-                "ec2:DescribeSecurityGroups",
-                "iot:GetTopicRule",
-                "iot:ListTopicRules",
-                "iot:CreateTopicRule",
-                "iot:ReplaceTopicRule",
-                "iot:AttachPrincipalPolicy",
-                "iot:AttachThingPrincipal",
-                "iot:CreateKeysAndCertificate",
-                "iot:CreatePolicy",
-                "iot:CreateThing",
-                "iot:ListPolicies",
-                "iot:ListThings",
-                "iot:DescribeEndpoint",
-                "ec2:CreateNetworkInterface",
-                "ec2:DescribeNetworkInterfaces",
-                "ec2:DeleteNetworkInterface"
+                "ec2:DescribeSecurityGroups"
             ],
             "Resource": "*"
         }
     ]
 }
 EOF
+}
+
+variable "lambda_sns_subscription_arn" {
+  default = ""
 }
