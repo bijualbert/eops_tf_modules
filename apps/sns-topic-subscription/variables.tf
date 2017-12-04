@@ -14,7 +14,7 @@ variable "tags_team" {
   default = ""
 }
 variable "tags_purpose" {
-  default = "dev WATRSON-904"
+  default = ""
 }
 variable "description" {}
 variable "app_name" {}
