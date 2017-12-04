@@ -1,5 +1,4 @@
-resource "aws_lambda_function" "app" {
-  filename         = "${var.filename}"
+resource "aws_lambda_function" "app" {  
   function_name = "${var.app_name}"
   description = "${var.description}"
   role = "${aws_iam_role.iam_for_app.arn}"
@@ -8,6 +7,8 @@ resource "aws_lambda_function" "app" {
   memory_size = "${var.memory_size}"
   timeout = "${var.timeout}"
   count            = "${var.enabled}"
+  s3_bucket = "${var.s3_bucket}"
+  s3_key = "${var.s3_key}"
 }
 
 resource "aws_lambda_permission" "cloudwatch" {

@@ -13,7 +13,6 @@ variable "tags_purpose" {
 }
 variable "description" {}
 variable "app_name" {}
-variable "filename" {}
 
 variable "runtime" {
   default = "nodejs4.3"
@@ -36,6 +35,9 @@ variable "timeout" {
 variable "enabled" {
   default = 1
 }
+
+variable "s3_bucket" {}
+variable "s3_key" {}
 
 variable "iam_policy_document" {
   default =<<EOF
