@@ -29,3 +29,13 @@ resource "aws_lambda_permission" "allow_sns_event" {
   principal      = "sns.amazonaws.com"  
   source_arn     = "${var.lambda_sns_subscription_arn}"
 }
+
+resource "aws_sns_topic" "lambda_error_sns" {
+  name = "${var.app_name}-ERROR"
+}
+
+resource "aws_sns_topic_subscription" "lambda_error_topic_sqs_subscription" {
+  topic_arn = "${aws_sns_topic.lambda_error_sns.arn}"
+  protocol  = "sqs"
+  endpoint  = "${aws_sqs_queue.lambda_error_queue.arn}"
+}

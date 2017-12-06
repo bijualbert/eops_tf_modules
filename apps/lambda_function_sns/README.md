@@ -6,7 +6,7 @@ An example terraform module to build simple application as aws lambda function t
 ```hcl-terraform
 //CustomerSubscription.EmailChanged
 module "lambda_app" {
-  source = "git@github.com:albumprinter/eops_tf_modules.git//apps/lambda_function_sns?ref=lambda_sns_7" # for eg. {TAG_VERSION} = v0.3.0
+  source = "git@github.com:albumprinter/eops_tf_modules.git//apps/lambda_function_sns?ref=lambda_sns_8" # for eg. {TAG_VERSION} = v0.3.0
   app_name = "CustomerSubscriptions-EmailChanged-Lambda"
   description = "Lambda function to update CustomerSubscriptions when an EmailChanged event happens"
   handler = "Albumprinter.CustomerSubscriptions.EmailChanged.Lambda::Albumprinter.CustomerSubscriptions.EmailChanged.Lambda.Handler::Handle"
