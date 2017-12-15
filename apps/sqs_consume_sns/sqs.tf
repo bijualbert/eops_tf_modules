@@ -1,7 +1,7 @@
 resource "aws_sqs_queue" "sqs_queue" {
   name                      = "${var.app_name}"
   message_retention_seconds = 1209600
-  redrive_policy            = "{\"deadLetterTargetArn\":\"${aws_sqs_queue.sqs_error_queue.arn}\",\"maxReceiveCount\":${var.redrive_policy.retry_count}}"
+  redrive_policy            = "{\"deadLetterTargetArn\":\"${aws_sqs_queue.sqs_error_queue.arn}\",\"maxReceiveCount\":${var.redrive_policy_retry_count}}"
 }
 
 resource "aws_sqs_queue_policy" "sqs_sns_policy" {

@@ -90,7 +90,7 @@ variable "sns_subscription_arn" {
   default = ""
 }
 
-variable "redrive_policy.retry_count" {
+variable "redrive_policy_retry_count" {
   default = "10"
 }
 
