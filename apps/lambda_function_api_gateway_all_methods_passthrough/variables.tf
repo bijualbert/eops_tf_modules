@@ -7,6 +7,10 @@ variable "account_type" {
 variable "tags_business_unit" {
   default = "Albumprinter"
 }
+
+variable "path_part" {
+  default = "{proxy+}"
+}
 variable "tags_cost_center" {
   default = "CC443100"
 }
