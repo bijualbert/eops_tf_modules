@@ -20,7 +20,6 @@ variable "app_name" {}
 variable "runtime" {
   default = "nodejs4.3"
 }
-variable "handler" {}
 variable "environment" {}
 variable "variables" {
   type = "map"
