@@ -9,7 +9,7 @@ resource "aws_cloudwatch_metric_alarm" "foobar" {
   threshold                 = "0"
   alarm_description         = "This metric monitors messages on error queue"
   alarm_actions             = ["${var.sns_alert_arn}"]
-  count                     = "${var.environment == "prod" ? true : false }"
+  count                     = "${var.environment == "prod" ? 1 : 0 }"
   dimensions {
       QueueName = "${aws_sqs_queue.sqs_error_queue.name}"
     }
