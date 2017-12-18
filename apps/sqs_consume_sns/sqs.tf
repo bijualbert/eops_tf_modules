@@ -31,7 +31,7 @@ resource "aws_sqs_queue_policy" "sqs_sns_policy" {
       "Resource": "${aws_sqs_queue.sqs_queue.arn}",
       "Condition": {
         "ArnEquals": {
-          "aws:SourceArn": "${aws_sns_topic_subscription.replay_topic_subscription.arn}"
+          "aws:SourceArn": "${aws_sns_topic.replay_sns.arn}"
         }
       }
     }
