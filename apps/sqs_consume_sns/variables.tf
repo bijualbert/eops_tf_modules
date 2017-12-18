@@ -93,3 +93,6 @@ variable "redrive_policy_retry_count" {
   default = "10"
 }
 
+variable "sns_alert_arn" {
+  default = ""
+}
