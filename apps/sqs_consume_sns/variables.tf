@@ -96,3 +96,7 @@ variable "redrive_policy_retry_count" {
 variable "sns_alert_arn" {
   default = ""
 }
+
+variable "add_error_queue_cloudwatch" {
+  default = "0"
+}
