@@ -4,7 +4,7 @@ resource "aws_cloudwatch_metric_alarm" "sqs_error_queue_alarm" {
   evaluation_periods        = "1"
   metric_name               = "NumberOfMessagesSent"
   namespace                 = "AWS/SQS"
-  period                    = "300"
+  period                    = "900"
   statistic                 = "Sum"
   threshold                 = "0"
   alarm_description         = "This alarm monitors messages on error queue"
