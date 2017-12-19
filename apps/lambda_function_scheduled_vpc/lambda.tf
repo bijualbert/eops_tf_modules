@@ -1,5 +1,6 @@
 resource "aws_lambda_function" "app" {
-  filename         = "${var.filename}"
+  s3_bucket = "${var.lambda_bucket_name}"
+  s3_key = "builds/lambda/${var.app_name}/lambda.zip"
   function_name = "${var.app_name}"
   description = "${var.description}"
   role = "${aws_iam_role.iam_for_app.arn}"
