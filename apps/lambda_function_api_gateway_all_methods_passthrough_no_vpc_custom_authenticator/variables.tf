@@ -20,22 +20,29 @@ variable "app_name" {}
 variable "runtime" {
   default = "nodejs4.3"
 }
-variable "handler" {
-  default = "exports.handler"
-}
-
-variable "lambda_bucket_name" {}
-
+variable "handler" {}
 variable "environment" {}
 variable "variables" {
   type = "map"
   default = {
-    ENCODING="utf-8"
-//    SUMO_ENDPOINT=""
-//    SOURCE_CATEGORY_OVERRIDE=""
-//    SOURCE_HOST_OVERRIDE=""
-//    SOURCE_NAME_OVERRIDE=""
+    env = ""
   }
+}
+
+variable "authorizer_uri" {}
+
+variable "authorizer_arn" {}
+
+variable "authorizer_type" {
+  default = "TOKEN"
+}
+
+variable "authorize_cache_ttl" {
+  default = 300
+}
+
+variable "lambda_bucket_name" {
+  default = ""
 }
 
 variable "memory_size" {
@@ -46,6 +53,16 @@ variable "timeout" {
 }
 variable "enabled" {
   default = 1
+}
+variable "private" {
+  default = false
+}
+
+variable "response_template" {
+  type = "map"
+  default ={
+    "application/json" = ""
+  }
 }
 
 variable "iam_policy_document" {
@@ -101,10 +118,7 @@ variable "iam_policy_document" {
                 "iot:CreateThing",
                 "iot:ListPolicies",
                 "iot:ListThings",
-                "iot:DescribeEndpoint",
-                "ec2:CreateNetworkInterface",
-                "ec2:DescribeNetworkInterfaces",
-                "ec2:DeleteNetworkInterface"
+                "iot:DescribeEndpoint"
             ],
             "Resource": "*"
         }
