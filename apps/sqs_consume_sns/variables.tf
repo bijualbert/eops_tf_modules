@@ -102,9 +102,9 @@ variable "add_error_queue_cloudwatch" {
 }
 
 variable "receive_wait_time_seconds" {
-  default = 20
+  default = "20"
 }
 
 variable "message_retention_seconds" {
-  default = 1209600
+  default = "1209600"
 }
