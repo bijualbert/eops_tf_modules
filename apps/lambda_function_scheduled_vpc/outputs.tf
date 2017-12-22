@@ -4,3 +4,6 @@ output "lambda_arn" {
 output "iam_role_arn" {
   value = "${aws_iam_role.iam_for_app.arn}"
 }
+output "debug" {
+  value = "${var.private}"
+}
