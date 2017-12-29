@@ -1,6 +1,9 @@
 variable "region" {
   default = "eu-west-1"
 }
+variable "account_type" {
+  default = "sandbox"
+}
 variable "tags_business_unit" {
   default = "Albumprinter"
 }
@@ -13,33 +16,24 @@ variable "tags_purpose" {
 }
 variable "description" {}
 variable "app_name" {}
-variable "lambda_bucket_name" {}
 
 variable "runtime" {
   default = "nodejs4.3"
 }
-variable "handler" {}
 variable "environment" {}
 variable "variables" {
-  default = ""
+  type = "map"
+  default = {
+    env = ""
+  }
 }
 
-variable "schedule_expression" {
-  default = "rate(5 minutes)"
+variable "response_template" {
+  type = "map"
+  default ={
+    "application/json" = ""
+  }
 }
-variable "memory_size" {
-  default = "128"
-}
-variable "timeout" {
-  default = "3"
-}
-variable "enabled" {
-  default = 1
-}
-variable "private" {
-  default = false
-}
-
 
 variable "iam_policy_document" {
   default =<<EOF
@@ -55,9 +49,6 @@ variable "iam_policy_document" {
                 "ec2:CreateNetworkInterface",
                 "ec2:DescribeNetworkInterfaces",
                 "ec2:DeleteNetworkInterface",
-                "ec2:DescribeVpcs",
-                "ec2:DescribeSubnets",
-                "ec2:DescribeSecurityGroups",
                 "cloudwatch:*",
                 "cognito-identity:ListIdentityPools",
                 "cognito-sync:GetCognitoEvents",
@@ -68,7 +59,11 @@ variable "iam_policy_document" {
                 "iam:ListRolePolicies",
                 "iam:ListRoles",
                 "iam:PassRole",
+                "kinesis:DescribeStream",
+                "kinesis:ListStreams",
+                "kinesis:PutRecord",
                 "lambda:*",
+                "logs:*",
                 "s3:*",
                 "sns:ListSubscriptions",
                 "sns:ListSubscriptionsByTopic",
@@ -79,22 +74,37 @@ variable "iam_policy_document" {
                 "sqs:ListQueues",
                 "sqs:SendMessage",
                 "kms:ListAliases",
-                "iot:GetTopicRule",
-                "iot:ListTopicRules",
-                "iot:CreateTopicRule",
-                "iot:ReplaceTopicRule",
-                "iot:AttachPrincipalPolicy",
-                "iot:AttachThingPrincipal",
-                "iot:CreateKeysAndCertificate",
-                "iot:CreatePolicy",
-                "iot:CreateThing",
-                "iot:ListPolicies",
-                "iot:ListThings",
-                "iot:DescribeEndpoint"
+                "ec2:DescribeVpcs",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeSecurityGroups"
             ],
             "Resource": "*"
         }
     ]
 }
 EOF
+}
+
+variable "sns_subscription_arn" {
+  default = ""
+}
+
+variable "redrive_policy_retry_count" {
+  default = "10"
+}
+
+variable "sns_alert_arn" {
+  default = ""
+}
+
+variable "add_error_queue_cloudwatch" {
+  default = "0"
+}
+
+variable "receive_wait_time_seconds" {
+  default = "20"
+}
+
+variable "message_retention_seconds" {
+  default = "1209600"
 }
