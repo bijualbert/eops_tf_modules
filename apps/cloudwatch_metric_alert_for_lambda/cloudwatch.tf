@@ -22,9 +22,9 @@ resource "aws_cloudwatch_metric_alarm" "lambda_invocations_alarm" {
   dimensions {
     FunctionName = "${var.app_name}"
   }
-//  ok_actions = ["arn:aws:lambda:eu-west-1:047710374887:function:SumologicLambdaLogCollector"]
-//  alarm_actions = ["arn:aws:lambda:eu-west-1:047710374887:function:SumologicLambdaLogCollector"]
-//  insufficient_data_actions = ["arn:aws:lambda:eu-west-1:047710374887:function:SumologicLambdaLogCollector"]
+  ok_actions = ["arn:aws:sns:eu-west-1:047710374887:ERROR-AlertQueue"]
+  alarm_actions = ["arn:aws:sns:eu-west-1:047710374887:ERROR-AlertQueue"]
+  insufficient_data_actions = ["arn:aws:sns:eu-west-1:047710374887:ERROR-AlertQueue"]
 }
 
 resource "aws_cloudwatch_metric_alarm" "lambda_error_alarm" {
@@ -41,7 +41,7 @@ resource "aws_cloudwatch_metric_alarm" "lambda_error_alarm" {
   dimensions {
     FunctionName = "${var.app_name}"
   }
-//  ok_actions = ["arn:aws:lambda:eu-west-1:047710374887:function:SumologicLambdaLogCollector"]
-//  alarm_actions = ["arn:aws:lambda:eu-west-1:047710374887:function:SumologicLambdaLogCollector"]
-//  insufficient_data_actions = ["arn:aws:lambda:eu-west-1:047710374887:function:SumologicLambdaLogCollector"]
+  ok_actions = ["arn:aws:sns:eu-west-1:047710374887:ERROR-AlertQueue"]
+  alarm_actions = ["arn:aws:sns:eu-west-1:047710374887:ERROR-AlertQueue"]
+  insufficient_data_actions = ["arn:aws:sns:eu-west-1:047710374887:ERROR-AlertQueue"]
 }
