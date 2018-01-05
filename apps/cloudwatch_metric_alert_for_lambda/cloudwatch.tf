@@ -18,7 +18,6 @@ resource "aws_cloudwatch_metric_alarm" "lambda_invocations_alarm" {
   statistic                 = "Average"
   threshold                 = "180"
   alarm_description         = "This metric monitors lambda invocations"
-  insufficient_data_actions = []
   dimensions {
     FunctionName = "${var.app_name}"
   }
@@ -31,13 +30,12 @@ resource "aws_cloudwatch_metric_alarm" "lambda_error_alarm" {
   alarm_name                = "${var.app_name}-error"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = "1"
-  metric_name               = "Invocations"
+  metric_name               = "Errors"
   namespace                 = "AWS/Lambda"
   period                    = "60"
   statistic                 = "Average"
   threshold                 = "180"
-  alarm_description         = "This metric monitors lambda invocations"
-  insufficient_data_actions = []
+  alarm_description         = "This metric monitors lambda Errors"
   dimensions {
     FunctionName = "${var.app_name}"
   }
