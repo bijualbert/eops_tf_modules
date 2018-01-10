@@ -6,6 +6,6 @@ resource "aws_cloudwatch_log_metric_filter" "lambda_memory_alarm" {
   metric_transformation {
     name = "lambda_memory"
     namespace = "used_memory"
-    value = "120"
+    value = "$MemUsed"
   }
 }
