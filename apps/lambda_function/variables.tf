@@ -112,3 +112,7 @@ variable "iam_policy_document" {
 }
 EOF
 }
+
+variable "retention_days" {
+  default = "30"
+}
