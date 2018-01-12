@@ -19,7 +19,6 @@ variable "tags_purpose" {
 variable "description" {}
 variable "app_name" {}
 
-variable "environment" {}
 variable "variables" {
   default = ""
 }
