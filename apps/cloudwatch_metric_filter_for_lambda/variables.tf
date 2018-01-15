@@ -26,7 +26,7 @@ variable "alarm_threshold" {
 }
 
 variable "period" {
-  default = "120"  // 2 minutes
+  default = "60"  // 1 minutes
 }
 
 variable "log_group_name" {
