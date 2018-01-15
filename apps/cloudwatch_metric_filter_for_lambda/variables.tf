@@ -32,3 +32,7 @@ variable "period" {
 variable "log_group_name" {
   default = ""
 }
+
+variable "action_enabled" {
+  default = "true"
+}
