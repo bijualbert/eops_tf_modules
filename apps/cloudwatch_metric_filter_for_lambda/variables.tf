@@ -10,7 +10,6 @@ variable "tags_business_unit" {
 variable "tags_cost_center" {
   default = "CC443100"
 }
-variable "tags_team" {}
 variable "tags_purpose" {
   default = ""
 }
@@ -18,7 +17,6 @@ variable "description" {
   default = "WATSON-968 test metric"
 }
 variable "app_name" {}
-variable "environment" {}
 
 variable "pattern" {
   default = "[type=REPORT,...,MemUsed,MemUnit]"
@@ -29,4 +27,8 @@ variable "alarm_threshold" {
 
 variable "period" {
   default = "120"  // 2 minutes
+}
+
+variable "log_group_name" {
+  default = ""
 }

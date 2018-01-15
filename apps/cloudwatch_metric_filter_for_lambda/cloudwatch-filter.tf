@@ -1,7 +1,7 @@
 resource "aws_cloudwatch_log_metric_filter" "lambda_memory_metric" {
   name = "${var.app_name}_memory_alarm"
   pattern = "${var.pattern}"
-  log_group_name = "/aws/lambda/SumologicLambdaLogCollector"
+  log_group_name = "${var.log_group_name}"
 
   metric_transformation {
     name = "lambda_memory"
