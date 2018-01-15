@@ -23,3 +23,10 @@ variable "environment" {}
 variable "pattern" {
   default = "[type=REPORT,...,MemUsed,MemUnit]"
 }
+variable "alarm_threshold" {
+  default =""
+}
+
+variable "period" {
+  default = "120"  // 2 minutes
+}
