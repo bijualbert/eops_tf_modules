@@ -98,3 +98,7 @@ variable "iam_policy_document" {
 }
 EOF
 }
+
+variable "lambda_memory_alert_threshold" {
+  default = "120"
+}
