@@ -21,6 +21,6 @@ resource "aws_cloudwatch_metric_alarm" "lambda_memory_alert" {
   threshold                 = "${var.alarm_threshold}"
   alarm_description         = "This metric monitors ec2 cpu utilization"
   insufficient_data_actions = []
-  alarm_actions = ["arn:aws:sns:eu-west-1:047710374887:ERROR-AlertQueue"]
+  alarm_actions = ["${var.alarm_action_arn}"]
   actions_enabled = "${var.action_enabled}"
 }

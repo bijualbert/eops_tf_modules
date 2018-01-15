@@ -36,3 +36,6 @@ variable "log_group_name" {
 variable "action_enabled" {
   default = "true"
 }
+
+variable "alarm_action_arn" {  
+}
