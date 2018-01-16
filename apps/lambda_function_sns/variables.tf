@@ -113,3 +113,6 @@ variable "lambda_memory_alert_threshold" {
 variable "alarm_action_arn" {
   default = ""
 }
+variable "retention_days" {
+  default = "30"
+}
