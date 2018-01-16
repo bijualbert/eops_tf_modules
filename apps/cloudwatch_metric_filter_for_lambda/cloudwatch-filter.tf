@@ -14,6 +14,7 @@ resource "aws_cloudwatch_metric_alarm" "lambda_memory_alert" {
   alarm_name                = "${var.app_name}_memory_alarm"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = "1"
+  datapoints_to_alarm       = "1"
   metric_name               = "lambda_memory_alarm"
   namespace                 = "AWS/Logs"
   period                    = "${var.period}"
