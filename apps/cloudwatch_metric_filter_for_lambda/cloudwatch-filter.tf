@@ -23,5 +23,10 @@ resource "aws_cloudwatch_metric_alarm" "lambda_memory_alert" {
   alarm_description         = "This metric alerts on memory usage"
   insufficient_data_actions = []
   alarm_actions = ["${var.alarm_action_arn}"]
+
+  dimensions {
+    filter = "$max_mem_used"
+  }
+
   actions_enabled = "${var.action_enabled}"
 }
