@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_log_metric_filter" "lambda_memory_metric" {
-  name = "${var.app_name}_memory_alarm"
+  name = "${var.app_name}_memory_metric_filter"
   pattern = "${var.pattern}"
   log_group_name = "${var.log_group_name}"
 
@@ -15,7 +15,7 @@ resource "aws_cloudwatch_metric_alarm" "lambda_memory_alert" {
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = "1"
   datapoints_to_alarm       = "1"
-  metric_name               = "lambda_memory"
+  metric_name               = "${var.app_name}_memory_metric_filter"
   namespace                 = "AWS/Logs"
   period                    = "${var.period}"
   statistic                 = "Maximum"
