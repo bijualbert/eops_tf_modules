@@ -25,7 +25,7 @@ resource "aws_cloudwatch_metric_alarm" "lambda_memory_alert" {
   alarm_actions = ["${var.alarm_action_arn}"]
 
   dimensions {
-    filter = "$max_mem_used"
+    FilterName = "${var.app_name}_memory_metric_filter"
   }
 
   actions_enabled = "${var.action_enabled}"
