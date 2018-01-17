@@ -18,8 +18,7 @@ module "lambda_app_cloudwatch" {
   log_group_name = "/aws/lambda/${var.app_name}"
   alarm_threshold = "${var.lambda_memory_alert_threshold}"
   alarm_action_arn = "${var.alarm_action_arn}"
-  environment = "${environment}"  
-  tags_team = "${tags_team}"
-  description = "${description}"
-  description = "${description}"
+  environment = "${var.environment}"
+  tags_team = "${var.tags_team}"
+  description = "${var.description}"
 }
