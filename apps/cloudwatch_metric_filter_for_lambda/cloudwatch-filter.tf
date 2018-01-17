@@ -11,6 +11,7 @@ resource "aws_cloudwatch_log_metric_filter" "lambda_memory_metric" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "lambda_memory_alert" {
+  depends_on = ["aws_cloudwatch_log_group.lambda_log_group"]
   alarm_name                = "${var.app_name}_memory_alarm"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = "1"
