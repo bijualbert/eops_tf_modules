@@ -24,9 +24,9 @@ resource "aws_cloudwatch_metric_alarm" "lambda_memory_alert" {
   insufficient_data_actions = []
   alarm_actions = ["${var.alarm_action_arn}"]
 
-  dimensions {
-    FilterName = "${var.app_name}_memory_metric_filter"
-  }
+  # dimensions {
+  #   FilterName = "${var.app_name}_memory_metric_filter"
+  # }
 
   actions_enabled = "${var.action_enabled}"
 }
