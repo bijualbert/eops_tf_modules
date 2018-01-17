@@ -9,6 +9,7 @@ resource "aws_cloudwatch_log_group" "lambda_log_group" {
 
 resource "aws_cloudwatch_log_metric_filter" "lambda_memory_metric" {
   name = "${var.app_name}_memory_metric_filter"
+  depends_on = ["aws_cloudwatch_log_group.lambda_log_group"]
   pattern = "${var.pattern}"
   log_group_name = "${var.log_group_name}"
 
