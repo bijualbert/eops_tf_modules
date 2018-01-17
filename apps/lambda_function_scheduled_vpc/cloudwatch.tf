@@ -6,7 +6,6 @@ resource "aws_cloudwatch_event_rule" "app" {
 
 resource "aws_cloudwatch_event_target" "lambda_vpc" {
   target_id = "${var.app_name}"
-  log_group_name = "/aws/lambda/${var.app_name}"
   rule      = "${aws_cloudwatch_event_rule.app.name}"
   arn       = "${aws_lambda_function.app.arn}"
   count     = "${var.enabled}"
