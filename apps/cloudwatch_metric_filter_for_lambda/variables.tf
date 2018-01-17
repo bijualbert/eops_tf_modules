@@ -30,7 +30,7 @@ variable "period" {
 }
 
 variable "log_group_name" {
-  default = ""
+  default = "/aws/lambda/${var.app_name}"
 }
 
 variable "action_enabled" {
