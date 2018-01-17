@@ -1,3 +1,12 @@
+resource "aws_cloudwatch_log_group" "lambda_log_group" {
+  name = "/aws/lambda/${var.app_name}"
+  retention_in_days = "${var.retention_days}"
+
+  tags {
+    Environment = "${var.environment}"
+  }
+}
+
 resource "aws_cloudwatch_log_metric_filter" "lambda_memory_metric" {
   name = "${var.app_name}_memory_metric_filter"
   pattern = "${var.pattern}"
@@ -23,10 +32,5 @@ resource "aws_cloudwatch_metric_alarm" "lambda_memory_alert" {
   alarm_description         = "This metric alerts on memory usage"
   insufficient_data_actions = []
   alarm_actions = ["${var.alarm_action_arn}"]
-
-  dimensions {
-    filter = "$max_mem_used"
-  }
-
-  actions_enabled = "${var.action_enabled}"
+  actions_enabled = "${var.alarm_action_enabled}"
 }
