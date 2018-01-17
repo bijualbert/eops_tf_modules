@@ -17,7 +17,7 @@ variable "environment" {}
 
 
 variable "period" {
-  default = "1"
+  default = "60"  #it's seconds damn it!
 }
 variable "alarm_threshold" {}
 variable "alarm_action_arn" {}
