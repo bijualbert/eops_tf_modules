@@ -5,7 +5,7 @@ resource "aws_cloudwatch_log_metric_filter" "lambda_memory_metric" {
 
   metric_transformation {
     name = "lambda_memory"
-    namespace = "Albelli"
+    namespace = "Albelli/${var.app_name}"
     value = "$MemUsed"
   }
 }
@@ -16,7 +16,7 @@ resource "aws_cloudwatch_metric_alarm" "lambda_memory_alert" {
   evaluation_periods        = "1"
   datapoints_to_alarm       = "1"
   metric_name               = "lambda_memory"
-  namespace                 = "Albelli"
+  namespace                 = "Albelli/${var.app_name}"
   period                    = "${var.period}"
   statistic                 = "Maximum"
   threshold                 = "${var.alarm_threshold}"
