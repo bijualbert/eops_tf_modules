@@ -25,8 +25,7 @@ variable "actions_enabled" {}
 variable "retention_days" {
   default = "30"
 }
-variable "log_group_name" {
-  default = "/aws/lambda/${var.app_name}"
+variable "log_group_name" {  
 }
 variable "pattern" {
   default = "[type=REPORT,...,MemUsed,MemUnit]"
