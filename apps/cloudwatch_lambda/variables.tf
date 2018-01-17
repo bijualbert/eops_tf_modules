@@ -21,7 +21,6 @@ variable "period" {
 }
 variable "alarm_threshold" {}
 variable "alarm_action_arn" {}
-variable "actions_enabled" {}
 variable "retention_days" {
   default = "30"
 }
@@ -30,7 +29,6 @@ variable "log_group_name" {
 variable "pattern" {
   default = "[type=REPORT,...,MemUsed,MemUnit]"
 }
-variable "action_enabled" {
+variable "alarm_action_enabled" {
   default = "true"
 }
-
