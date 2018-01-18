@@ -1,1 +1,0 @@
-Add CW filter to your log group to monitor for memory usage.
