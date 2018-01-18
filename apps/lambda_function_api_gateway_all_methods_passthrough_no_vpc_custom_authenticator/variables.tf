@@ -64,6 +64,8 @@ variable "response_template" {
     "application/json" = ""
   }
 }
+variable "lambda_memory_alert_threshold" {}
+variable "alarm_action_arn" {}
 
 variable "iam_policy_document" {
   default =<<EOF
