@@ -78,10 +78,3 @@ resource "aws_security_group" "sg_for_app" {
     Environment     = "${var.environment}"
   }
 }
-
-//resource "aws_lambda_alias" "app_alias" {
-//  name = "${var.app_name}"
-//  description = "${var.description}"
-//  function_name = "${aws_lambda_function.app.arn}"
-//  function_version = "$LATEST"
-//}

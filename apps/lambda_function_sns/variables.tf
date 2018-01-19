@@ -106,3 +106,13 @@ EOF
 variable "lambda_sns_subscription_arn" {
   default = ""
 }
+variable "lambda_memory_alert_threshold" {
+  default = "120"
+}
+
+variable "alarm_action_arn" {
+  default = ""
+}
+variable "retention_days" {
+  default = "30"
+}

@@ -16,10 +16,16 @@ variable "tags_team" {
 variable "tags_purpose" {
   default = ""
 }
-variable "description" {}
-variable "app_name" {}
+variable "description" {
+  default = ""
+}
+variable "app_name" {
+  default = ""
+}
 
-variable "environment" {}
+variable "environment" {
+  default = ""
+}
 variable "variables" {
   default = ""
 }
