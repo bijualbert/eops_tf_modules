@@ -20,6 +20,7 @@ resource "aws_lambda_function" "app" {
   dead_letter_config = {
     target_arn = "${aws_sns_topic.lambda_error_sns.arn}"
   }
+
 }
 
 resource "aws_iam_role" "iam_for_app" {
