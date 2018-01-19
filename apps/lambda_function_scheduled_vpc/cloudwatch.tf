@@ -20,4 +20,5 @@ module "lambda_app_cloudwatch" {
   environment = "${var.environment}"
   tags_team = "${var.tags_team}"
   description = "${var.description}"
+  retention_days = "${var.retention_days}"
 }
