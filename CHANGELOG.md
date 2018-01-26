@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.9.0] - 2018-01-26
+### Changed
+- Refactored autoscaling_group, see README for usage information
+
+### Added
+- Created autoscaling_group_with_elb, that uses autoscaling_group as basis
 
 ## [0.7.16] - 2017-11-21
 ### Added
@@ -237,7 +243,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Initial commit
 
 
-[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.16..HEAD
+[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.9.0..HEAD
+[0.9.0]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.16...v0.9.0
 [0.7.16]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.15...v0.7.16
 [0.7.15]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.2...v0.7.15
 [0.7.3]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.2...v0.7.3

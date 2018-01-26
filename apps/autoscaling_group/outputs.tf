@@ -1,12 +1,7 @@
-# Outputs
-output "asg_security_group" {
-  value = "${aws_security_group.asg.id}"
+output "asg_security_group_id" {
+  value = "${aws_security_group.asg_sg.id}"
 }
 
-output "asg_profile"{
-  value = "${aws_iam_instance_profile.asg.id}"
-}
-
-output "asg_iam_role" {
-  value = "${aws_iam_role.asg.id}"
+output "asg_id" {
+  value = "${aws_autoscaling_group.app_asg.id}"
 }
