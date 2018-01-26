@@ -112,3 +112,14 @@ variable "iam_policy_document" {
 }
 EOF
 }
+
+variable "retention_days" {
+  default = "30"
+}
+variable "lambda_memory_alert_threshold" {
+  default = "120"
+}
+
+variable "alarm_action_arn" {
+  default = ""
+}

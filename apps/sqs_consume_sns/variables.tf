@@ -20,30 +20,12 @@ variable "app_name" {}
 variable "runtime" {
   default = "nodejs4.3"
 }
-variable "handler" {}
 variable "environment" {}
 variable "variables" {
   type = "map"
   default = {
     env = ""
   }
-}
-
-variable "lambda_bucket_name" {
-  default = ""
-}
-
-variable "memory_size" {
-  default = "128"
-}
-variable "timeout" {
-  default = "3"
-}
-variable "enabled" {
-  default = 1
-}
-variable "private" {
-  default = false
 }
 
 variable "response_template" {
@@ -103,16 +85,26 @@ variable "iam_policy_document" {
 EOF
 }
 
-variable "lambda_sns_subscription_arn" {
+variable "sns_subscription_arn" {
   default = ""
-}
-variable "lambda_memory_alert_threshold" {
-  default = "120"
 }
 
-variable "alarm_action_arn" {
+variable "redrive_policy_retry_count" {
+  default = "10"
+}
+
+variable "sns_alert_arn" {
   default = ""
 }
-variable "retention_days" {
-  default = "30"
+
+variable "add_error_queue_cloudwatch" {
+  default = "0"
+}
+
+variable "receive_wait_time_seconds" {
+  default = "20"
+}
+
+variable "message_retention_seconds" {
+  default = "1209600"
 }

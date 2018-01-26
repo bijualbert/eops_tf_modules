@@ -13,7 +13,7 @@ variable "tags_purpose" {
 }
 variable "description" {}
 variable "app_name" {}
-variable "filename" {}
+variable "lambda_bucket_name" {}
 
 variable "runtime" {
   default = "nodejs4.3"
@@ -97,4 +97,16 @@ variable "iam_policy_document" {
     ]
 }
 EOF
+}
+
+variable "lambda_memory_alert_threshold" {
+  default = "120"
+}
+
+variable "alarm_action_arn" {
+  default = ""
+}
+
+variable "retention_days" {
+  default = "30"
 }

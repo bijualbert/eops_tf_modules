@@ -1,5 +1,6 @@
 resource "aws_lambda_function" "app" {
-  filename         = "${var.filename}"
+  s3_bucket = "${var.lambda_bucket_name}"
+  s3_key = "builds/lambda/${var.app_name}/lambda.zip"
   function_name = "${var.app_name}"
   description = "${var.description}"
   role = "${aws_iam_role.iam_for_app.arn}"
@@ -8,7 +9,7 @@ resource "aws_lambda_function" "app" {
   memory_size = "${var.memory_size}"
   timeout = "${var.timeout}"
   vpc_config = {
-    subnet_ids = ["${split( ",", var.private == true ?   join(",", module.aws_core_data.private_subnets) :  join(",", concat(module.aws_core_data.private_subnets,module.aws_core_data.public_subnets)))}"]
+    subnet_ids = ["${split( ",", var.private == 1 ?   join(",", module.aws_core_data.private_subnets) :  join(",", concat(module.aws_core_data.private_subnets,module.aws_core_data.public_subnets)))}"]
     security_group_ids = ["${aws_security_group.sg_for_app.id}"]
   }
   count            = "${var.enabled}"
@@ -77,10 +78,3 @@ resource "aws_security_group" "sg_for_app" {
     Environment     = "${var.environment}"
   }
 }
-
-//resource "aws_lambda_alias" "app_alias" {
-//  name = "${var.app_name}"
-//  description = "${var.description}"
-//  function_name = "${aws_lambda_function.app.arn}"
-//  function_version = "$LATEST"
-//}
