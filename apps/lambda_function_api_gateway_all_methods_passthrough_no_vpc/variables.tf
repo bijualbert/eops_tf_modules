@@ -111,3 +111,7 @@ variable "iam_policy_document" {
 }
 EOF
 }
+
+variable "binary_media_types" {
+  default = ["application/octet-stream", "image/*"]
+}

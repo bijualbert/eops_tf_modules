@@ -132,3 +132,7 @@ EOF
 variable "retention_days" {
   default = "30"
 }
+
+variable "binary_media_types" {
+  default = ["application/octet-stream", "image/*"]
+}
