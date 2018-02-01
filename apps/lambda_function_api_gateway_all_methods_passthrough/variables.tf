@@ -57,6 +57,9 @@ variable "response_template" {
   }
 }
 
+variable "lambda_memory_alert_threshold" {}
+variable "alarm_action_arn" {}
+
 variable "iam_policy_document" {
   default =<<EOF
 {
@@ -117,6 +120,10 @@ variable "iam_policy_document" {
     ]
 }
 EOF
+}
+
+variable "retention_days" {
+  default = "30"
 }
 
 variable "binary_media_types" {
