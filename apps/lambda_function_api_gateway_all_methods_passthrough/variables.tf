@@ -122,3 +122,11 @@ EOF
 variable "binary_media_types" {
   default = ["application/octet-stream", "image/*"]
 }
+
+variable "swagger_resource_path" {
+  default = "swagger"
+}
+
+variable "swagger_with_api_key" {
+  default = false
+}
