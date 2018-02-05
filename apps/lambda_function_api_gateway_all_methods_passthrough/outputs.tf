@@ -19,6 +19,3 @@ output "proxy_api_lambda_passthru_gateway_endpoint" {
 output "iam_role_arn" {
   value = "${aws_iam_role.iam_for_app.arn}"
 }
-output "swagger_api_key" {
-  value = "${aws_api_gateway_api_key.swagger.value}"
-}
