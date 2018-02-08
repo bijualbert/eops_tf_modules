@@ -137,10 +137,18 @@ variable "binary_media_types" {
   default = ["application/octet-stream", "image/*"]
 }
 
-variable "swagger_auth" {
+variable "swagger_resource_enable" {
   default = false
 }
 
 variable "swagger_resource_path" {
   default = "swagger"
+}
+
+variable "swagger_api_key_required" {
+  default = false
+}
+
+variable "swagger_api_key" {
+  default = ""
 }
