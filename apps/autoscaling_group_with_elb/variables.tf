@@ -55,6 +55,33 @@ variable "elb_tags" {
   type = "map"
 }
 
+variable "associate_public_ip" {
+  default = false
+}
+
+variable "role_policy" {
+  default = <<EOF
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Stmt1468377974000",
+            "Effect": "Allow",
+            "Action": [
+                "autoscaling:DescribeAutoScalingInstances",
+                "ec2:DescribeInstances"
+            ],
+            "Resource": ["*"]
+        }
+    ]
+}
+    EOF
+}
+
+variable "role_policy_description" {
+  default = "This policy is used for Autoclustering features."
+}
+
 variable "is_internal" {
   default = false
 }

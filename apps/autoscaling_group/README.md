@@ -60,7 +60,7 @@ See the example for more information.
 
 ```hcl
 module "autoscaling_group" {
-  source = "git@github.com:albumprinter/eops_tf_modules.git//apps/autoscaling_group?ref=0.9.0"
+  source = "git@github.com:albumprinter/payments-tf-modules.git//apps/autoscaling_group?ref=0.1.0"
 
   environment = "${var.environment}"
   app_name = "${var.app_name}"
