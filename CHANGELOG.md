@@ -253,7 +253,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Initial commit
 
 
-[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.12.1..HEAD
+[Unreleased]: https://github.com/albumprinter/eops_tf_modules/compare/v0.12.2..HEAD
+[0.12.2]: https://github.com/albumprinter/eops_tf_modules/compare/v0.12.1...v0.12.2
 [0.12.1]: https://github.com/albumprinter/eops_tf_modules/compare/v0.9.0...v0.12.1
 [0.9.0]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.16...v0.9.0
 [0.7.16]: https://github.com/albumprinter/eops_tf_modules/compare/v0.7.15...v0.7.16
