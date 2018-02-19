@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.12.2] - 2018-02-19
+### Fixed
+- ASG with ELB: Default variables were not passed properly to ASG module. Added them to the module reference.
+
 ## [0.12.1] - 2018-02-15
 ### Added
 - ASG with ELB: Add variables for pass through to ASG module

@@ -1,5 +1,5 @@
 module "autoscaling_group" {
-  source = "git@github.com:albumprinter/eops_tf_modules.git//apps/autoscaling_group?ref=0.9.0"
+  source = "git@github.com:albumprinter/eops_tf_modules.git//apps/autoscaling_group?ref=0.12.2"
 
   ami_id = "${var.ami_id}"
   instance_type = "${var.instance_type}"
@@ -16,4 +16,7 @@ module "autoscaling_group" {
   asg_sg_ingress = ["${var.asg_sg_ingress}"]
   team_name = "${var.team_name}"
   asg_sg_tags = "${var.asg_sg_tags}"
+  associate_public_ip = "${var.associate_public_ip}"
+  role_policy = "${var.role_policy}"
+  role_policy_description = "${var.role_policy_description}"
 }
