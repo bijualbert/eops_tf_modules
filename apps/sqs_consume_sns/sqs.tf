@@ -2,7 +2,15 @@ resource "aws_sqs_queue" "sqs_queue" {
   name                      = "${var.app_name}"
   message_retention_seconds = "${var.message_retention_seconds}"
   receive_wait_time_seconds = "${var.receive_wait_time_seconds}"
-  redrive_policy            = "{\"deadLetterTargetArn\":\"${aws_sqs_queue.sqs_error_queue.arn}\",\"maxReceiveCount\":${var.redrive_policy_retry_count}}"
+  redrive_policy            = "{\"deadLetterTargetArn\":\"${aws_sqs_queue.sqs_error_queue.arn}\",\"maxReceiveCount\":${var.redrive_policy_retry_count}}"  
+  tags = {
+    "Business Unit" = "${var.tags_business_unit}"
+    Environment = "${var.environment}"
+    "Cost Center" = "${var.tags_cost_center}"
+    Team = "${var.tags_team}"
+    Purpose = "${var.tags_purpose}"
+    Description = "${var.description}"
+  }
 }
 
 resource "aws_sqs_queue_policy" "sqs_sns_policy" {

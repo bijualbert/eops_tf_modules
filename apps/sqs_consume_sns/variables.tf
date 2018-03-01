@@ -16,24 +16,7 @@ variable "tags_purpose" {
 }
 variable "description" {}
 variable "app_name" {}
-
-variable "runtime" {
-  default = "nodejs4.3"
-}
 variable "environment" {}
-variable "variables" {
-  type = "map"
-  default = {
-    env = ""
-  }
-}
-
-variable "response_template" {
-  type = "map"
-  default ={
-    "application/json" = ""
-  }
-}
 
 variable "iam_policy_document" {
   default =<<EOF
