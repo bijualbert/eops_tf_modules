@@ -118,6 +118,8 @@ variable "retention_days" {
 }
 
 variable "tags" {
+  type = "map"
+  default={
     Name            = "${var.app_name}"
     "Business Unit" = "${var.tags_business_unit}"
     "Cost Center"   = "${var.tags_cost_center}"
@@ -125,4 +127,5 @@ variable "tags" {
     Purpose         = "${var.tags_purpose}"
     Description     = "${var.description}"
     Environment     = "${var.environment}"
+  }
 }
