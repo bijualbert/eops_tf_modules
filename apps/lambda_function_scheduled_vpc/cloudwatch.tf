@@ -12,7 +12,7 @@ resource "aws_cloudwatch_event_target" "lambda_vpc" {
 }
 
 module "lambda_app_cloudwatch" {
-  source = "git@github.com:albumprinter/eops_tf_modules.git//apps/cloudwatch_lambda?ref=v0.8.0"
+  source = "git@github.com:albumprinter/eops_tf_modules.git//apps/cloudwatch_lambda?ref=v0.13.0"
   app_name = "${var.app_name}"
   log_group_name = "/aws/lambda/${var.app_name}"
   alarm_threshold = "${var.lambda_memory_alert_threshold}"
@@ -20,5 +20,6 @@ module "lambda_app_cloudwatch" {
   environment = "${var.environment}"
   tags_team = "${var.tags_team}"
   description = "${var.description}"
-  retention_days = "${var.retention_days}"
+  tags_purpose = "${var.tags_purpose}"
+  retention_days = "${var.retention_days}"  
 }
