@@ -9,6 +9,7 @@ resource "aws_lambda_function" "app" {
   count            = "${var.enabled}"
   s3_bucket = "${var.s3_bucket}"
   s3_key = "${var.s3_key}"
+  tags = "${local.tags}"
 }
 
 resource "aws_lambda_permission" "cloudwatch" {
@@ -44,10 +45,3 @@ resource "aws_iam_role_policy" "iam_policy_for_app" {
   role = "${aws_iam_role.iam_for_app.id}"
   policy = "${var.iam_policy_document}"
 }
-
-//resource "aws_lambda_alias" "app_alias" {
-//  name = "${var.app_name}"
-//  description = "${var.description}"
-//  function_name = "${aws_lambda_function.app.arn}"
-//  function_version = "$LATEST"
-//}

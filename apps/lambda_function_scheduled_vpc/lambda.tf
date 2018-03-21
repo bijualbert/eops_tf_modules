@@ -13,6 +13,7 @@ resource "aws_lambda_function" "app" {
     security_group_ids = ["${aws_security_group.sg_for_app.id}"]
   }
   count            = "${var.enabled}"
+  tags = "${local.tags}"
 }
 
 resource "aws_lambda_permission" "cloudwatch" {
@@ -68,13 +69,5 @@ resource "aws_security_group" "sg_for_app" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags {
-    Name            = "${var.app_name}"
-    "Business Unit" = "${var.tags_business_unit}"
-    "Cost Center"   = "${var.tags_cost_center}"
-    Team            = "${var.tags_team}"
-    Purpose         = "${var.tags_purpose}"
-    Description     = "${var.description}"
-    Environment     = "${var.environment}"
-  }
+  tags = "${local.tags}"
 }

@@ -13,6 +13,7 @@ resource "aws_lambda_function" "app" {
     variables = "${var.variables}"
   }
   count            = "${var.enabled}"
+  tags = "${local.tags}"
 }
 
 resource "aws_iam_role" "iam_for_app" {
