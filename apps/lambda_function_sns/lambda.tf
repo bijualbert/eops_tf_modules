@@ -20,7 +20,7 @@ resource "aws_lambda_function" "app" {
   dead_letter_config = {
     target_arn = "${aws_sns_topic.lambda_error_sns.arn}"
   }
-  tags = "${var.tags}"
+  tags = "${local.tags}"
 }
 
 resource "aws_iam_role" "iam_for_app" {
@@ -75,5 +75,5 @@ resource "aws_security_group" "sg_for_app" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = "${var.tags}"
+  tags = "${local.tags}"
 }
