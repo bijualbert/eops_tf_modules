@@ -18,21 +18,7 @@ resource "aws_lambda_function" "app" {
 
 resource "aws_iam_role" "iam_for_app" {
   name = "${var.app_name}"
-  assume_role_policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": "sts:AssumeRole",
-      "Principal": {
-        "Service": "lambda.amazonaws.com"
-      },
-      "Effect": "Allow",
-      "Sid": ""
-    }
-  ]
-}
-EOF
+  assume_role_policy = "${var.assume_role_policy_document}"
 }
 
 resource "aws_iam_role_policy" "iam_policy_for_app" {
