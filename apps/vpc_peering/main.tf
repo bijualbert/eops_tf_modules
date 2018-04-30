@@ -1,11 +1,9 @@
-module "aws_core_data" {
-  source = "git@github.com:albumprinter/eops_tf_modules.git//data_providers/aws_account_core_data"
-}
+# Data sources
+module "local_data" {
+  source = "git@github.com:albumprinter/eops_tf_modules.git//data_providers/local-get-data"
 
-// For local development use instead:
-//module "aws_core_data" {
-//  source = "../../data_providers/aws_account_core_data"
-//}
+  # See repo for possible outputs
+}
 
 //data "aws_caller_identity" "current" {}
 
