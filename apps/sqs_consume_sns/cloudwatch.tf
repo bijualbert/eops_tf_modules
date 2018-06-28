@@ -1,4 +1,4 @@
-resource "aws_cloudwatch_metric_alarm" "the_alarm" {
+resource "aws_cloudwatch_metric_alarm" "stale_messages_alarm_1" {
   alarm_name                = "${var.app_name}-STALE-MESSAGES-ALARM-1"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = "1"
@@ -15,7 +15,7 @@ resource "aws_cloudwatch_metric_alarm" "the_alarm" {
   }
 }
 
-resource "aws_cloudwatch_metric_alarm" "the_alarm" {
+resource "aws_cloudwatch_metric_alarm" "stale_messages_alarm_2" {
   alarm_name                = "${var.app_name}-STALE-MESSAGES-ALARM-2"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = "1"
@@ -32,7 +32,7 @@ resource "aws_cloudwatch_metric_alarm" "the_alarm" {
   }
 }
 
-resource "aws_cloudwatch_metric_alarm" "the_alarm" {
+resource "aws_cloudwatch_metric_alarm" "stale_messages_alarm_3" {
   alarm_name                = "${var.app_name}-STALE-MESSAGES-ALARM-3"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = "1"
