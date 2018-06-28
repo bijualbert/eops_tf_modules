@@ -80,14 +80,14 @@ variable "sns_alert_arn" {
   default = ""
 }
 
-variable "add_error_queue_cloudwatch" {
-  default = "0"
-}
-
 variable "receive_wait_time_seconds" {
   default = "20"
 }
 
 variable "message_retention_seconds" {
   default = "1209600"
+}
+
+variable "add_stale_message_cloudwatch" {
+  default = 1
 }
