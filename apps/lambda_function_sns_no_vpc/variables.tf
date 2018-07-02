@@ -120,7 +120,6 @@ variable "alarm_action_arn" {
 variable "retention_days" {
   default = "30"
 }
-
 variable "reserved_concurrent_executions" { 
   default = 0
 }
