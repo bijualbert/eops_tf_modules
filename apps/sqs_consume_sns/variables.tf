@@ -91,3 +91,7 @@ variable "message_retention_seconds" {
 variable "add_stale_message_cloudwatch" {
   default = 1
 }
+
+variable "visibility_timeout_seconds" {
+  default = 30
+}
