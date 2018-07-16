@@ -14,10 +14,6 @@ output "lambda_arn" {
   value = "${aws_lambda_function.app.*.arn}"
 }
 
-output "lambda_kms_key_arn" {
-  value = "${aws_lambda_function.app.*.kms_key_arn}"
-}
-
 output "proxy_api_lambda_passthru_gateway_endpoint" {
   value = "https://${aws_api_gateway_deployment.app.rest_api_id}.execute-api.${var.region}.amazonaws.com/${aws_api_gateway_deployment.app.stage_name}"
 }
