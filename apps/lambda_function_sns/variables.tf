@@ -117,5 +117,5 @@ variable "reserved_concurrent_executions" {
   default = 0
 }
 variable "sns_subscription_filters" {
-  default = ""
+  default = "{}"
 }
