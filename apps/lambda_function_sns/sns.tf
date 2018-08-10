@@ -20,6 +20,7 @@ resource "aws_sns_topic_subscription" "lambda_event_topic_subscription" {
   topic_arn = "${var.lambda_sns_subscription_arn}"
   protocol  = "lambda"
   endpoint  = "${aws_lambda_function.app.arn}"
+  filter_policy = "${var.sns_subscription_filters}"
 }
 
 resource "aws_lambda_permission" "allow_sns_event" {
