@@ -16,7 +16,6 @@ variable "tags_purpose" {
 }
 variable "description" {}
 variable "app_name" {}
-
 variable "runtime" {
   default = "nodejs4.3"
 }
@@ -28,11 +27,9 @@ variable "variables" {
     env = ""
   }
 }
-
 variable "lambda_bucket_name" {
   default = ""
 }
-
 variable "memory_size" {
   default = "128"
 }
@@ -42,23 +39,21 @@ variable "timeout" {
 variable "enabled" {
   default = 1
 }
-
 variable "private" {
   default = false
 }
 variable "vpc_enabled" {
   default = true
 }
-
 variable "response_template" {
   type = "map"
-  default ={
+
+  default = {
     "application/json" = ""
   }
 }
-
 variable "iam_policy_document" {
-  default =<<EOF
+  default = <<EOF
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -106,21 +101,21 @@ variable "iam_policy_document" {
 }
 EOF
 }
-
 variable "lambda_sns_subscription_arn" {
   default = ""
 }
 variable "lambda_memory_alert_threshold" {
   default = "120"
 }
-
 variable "alarm_action_arn" {
   default = ""
 }
 variable "retention_days" {
   default = "30"
 }
-
-variable "reserved_concurrent_executions" { 
+variable "reserved_concurrent_executions" {
   default = 0
+}
+variable "sns_subscription_filters" {
+  default = ""
 }
