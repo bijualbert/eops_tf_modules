@@ -103,6 +103,7 @@ variable "iam_policy_document" {
                 "sns:Subscribe",
                 "sns:Unsubscribe",
                 "sns:Publish",
+                "sqs:GetQueueUrl",
                 "sqs:ListQueues",
                 "sqs:SendMessage",
                 "kms:ListAliases",
