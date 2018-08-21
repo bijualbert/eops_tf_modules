@@ -129,6 +129,6 @@ variable "message_retention_seconds" {
 }
 variable "sqs_name" {
 }
-variable "add_stale_message_cloudwatch" {
+variable "enable_cloudwatch_alarms" {
   default = 1
 }
