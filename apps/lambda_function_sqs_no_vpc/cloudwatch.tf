@@ -41,6 +41,7 @@ resource "aws_cloudwatch_metric_alarm" "error_messages_alarm" {
   period                    = "60"  // 1 minute
   statistic                 = "Minimum"
   threshold                 = "60" // 1 minute
+  treat_missing_data        = "notBreaching"
   datapoints_to_alarm       = "1"
   alarm_actions             = ["${var.alarm_action_arn}"]
   count                     = "${var.enable_cloudwatch_alarms}"
