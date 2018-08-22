@@ -34,7 +34,7 @@ resource "aws_cloudwatch_metric_alarm" "stale_messages_alarm" {
 
 resource "aws_cloudwatch_metric_alarm" "error_messages_alarm" {
   alarm_name                = "${var.app_name}-ERROR-MESSAGES-ALARM"
-  comparison_operator       = "LessThanOrEqualToThreshold"
+  comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = "1"
   metric_name               = "ApproximateAgeOfOldestMessage"
   namespace                 = "AWS/SQS"
