@@ -133,5 +133,5 @@ variable "enable_cloudwatch_alarms" {
   default = 1
 }
 variable "sqs_policy_statement" {
-  defaut = ""
+  default = ""
 }
