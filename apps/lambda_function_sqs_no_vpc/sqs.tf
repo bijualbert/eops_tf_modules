@@ -67,7 +67,7 @@ resource "aws_sqs_queue_policy" "sqs_sns_policy" {
           "aws:SourceArn": "${aws_sns_topic.replay_sns.arn}"
         }
       }
-    }
+    }${var.sqs_policy_statement}
   ]
 }
 POLICY
