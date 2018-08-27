@@ -49,7 +49,7 @@ resource "aws_sqs_queue" "sqs_queue" {
   }
 }
 
-resource "aws_sqs_queue_policy" "sqs_sns_policy" {
+resource "aws_sqs_queue_policy" "sqs_sqs_policy" {
   queue_url = "${aws_sqs_queue.sqs_queue.id}"
   policy = <<POLICY
 {
@@ -61,11 +61,7 @@ resource "aws_sqs_queue_policy" "sqs_sns_policy" {
       "Effect": "Allow",
       "Principal": "*",
       "Action": "sqs:SendMessage",
-      "Resource": "${aws_sqs_queue.sqs_queue.arn}",
-      "Condition": {
-        "ArnEquals": {
-          "aws:SourceArn": "${aws_sns_topic.replay_sns.arn}"
-        }
+      "Resource": "${aws_sqs_queue.sqs_queue.arn}"
       }
     }${var.sqs_policy_statement}
   ]
