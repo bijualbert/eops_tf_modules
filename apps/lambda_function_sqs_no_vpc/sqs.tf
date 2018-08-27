@@ -62,7 +62,6 @@ resource "aws_sqs_queue_policy" "sqs_sqs_policy" {
       "Principal": "*",
       "Action": "sqs:SendMessage",
       "Resource": "${aws_sqs_queue.sqs_queue.arn}"
-      }
     }${var.sqs_policy_statement}
   ]
 }
