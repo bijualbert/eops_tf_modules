@@ -140,3 +140,6 @@ variable "swagger_api_key" {
   default = ""
 }
 
+variable "api_gateway_type" {
+  default = "EDGE"
+}

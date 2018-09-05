@@ -4,7 +4,7 @@ resource "aws_api_gateway_rest_api" "app" {
   description = "${var.description}"
   binary_media_types = "${var.binary_media_types}"
   endpoint_configuration {
-    types = ["REGIONAL"]
+    types = ["${var.api_gateway_type}"]
   }
 }
 
