@@ -3,6 +3,9 @@ resource "aws_api_gateway_rest_api" "app" {
   name        = "${var.app_name}"
   description = "${var.description}"
   binary_media_types = "${var.binary_media_types}"
+  endpoint_configuration {
+    types = ["${var.api_gateway_type}"]
+  }
 }
 
 resource "aws_api_gateway_resource" "app" {
