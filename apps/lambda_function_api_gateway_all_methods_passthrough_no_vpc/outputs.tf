@@ -6,6 +6,10 @@ output "api_gateway_rest_api_id" {
   value = "${aws_api_gateway_rest_api.app.id}"
 }
 
+output "api_gateway_resource_app_id" {
+  value = "${aws_api_gateway_resource.app.id}"
+}
+
 output "lambda_kms_key_id" {
   value = "${aws_lambda_function.app.*.id}"
 }
