@@ -1,11 +1,3 @@
-variable "region" {
-  default = "eu-west-1"
-}
-
-variable "aws_profile" {
-  default = "default"
-}
-
 variable "terraform_bucket" {
   default = "terraform-ap"
 }
