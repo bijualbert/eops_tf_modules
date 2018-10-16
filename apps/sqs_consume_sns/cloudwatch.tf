@@ -101,4 +101,5 @@ resource "aws_cloudwatch_metric_alarm" "error_messages_alarm_3" {
   dimensions {
     QueueName = "${aws_sqs_queue.sqs_error_queue.name}"
   }
+}
 
