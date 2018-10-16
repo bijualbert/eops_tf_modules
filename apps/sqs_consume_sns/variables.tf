@@ -92,6 +92,10 @@ variable "add_stale_message_cloudwatch" {
   default = 1
 }
 
+variable "add_error_messages_cloudwatch" {
+  default = 1
+}
+
 variable "visibility_timeout_seconds" {
   default = 30
 }
