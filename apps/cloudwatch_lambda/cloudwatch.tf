@@ -16,9 +16,6 @@ resource "aws_cloudwatch_log_metric_filter" "lambda_memory_metric" {
     namespace = "Albelli"
     value = "$MemUsed"
   } 
-    providers = { 
-    aws = "aws.default" 
-  } 
 }
 
 resource "aws_cloudwatch_metric_alarm" "lambda_memory_alert" {
