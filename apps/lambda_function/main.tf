@@ -1,6 +1,5 @@
 provider "aws" {
   region = "${var.region}"
-//  profile = "eops-sandbox"
 }
 
 module "aws_core_data" {
