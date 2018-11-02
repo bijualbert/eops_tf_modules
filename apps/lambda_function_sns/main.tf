@@ -1,5 +1,7 @@
 provider "aws" {
-  region = "${var.region}"
+  version = "~> 1.0"
+  alias = "default"
+  region = "eu-west-1"
 }
 
 module "aws_core_data" {
