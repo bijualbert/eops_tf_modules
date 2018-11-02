@@ -1,5 +1,6 @@
 provider "aws" {
   alias = "default"
+  region = "eu-west-1"
 }
 
 module "aws_core_data" {
