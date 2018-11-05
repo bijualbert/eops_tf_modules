@@ -1,4 +1,10 @@
-# provider "aws" {
-#   alias = "default"
-#   region = "eu-west-1"
-# }
+provider "aws" {
+}
+
+provider "aws" {
+  alias  = "default"
+}
+
+provider "aws" {
+  alias  = "us-east-1"
+}
