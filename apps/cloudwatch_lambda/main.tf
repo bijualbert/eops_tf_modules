@@ -1,4 +1,4 @@
-provider "aws" {
-  alias = "default"
-  region = "eu-west-1"
-}
+# provider "aws" {
+#   alias = "default"
+#   region = "eu-west-1"
+# }
