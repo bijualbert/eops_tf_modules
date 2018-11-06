@@ -20,16 +20,22 @@ data "terraform_remote_state" "terraform-ap" {
 //  }
 //}
 
-data "aws_availability_zones" "available" {}
+data "aws_availability_zones" "available" {
+  provider = "aws.default" 
+}
 
 data "aws_vpc_endpoint_service" "s3" {
   service = "s3"
+  provider = "aws.default" 
 }
 
 data "aws_vpc" "main" {
   tags {
     Name = "main"
   }
+  provider = "aws.default" 
 }
 
-data "aws_caller_identity" "current" {}
+data "aws_caller_identity" "current" {
+  provider = "aws.default" 
+}
