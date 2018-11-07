@@ -11,6 +11,5 @@ module "lambda_app_cloudwatch" {
   tags_purpose = "${var.tags_purpose}"
   providers = {
    aws = "aws"
-   //aws.default = "aws.default"
   }
 }

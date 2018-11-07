@@ -12,6 +12,5 @@ module "api_gateway_resource" {
   api_gateway_integration_credentials     = "${aws_api_gateway_integration.app_integration.credentials}"
   providers = {
    aws = "aws"
-   //aws.default = "aws.default"
   } 
 }

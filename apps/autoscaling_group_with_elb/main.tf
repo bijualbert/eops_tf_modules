@@ -1,3 +1,6 @@
+provider "aws" {
+}
+
 module "autoscaling_group" {
   source = "git@github.com:albumprinter/eops_tf_modules.git//apps/autoscaling_group"
 
@@ -19,4 +22,7 @@ module "autoscaling_group" {
   associate_public_ip = "${var.associate_public_ip}"
   role_policy = "${var.role_policy}"
   role_policy_description = "${var.role_policy_description}"
+  providers = {
+   aws = "aws"
+  } 
 }

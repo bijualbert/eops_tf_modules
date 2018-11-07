@@ -1,11 +1,11 @@
 provider "aws" {
-  region = "${var.region}"
 }
 
 module "aws_account_core_data" {
-  source = "git@github.com:albumprinter/eops_tf_modules.git//data_providers/aws_account_core_data?ref=v0.2.1"
-  // For local development use instead:
-  //  source = "../../data_providers/aws_account_core_data"
+  source = "git@github.com:albumprinter/eops_tf_modules.git//data_providers/aws_account_core_data"
+  providers = {
+   aws = "aws"
+  } 
 }
 
 resource "aws_key_pair" "ec2_key_pair" {

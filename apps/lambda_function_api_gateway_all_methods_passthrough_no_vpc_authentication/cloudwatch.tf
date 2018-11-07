@@ -9,4 +9,7 @@ module "lambda_app_cloudwatch" {
   description = "${var.description}"
   retention_days = "${var.retention_days}"
   tags_purpose = "${var.tags_purpose}"
+  providers = {
+   aws = "aws"
+  } 
 }
