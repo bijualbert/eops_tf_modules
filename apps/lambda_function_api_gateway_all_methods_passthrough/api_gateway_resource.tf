@@ -1,5 +1,6 @@
 module "api_gateway_resource" {
-  source                                  = "git@github.com:albumprinter/eops_tf_modules.git//apps/api_gateway_resource"
+  //source                                  = "git@github.com:albumprinter/eops_tf_modules.git//apps/api_gateway_resource"
+  source                                  = "../../apps/api_gateway_resource"
   enable                                  = "${var.swagger_resource_enable}"
   api_key_required                        = "${var.swagger_api_key_required}"
   api_key                                 = "${var.swagger_api_key}"

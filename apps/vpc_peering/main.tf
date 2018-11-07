@@ -1,6 +1,7 @@
 # Data sources
 module "local_data" {
-  source = "git@github.com:albumprinter/eops_tf_modules.git//data_providers/local-get-data"
+  //source = "git@github.com:albumprinter/eops_tf_modules.git//data_providers/local-get-data"
+  source = "../../data_providers/local-get-data"
 
   # See repo for possible outputs
 }

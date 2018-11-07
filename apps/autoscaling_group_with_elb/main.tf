@@ -2,8 +2,8 @@ provider "aws" {
 }
 
 module "autoscaling_group" {
-  source = "git@github.com:albumprinter/eops_tf_modules.git//apps/autoscaling_group"
-
+  //source = "git@github.com:albumprinter/eops_tf_modules.git//apps/autoscaling_group"
+  source = "../../apps/autoscaling_group"
   ami_id = "${var.ami_id}"
   instance_type = "${var.instance_type}"
   environment = "${var.environment}"
