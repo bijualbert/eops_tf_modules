@@ -10,7 +10,8 @@ module "api_gateway_resource" {
   api_gateway_deployment_stage_name       = "${aws_api_gateway_deployment.app.stage_name}"
   api_gateway_integration_uri             = "${aws_api_gateway_integration.app_integration.uri}"
   api_gateway_integration_credentials     = "${aws_api_gateway_integration.app_integration.credentials}"
-  # providers = { 
-  #  aws= "aws.default" 
-  # } 
+  providers = {
+   aws = "aws.default"
+   aws.default = "aws.default"
+  } 
 }
