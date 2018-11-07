@@ -3,7 +3,7 @@ resource "aws_sns_topic_subscription" "topic-subscription" {
   protocol  = "${var.protocol}"
   endpoint  = "${var.endpoint}"
   providers = {
-   aws = "aws.default"
-   aws.default = "aws.default"
+   aws = "aws"
+   //aws.default = "aws.default"
   }
 }

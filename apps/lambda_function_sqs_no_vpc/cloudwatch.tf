@@ -10,8 +10,8 @@ module "lambda_app_cloudwatch" {
   description = "${var.description}"
   retention_days = "${var.retention_days}"  
   providers = {
-   aws = "aws.default"
-   aws.default = "aws.default"
+   aws = "aws"
+   //aws.default = "aws.default"
   }
 }
 
