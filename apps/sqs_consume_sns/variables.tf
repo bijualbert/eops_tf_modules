@@ -98,5 +98,5 @@ variable "visibility_timeout_seconds" {
 }
 
 variable "sns_subscription_filters" {
-  default = "{}"
+  default = ""
 }
