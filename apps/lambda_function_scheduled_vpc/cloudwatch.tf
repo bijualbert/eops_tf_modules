@@ -12,7 +12,6 @@ resource "aws_cloudwatch_event_target" "lambda_vpc" {
 }
 
 module "lambda_app_cloudwatch" {
-  //source = "git@github.com:albumprinter/eops_tf_modules.git//apps/cloudwatch_lambda"
   source = "../../apps/cloudwatch_lambda"
   app_name = "${var.app_name}"
   log_group_name = "/aws/lambda/${var.app_name}"
@@ -23,4 +22,8 @@ module "lambda_app_cloudwatch" {
   description = "${var.description}"
   tags_purpose = "${var.tags_purpose}"
   retention_days = "${var.retention_days}"  
+
+  providers = {
+   aws = "aws"
+  }
 }
