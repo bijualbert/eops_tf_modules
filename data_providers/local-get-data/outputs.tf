@@ -46,3 +46,8 @@ output "default_vpc_id" {
 output "default_vpc_route_table_id" {
   value = "${data.aws_route_table.default_vpc_route_table.route_table_id}"
 }
+
+output "default_vpc_cidr" {
+  value = "${data.aws_vpc.default_vpc.cidr_block}"
+}
+
