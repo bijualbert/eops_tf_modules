@@ -49,3 +49,7 @@ output "tags_contact" {
 output "tags_description" {
   value = "${var.tags_description}"
 }
+
+output "almere_customer_gateway_id" {
+  value = "${data.terraform_remote_state.terraform-ap.almere_customer_gateway_id}"
+}
