@@ -1,1 +1,0 @@
-# Variables for the Non-Prod environment
