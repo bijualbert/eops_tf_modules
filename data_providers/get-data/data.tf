@@ -4,7 +4,7 @@ data "terraform_remote_state" "terraform-ap" {
 
   config {
     bucket = "terraform-ap"
-    key    = "${data.aws_caller_identity.current.account_id}/terraform.tfstate"
+    key    = "${data.aws_caller_identity.current.account_id}/core-infra/terraform.tfstate"
     region = "eu-west-1"
     acl    = "bucket-owner-full-control"
   }
