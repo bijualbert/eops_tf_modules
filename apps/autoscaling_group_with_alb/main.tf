@@ -1,5 +1,5 @@
-//provider "aws" {
-//}
+provider "aws" {
+}
 
 module "autoscaling_group" {
   source = "../../apps/autoscaling_group"
