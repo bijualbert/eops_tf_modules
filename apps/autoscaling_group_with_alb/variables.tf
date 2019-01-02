@@ -27,10 +27,6 @@ variable "alb_subnets" {
   type = "list"
 }
 
-variable "alb_listeners" {
-  type = "list"
-}
-
 variable "asg_tags" {
   type = "list"
 }
@@ -108,18 +104,3 @@ variable "interval" {
   default = 10
 }
 
-variable "cross_zone_load_balancing" {
-  default = true
-}
-
-variable "idle_timeout" {
-  default = 300
-}
-
-variable "connection_draining" {
-  default = true
-}
-
-variable "connection_draining_timeout" {
-  default = 300
-}

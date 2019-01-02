@@ -67,10 +67,6 @@ variable "interval" {
   default = 10
 }
 
-variable "cross_zone_load_balancing" {
-  default = true
-}
-
 variable "idle_timeout" {
   default = 300
 }
