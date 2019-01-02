@@ -11,7 +11,7 @@ resource "aws_lb" "asg_alb" {
 }
 
 resource "aws_lb_target_group" "asg_alb_tg" {
-  name     = "${var.environment}-${var.app_name}-${var.domain}-alb-tg"
+  name     = "${var.environment}-${var.app_name}-tg"
   port     = "${var.tg_port}"
   protocol = "${var.tg_protocol}"
   vpc_id   = "${var.vpc_id}"
