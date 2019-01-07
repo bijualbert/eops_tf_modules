@@ -21,5 +21,5 @@ output "alb_zone_id" {
   value = "${aws_lb.asg_alb.zone_id}"
 }
 output "alb_tg_arn" {
-  value = "${aws_lb.asg_alb.arn}"
+  value = "${aws_lb_target_group.asg_alb_tg.arn}"
 }
