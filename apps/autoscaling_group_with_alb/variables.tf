@@ -57,6 +57,10 @@ variable "associate_public_ip" {
   default = false
 }
 
+variable "alb_deletion_protection" {
+  default = false
+}
+
 variable "role_policy" {
   default = <<EOF
 {

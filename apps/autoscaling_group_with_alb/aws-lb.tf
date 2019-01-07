@@ -5,7 +5,7 @@ resource "aws_lb" "asg_alb" {
   security_groups = ["${concat(list(aws_security_group.alb_sg.id), var.alb_security_groups)}"]
   subnets = ["${var.alb_subnets}"]
 
-  enable_deletion_protection = true
+  enable_deletion_protection = "${var.alb_deletion_protection}"
 
   tags = "${var.alb_tags}"
 }
