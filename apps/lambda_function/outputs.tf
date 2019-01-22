@@ -1,5 +1,5 @@
 output "lambda_arn" {
-  value = "${aws_lambda_function.app.arn}"
+  value = "${aws_lambda_function.app.*.arn}"
 }
 
 output "lambda_name" {
