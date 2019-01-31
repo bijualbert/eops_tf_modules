@@ -92,7 +92,8 @@ variable "iam_policy_document" {
                 "kms:ListAliases",
                 "ec2:DescribeVpcs",
                 "ec2:DescribeSubnets",
-                "ec2:DescribeSecurityGroups"
+                "ec2:DescribeSecurityGroups",
+                "xray:*"
             ],
             "Resource": "*"
         }
