@@ -23,3 +23,7 @@ output "alb_zone_id" {
 output "alb_tg_arn" {
   value = "${aws_lb_target_group.asg_alb_tg.arn}"
 }
+
+output "asg_id" {
+  value = "${module.autoscaling_group.asg_id}"
+}
