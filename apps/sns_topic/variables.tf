@@ -3,3 +3,7 @@ variable "region" {
 }
 variable "app_name" {
 }
+variable "sns_extra_policy_statements"
+{
+  default = ""
+}
