@@ -13,3 +13,28 @@ variable "extra_policy_statements"
 variable "sns_alert_arn" {
   default = ""
 }
+variable "description"
+{
+  default = ""
+}
+variable "receive_wait_time_seconds" {
+  default = "20"
+}
+variable "message_retention_seconds" {
+  default = "1209600"
+}
+variable "visibility_timeout_seconds" {
+  default = 120
+}
+variable "redrive_policy_retry_count" {
+  default = 3
+}
+variable "tags_business_unit" {
+  default = "Albumprinter"
+}
+variable "tags_cost_center" {
+  default = "CC443100"
+}
+variable "tags_team" {}
+variable "tags_purpose" {}
+variable "environment" {}
