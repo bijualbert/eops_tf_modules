@@ -17,3 +17,8 @@ output "invokation_arn" {
 output "authorization_arn" {
   value = "${aws_lambda_function.app.*.arn}"
 }
+
+output "lambda_security_group" {
+  description = "SG id created for the lambda"
+  value = "${aws_security_group.sg_for_app.id}"
+}
