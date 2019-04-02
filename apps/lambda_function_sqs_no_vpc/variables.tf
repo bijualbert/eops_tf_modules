@@ -50,6 +50,10 @@ variable "vpc_enabled" {
   default = true
 }
 
+variable "event_source_mapping_active" {
+  default = true
+}
+
 variable "response_template" {
   type = "map"
   default ={
