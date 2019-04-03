@@ -116,7 +116,7 @@ variable "retention_days" {
   default = "30"
 }
 variable "reserved_concurrent_executions" {
-  default = 0
+  default = -1
 }
 variable "sns_subscription_filters" {
   default = ""

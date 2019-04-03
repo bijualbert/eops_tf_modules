@@ -121,7 +121,7 @@ variable "retention_days" {
   default = "30"
 }
 variable "reserved_concurrent_executions" { 
-  default = 0
+  default = -1
 }
 variable "visibility_timeout_seconds" {
   default = 60
