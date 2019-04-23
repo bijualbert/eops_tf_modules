@@ -140,3 +140,7 @@ variable "enable_cloudwatch_alarms" {
 variable "sqs_policy_statement" {
   default = ""
 }
+
+variable "tracing_config" {
+  default = "PassThrough"
+}

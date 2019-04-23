@@ -11,6 +11,9 @@ resource "aws_lambda_function" "app" {
   environment {
     variables = "${var.variables}"
   }
+  tracing_config {
+    mode = "${var.tracing_config}"
+  }
   count            = "${var.enabled}"
   tags = "${local.tags}"
   reserved_concurrent_executions = "${var.reserved_concurrent_executions}"
