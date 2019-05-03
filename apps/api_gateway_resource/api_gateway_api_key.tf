@@ -1,9 +1,5 @@
 resource "aws_api_gateway_api_key" "api_key" { 
   name          = "${var.api_gateway_rest_api_name}_${var.resource_path}" 
-  stage_key { 
-    rest_api_id = "${var.api_gateway_rest_api_id}" 
-    stage_name  = "${var.api_gateway_deployment_stage_name}" 
-  }
   value         = "${var.api_key}"
   count         = "${var.enable && var.api_key_required ? 1  : 0}"
 } 
