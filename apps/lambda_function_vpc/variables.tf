@@ -146,3 +146,7 @@ variable "lambda_memory_alert_threshold" {
 variable "alarm_action_arn" {
   default = ""
 }
+
+variable "reserved_concurrent_executions" {
+  default = -1
+}
