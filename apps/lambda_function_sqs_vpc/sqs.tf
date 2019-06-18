@@ -56,7 +56,13 @@ resource "aws_sqs_queue_policy" "sqs_sqs_policy" {
   "Version": "2012-10-17",
   "Id": "sqspolicy",
   "Statement": [
-      ${var.sqs_policy_statement}
+     {
+      "Sid": "AllowReplayTopic",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "sqs:SendMessage",
+      "Resource": "${aws_sqs_queue.sqs_queue.arn}"
+    }${var.sqs_policy_statement}
   ]
 }
 POLICY
