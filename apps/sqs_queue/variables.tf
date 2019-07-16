@@ -38,5 +38,4 @@ variable "tags_cost_center" {
 variable "tags_team" {}
 variable "tags_domain" {}
 variable "tags_purpose" {}
-variable "tags_domain" {}
 variable "environment" {}

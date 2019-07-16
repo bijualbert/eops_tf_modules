@@ -11,7 +11,6 @@ resource "aws_sqs_queue" "sqs_queue" {
     "Cost Center" = "${var.tags_cost_center}"
     Team = "${var.tags_team}"
     Purpose = "${var.tags_purpose}"
-    Domain = "${var.tags_domain}"
     Description = "${var.description}"
   }
 }
