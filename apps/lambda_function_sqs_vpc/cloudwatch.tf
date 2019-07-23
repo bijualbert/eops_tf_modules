@@ -32,6 +32,7 @@ resource "aws_cloudwatch_metric_alarm" "stale_messages_alarm" {
   dimensions {
     QueueName = "${aws_sqs_queue.sqs_queue.name}"
   }
+  tags = "${local.tags}"
 }
 
 
@@ -51,6 +52,7 @@ resource "aws_cloudwatch_metric_alarm" "error_messages_alarm_1" {
   dimensions {
     QueueName = "${aws_sqs_queue.sqs_error_queue.name}"
   }
+  tags = "${local.tags}"
 }
 
 resource "aws_cloudwatch_metric_alarm" "error_messages_alarm_2" {
@@ -69,6 +71,7 @@ resource "aws_cloudwatch_metric_alarm" "error_messages_alarm_2" {
   dimensions {
     QueueName = "${aws_sqs_queue.sqs_error_queue.name}"
   }
+  tags = "${local.tags}"
 }
 
 resource "aws_cloudwatch_metric_alarm" "error_messages_alarm_3" {
@@ -87,4 +90,5 @@ resource "aws_cloudwatch_metric_alarm" "error_messages_alarm_3" {
   dimensions {
     QueueName = "${aws_sqs_queue.sqs_error_queue.name}"
   }
+  tags = "${local.tags}"
 }
