@@ -8,9 +8,10 @@ module "lambda_app_cloudwatch" {
   environment = "${var.environment}"
   tags_team = "${var.tags_team}"
   tags_domain = "${var.tags_domain}"
-  description = "${var.description}"
-  retention_days = "${var.retention_days}"
+  tags_cost_center = "${var.tags_cost_center}"
   tags_purpose = "${var.tags_purpose}"
+  description = "${var.description}"
+  retention_days = "${var.retention_days}"  
   providers = {
     aws = "aws"
   }

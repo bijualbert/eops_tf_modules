@@ -19,25 +19,3 @@ variable "environment" {
 variable "type" {
   default = "sandbox"
 }
-
-variable "tags_business_unit" {
-  default = "Albumprinter"
-}
-
-variable "tags_cost_center" {}
-
-variable "tags_purpose" {
-  default = ""
-}
-
-variable "tags_team" {
-  default = ""
-}
-
-variable "tags_contact" {
-  default = ""
-}
-
-variable "tags_description" {
-  default = ""
-}

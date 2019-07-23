@@ -7,10 +7,11 @@ module "lambda_app_cloudwatch" {
   alarm_action_arn = "${var.alarm_action_arn}"
   environment = "${var.environment}"
   tags_team = "${var.tags_team}"
-  tags_domain = "${var.tags_domain}"
-  description = "${var.description}"
-  retention_days = "${var.retention_days}"
   tags_purpose = "${var.tags_purpose}"
+  tags_domain = "${var.tags_domain}"
+  tags_cost_center = "${var.tags_cost_center}"
+  description = "${var.description}"
+  retention_days = "${var.retention_days}"  
   providers = {
    aws = "aws"
   } 
