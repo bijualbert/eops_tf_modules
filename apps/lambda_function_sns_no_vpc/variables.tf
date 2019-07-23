@@ -127,3 +127,6 @@ variable "reserved_concurrent_executions" {
 variable "sns_subscription_filters" {
   default = ""
 }
+variable "enable_cloudwatch_alarms" {
+  default = "1"
+}

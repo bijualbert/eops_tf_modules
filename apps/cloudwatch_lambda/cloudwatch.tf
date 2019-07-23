@@ -31,4 +31,5 @@ resource "aws_cloudwatch_metric_alarm" "lambda_memory_alert" {
   alarm_actions = ["${var.alarm_action_arn}"]
   actions_enabled = "${var.alarm_action_enabled}"
   tags = "${local.tags}"
+  count = "${var.enable_cloudwatch_alarms}"
 }

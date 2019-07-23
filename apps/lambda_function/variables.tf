@@ -141,3 +141,6 @@ variable "lambda_memory_alert_threshold" {
 variable "alarm_action_arn" {
   default = ""
 }
+variable "enable_cloudwatch_alarms" {
+  default = 1
+}

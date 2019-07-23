@@ -149,3 +149,6 @@ variable "swagger_api_key" {
 variable "api_gateway_type" {
   default = "EDGE"
 }
+variable "enable_cloudwatch_alarms" {
+  default = "1"
+}

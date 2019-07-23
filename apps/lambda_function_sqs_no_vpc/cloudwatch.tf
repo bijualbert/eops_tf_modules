@@ -12,6 +12,7 @@ module "lambda_app_cloudwatch" {
   tags_cost_center = "${var.tags_cost_center}"
   description = "${var.description}"
   retention_days = "${var.retention_days}"  
+  enable_cloudwatch_alarms = "${var.enable_cloudwatch_alarms}"
   providers = {
    aws = "aws"
   }

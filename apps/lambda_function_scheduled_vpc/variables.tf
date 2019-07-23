@@ -113,3 +113,6 @@ variable "alarm_action_arn" {
 variable "retention_days" {
   default = "30"
 }
+variable "enable_cloudwatch_alarms" {
+  default = "1"
+}

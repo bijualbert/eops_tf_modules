@@ -31,3 +31,4 @@ variable "pattern" {
 variable "alarm_action_enabled" {
   default = "true"
 }
+variable "enable_cloudwatch_alarms" {}
