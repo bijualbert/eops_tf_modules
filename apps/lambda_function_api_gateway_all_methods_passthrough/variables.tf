@@ -11,9 +11,7 @@ variable "tags_business_unit" {
 variable "path_part" {
   default = "{proxy+}"
 }
-variable "tags_cost_center" {
-  default = "CC443100"
-}
+variable "tags_cost_center" {}
 variable "tags_team" {}
 variable "tags_domain" {}
 variable "tags_purpose" {
