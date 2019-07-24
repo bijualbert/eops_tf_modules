@@ -2,6 +2,7 @@ resource "aws_cloudwatch_event_rule" "app" {
   name                = "${var.app_name}"
   schedule_expression = "${var.schedule_expression}"
   count               = "${var.enabled}"
+  tags = "${local.tags}"
 }
 
 resource "aws_cloudwatch_event_target" "lambda_vpc" {
