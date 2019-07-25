@@ -11,16 +11,14 @@ resource "aws_s3_bucket_object" "initialDummyContent" {
   bucket = "${var.lambda_bucket_name}"
   key    = "builds/lambda/${var.app_name}/lambda.zip"
   source = "lambda.zip"
-  # lifecycle {
-  #   ignore_changes = "all"
-  # },
+  lifecycle {
+    ignore_changes = "all"
+  },
   tags = "${local.tags}"
 }
 
 resource "aws_lambda_function" "app" {
   s3_bucket = "${var.lambda_bucket_name}"
-//  s3_object_version = "$LATEST"
-  //s3_key = "builds/lambda/${var.app_name}/lambda.zip"
   s3_key = "${aws_s3_bucket_object.initialDummyContent.key}"
   function_name = "${var.app_name}"
   description = "${var.description}"
