@@ -1,25 +1,16 @@
-data "archive_file" "dummyfile" {
-  type        = "zip"
-  output_path = "lambda.zip"
-  source {
-    content  = "1"
-    filename = "dummyfile.txt"
-  }
-}
-
-resource "aws_s3_bucket_object" "initialDummyContent" {
-  bucket = "${var.lambda_bucket_name}"
-  key    = "builds/lambda/${var.app_name}/lambda.zip"
-  source = "lambda.zip"
-  lifecycle {
-    ignore_changes = "all"
-  },
+module "lambda_s3_bucket_object" {
+  source = "../../apps/lambda_s3_bucket_object"
+  lambda_bucket_name = "${var.lambda_bucket_name}"
+  s3_object_key = "builds/lambda/${var.app_name}/lambda.zip"
   tags = "${local.tags}"
+  providers = {
+   aws = "aws"
+  } 
 }
 
 resource "aws_lambda_function" "app" {
   s3_bucket = "${var.lambda_bucket_name}"
-  s3_key = "${aws_s3_bucket_object.initialDummyContent.key}"
+  s3_key = "${module.lambda_s3_bucket_object.key}"
   function_name = "${var.app_name}"
   description = "${var.description}"
   role = "${aws_iam_role.iam_for_app.arn}"
