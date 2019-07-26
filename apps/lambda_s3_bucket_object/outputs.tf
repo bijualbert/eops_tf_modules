@@ -1,3 +1,3 @@
 output "key" {
-  value = "${var.s3_object_key}"
+  value = "${aws_s3_bucket_object.initialDummyContent.id}"
 }
