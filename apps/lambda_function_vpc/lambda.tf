@@ -1,10 +1,19 @@
+module "lambda_s3_bucket_object" {
+  source = "../../apps/lambda_s3_bucket_object"
+  lambda_bucket_name = "${var.lambda_bucket_name}"
+  s3_object_key = "builds/lambda/${var.app_name}/lambda.zip"
+  tags = "${local.tags}"
+  providers = {
+   aws = "aws"
+  } 
+}
+
 resource "aws_lambda_function" "app" {
   function_name = "${var.app_name}"
   description = "${var.description}"
   role = "${aws_iam_role.iam_for_app.arn}"
   s3_bucket = "${var.lambda_bucket_name}"
-  s3_key = "builds/lambda/${var.app_name}/lambda.zip"
-  //  s3_object_version = "$LATEST"
+  s3_key = "${module.lambda_s3_bucket_object.key}"
   handler = "${var.handler}"
   runtime = "${var.runtime}"
   memory_size = "${var.memory_size}"
