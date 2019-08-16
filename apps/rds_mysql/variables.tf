@@ -19,6 +19,10 @@ variable "app_name" {
   description = "A value to append to the RDS identifer to create a unique name"
   default     = "rds-database"
 }
+variable "db_cidr" {
+  description = "cidr range that has access to the database. By default all the shared VPC ranges"
+  default     = "10.96.0.0/12"
+}
 
 variable "enabled" {
   default = 1
