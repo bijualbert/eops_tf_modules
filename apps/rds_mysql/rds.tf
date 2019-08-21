@@ -65,6 +65,7 @@ resource "aws_db_instance" "database" {
     prevent_destroy = true
   }
 
+  copy_tags_to_snapshot     = true
   tags = {
     Domain          = "${var.tags_domain}"
     Name            = "${var.app_name}"
