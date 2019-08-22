@@ -26,6 +26,12 @@ resource "aws_iam_role" "iam_for_app" {
   assume_role_policy = "${var.assume_role_policy_document}"
 }
 
+resource "aws_iam_role_policy" "iam_policy_for_app" {
+  name = "${var.app_name}"
+  role = "${aws_iam_role.iam_for_app.id}"
+  policy = "${var.iam_policy_document}"
+}
+
 resource "aws_security_group" "sg_for_app" {
   name = "${var.app_name}"
   description = "Allow all inbound traffic for the scheduled lambda function"
