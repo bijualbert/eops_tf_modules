@@ -47,10 +47,6 @@ variable "enabled" {
   default = 1
 }
 
-variable "private" {
-  default = false
-}
-
 variable "iam_policy_document" {
   default =<<EOF
 {
