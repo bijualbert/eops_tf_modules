@@ -3,7 +3,7 @@ variable "region" {
 }
 variable "app_name" {
 }
-variable "iam_policy_document" {
+variable "iam_policy_document" {}
 variable "environment" {}
 variable "description" {}
 
