@@ -12,25 +12,25 @@ resource "aws_lambda_function" "app" {
   s3_bucket = "${var.lambda_bucket_name}"
   s3_key = "${module.lambda_s3_bucket_object.key}"
   function_name = "${var.app_name}"
-  description = "${var.description}"
-  role = "${aws_iam_role.iam_for_app.arn}"
-  handler = "${var.handler}"
-  runtime = "${var.runtime}"
-  memory_size = "${var.memory_size}"
-  timeout = "${var.timeout}"
+  description   = "${var.description}"
+  role          = "${aws_iam_role.iam_for_app.arn}"
+  handler       = "${var.handler}"
+  runtime       = "${var.runtime}"
+  memory_size   = "${var.memory_size}"
+  timeout       = "${var.timeout}"
   environment {
     variables = "${var.variables}"
   }
-  count            = "${var.enabled}"
+  count = "${var.enabled}"
   dead_letter_config = {
     target_arn = "${aws_sns_topic.lambda_error_sns.arn}"
   }
-  tags = "${local.tags}"
+  tags                           = "${local.tags}"
   reserved_concurrent_executions = "${var.reserved_concurrent_executions}"
 }
 
 resource "aws_iam_role" "iam_for_app" {
-  name = "${var.app_name}"
+  name               = "${var.app_name}"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
