@@ -4,6 +4,23 @@ variable "region" {
 variable "app_name" {
 }
 variable "iam_policy_document" {
+variable "environment" {}
+variable "description" {}
+
+# tags
+variable "tags_business_unit" {
+  default = "Albumprinter"
+}
+variable "tags_cost_center" {}
+variable "tags_team" {}
+variable "tags_domain" {}
+variable "tags_purpose" {
+  default = ""
+}
+# end tags
+
+variable "sns_extra_policy_statements"
+{
   default = ""
 }
 variable "sns_extra_policy_statements" {

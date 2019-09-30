@@ -1,5 +1,6 @@
 resource "aws_sns_topic" "sns-topic" {
   name = "${var.app_name}"
+  tags = "${local.tags}"
 }
 
 locals {
