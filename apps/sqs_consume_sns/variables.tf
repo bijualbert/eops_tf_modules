@@ -15,13 +15,53 @@ variable "app_name" {}
 variable "environment" {}
 
 variable "iam_policy_document" {
-  default = ""
+  default = <<EOF
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+                "ec2:CreateNetworkInterface",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DeleteNetworkInterface",
+                "cloudwatch:*",
+                "cognito-identity:ListIdentityPools",
+                "cognito-sync:GetCognitoEvents",
+                "cognito-sync:SetCognitoEvents",
+                "dynamodb:*",
+                "events:*",
+                "iam:ListAttachedRolePolicies",
+                "iam:ListRolePolicies",
+                "iam:ListRoles",
+                "iam:PassRole",
+                "kinesis:DescribeStream",
+                "kinesis:ListStreams",
+                "kinesis:PutRecord",
+                "lambda:*",
+                "logs:*",
+                "s3:*",
+                "sns:ListSubscriptions",
+                "sns:ListSubscriptionsByTopic",
+                "sns:ListTopics",
+                "sns:Subscribe",
+                "sns:Unsubscribe",
+                "sns:Publish",
+                "sqs:ListQueues",
+                "sqs:SendMessage",
+                "kms:ListAliases",
+                "ec2:DescribeVpcs",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeSecurityGroups"
+            ],
+            "Resource": "*"
+        }
+    ]
 }
-variable "sns_extra_policy_statements" {
-  default = ""
-}
-variable "error_queue_policy" {
-  deafult = ""
+EOF
 }
 
 variable "sns_subscription_arn" {
@@ -59,4 +99,3 @@ variable "visibility_timeout_seconds" {
 variable "sns_subscription_filters" {
   default = ""
 }
-
