@@ -14,12 +14,14 @@ variable "description" {}
 variable "app_name" {}
 
 variable "runtime" {
-  default = "nodejs4.3"
 }
 variable "handler" {}
 variable "environment" {}
 variable "variables" {
   default = ""
+}
+variable "tracing_config" {
+  default = "PassThrough"
 }
 
 variable "schedule_expression" {
@@ -35,8 +37,9 @@ variable "enabled" {
   default = 1
 }
 
-variable "s3_bucket" {}
-variable "s3_key" {}
+variable "lambda_bucket_name" {
+    default = ""
+}
 
 variable "iam_policy_document" {
   default =<<EOF
@@ -64,4 +67,8 @@ variable "iam_policy_document" {
   ]
 }
 EOF
+}
+
+variable "reserved_concurrent_executions" {
+  default = -1
 }
