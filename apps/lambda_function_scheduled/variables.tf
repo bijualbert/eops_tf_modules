@@ -18,7 +18,10 @@ variable "runtime" {
 variable "handler" {}
 variable "environment" {}
 variable "variables" {
-  default = ""
+  type = "map"
+  default = {
+    env = ""
+  }
 }
 variable "tracing_config" {
   default = "PassThrough"
