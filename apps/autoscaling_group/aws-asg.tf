@@ -16,13 +16,13 @@ resource "aws_launch_configuration" "app_lc" {
 
 resource "aws_autoscaling_group" "app_asg" {
   name                 = "${var.environment}-${var.app_name}-asg"
-//  depends_on           = ["aws_launch_configuration.app_lc"]
   launch_configuration = "${aws_launch_configuration.app_lc.name}"
-  desired_capacity = "${var.desired_nodes}"
-  min_size             = "${var.desired_nodes}"
-  max_size             = "${var.desired_nodes}"
-  vpc_zone_identifier  = ["${var.subnet_ids}"]
 
+  desired_capacity = "${var.desired_nodes}"  
+  min_size             = "${var.min_size == 0 ? var.desired_nodes : var.min_size}"
+  max_size             = "${var.max_size == 0 ? var.desired_nodes : var.max_size}"
+
+  vpc_zone_identifier  = ["${var.subnet_ids}"]
   lifecycle {
     create_before_destroy = true
   }
