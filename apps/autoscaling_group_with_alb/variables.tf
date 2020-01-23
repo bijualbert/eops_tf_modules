@@ -7,6 +7,8 @@ variable "aws_key_name" {}
 variable "domain" {}
 variable "user_data" {}
 variable "desired_nodes" {}
+variable "min_size" { default = 0 }
+variable "max_size" { default = 0 }
 variable "vpc_id" {}
 variable "tg_port" {}
 variable "tg_protocol" {}

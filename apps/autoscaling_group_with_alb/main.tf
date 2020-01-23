@@ -12,6 +12,8 @@ module "autoscaling_group" {
   user_data = "${var.user_data}"
   security_groups = ["${var.security_groups}"]
   desired_nodes = "${var.desired_nodes}"
+  min_size = "${var.min_size}"
+  max_size = "${var.max_size}"
   subnet_ids = ["${var.subnet_ids}"]
   asg_tags = ["${var.asg_tags}"]
   vpc_id = "${var.vpc_id}"
