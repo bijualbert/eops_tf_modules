@@ -44,7 +44,7 @@ variable "enabled" {
   default = 1
 }
 variable "private" {
-  default = false
+  default = 1
 }
 
 variable "response_template" {
