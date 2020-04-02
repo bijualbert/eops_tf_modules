@@ -11,7 +11,6 @@ resource "aws_s3_bucket_object" "initialDummyContent" {
   bucket = "${var.lambda_bucket_name}"
   key    = "${var.s3_object_key}"
   source = "lambda.zip"
-  tags = "${var.tags}"
   lifecycle {
     ignore_changes = "all"
   }
