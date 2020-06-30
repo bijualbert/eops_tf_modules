@@ -5,7 +5,7 @@ module "lambda_s3_bucket_object" {
   tags = "${local.tags}"
   providers = {
    aws = "aws"
-  } 
+  }
 }
 
 resource "aws_lambda_function" "app" {
@@ -59,7 +59,10 @@ resource "aws_iam_role_policy" "iam_policy_for_app" {
 }
 
 resource "aws_security_group" "sg_for_app" {
-  name = "${var.app_name}"
+  name_prefix = "${var.app_name}-"
+  lifecycle {
+    create_before_destroy = true
+  }
   description = "Allow all inbound traffic for the scheduled lambda function"
   vpc_id = "${module.aws_core_data.vpc_id}"
 
