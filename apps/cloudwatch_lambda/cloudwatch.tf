@@ -32,6 +32,7 @@ resource "aws_cloudwatch_metric_alarm" "lambda_memory_alert" {
   actions_enabled = "${var.alarm_action_enabled}"
   tags = "${local.tags}"
   count = "${var.enable_cloudwatch_alarms}"
+  treat_missing_data  = "missing"
 }
 
 resource "aws_cloudwatch_metric_alarm" "lambda_duration_alert" {
@@ -45,7 +46,7 @@ resource "aws_cloudwatch_metric_alarm" "lambda_duration_alert" {
   statistic           = "Maximum"
   threshold           = "${var.alarm_timeout * 1000 * 0.80}"
   alarm_description   = "${var.app_name} execution duration is approaching timeout"
-  treat_missing_data  = "ignore"
+  treat_missing_data  = "missing"
   insufficient_data_actions = []
   alarm_actions = ["${var.alarm_action_arn}"]
   ok_actions = []
@@ -68,7 +69,7 @@ resource "aws_cloudwatch_metric_alarm" "lambda_errors" {
   statistic           = "Maximum"
   threshold           = "1"
   alarm_description   = "${var.app_name} error"
-  treat_missing_data  = "ignore"
+  treat_missing_data  = "notBreaching"
   insufficient_data_actions = []
   alarm_actions = ["${var.alarm_action_arn}"]
   ok_actions = []
