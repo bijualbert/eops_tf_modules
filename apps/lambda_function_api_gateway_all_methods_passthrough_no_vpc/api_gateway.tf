@@ -66,6 +66,16 @@ resource "aws_lambda_permission" "allow-api-gateway-parent-resource-get" {
   source_arn = "arn:aws:execute-api:${var.region}:${module.aws_core_data.account_id}:${aws_api_gateway_rest_api.app.id}/*/${aws_api_gateway_method.app.http_method}${aws_api_gateway_resource.app.path}"
 }
 
+resource "aws_lambda_permission" "allow-api-gateway-parent-resource-get-alias" {
+  count = "${var.useAlias}"
+  function_name = "${aws_lambda_function.app.id}"
+  statement_id = "allow-api-gateway-parent-resource-get"
+  action = "lambda:InvokeFunction"
+  principal = "apigateway.amazonaws.com"
+  source_arn = "arn:aws:execute-api:${var.region}:${module.aws_core_data.account_id}:${aws_api_gateway_rest_api.app.id}/*/${aws_api_gateway_method.app.http_method}${aws_api_gateway_resource.app.path}"
+  qualifier = "${aws_lambda_alias.alias.name}"
+}
+
 resource "aws_api_gateway_deployment" "app" {
   depends_on  = ["aws_api_gateway_integration.app_integration"]
   rest_api_id = "${aws_api_gateway_rest_api.app.id}"
