@@ -35,3 +35,7 @@ data "aws_subnet" "private" {
 }
 data "aws_caller_identity" "current" {}
 data "aws_availability_zones" "available" {}
+
+data "aws_vpc_endpoint_service" "s3" {
+  service = "s3"
+}
