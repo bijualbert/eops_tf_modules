@@ -40,6 +40,10 @@ variable "enabled" {
   default = 1
 }
 
+variable "cloudwatch_event_rule_is_enabled" {
+  default = 1
+}
+
 variable "lambda_bucket_name" {
     default = ""
 }
