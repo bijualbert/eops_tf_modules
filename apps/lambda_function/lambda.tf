@@ -23,6 +23,7 @@ resource "aws_lambda_function" "app" {
   }
   count            = "${var.enabled}"
   tags = "${local.tags}"
+  reserved_concurrent_executions = "${var.reserved_concurrent_executions}"
 }
 
 resource "aws_iam_role" "iam_for_app" {
