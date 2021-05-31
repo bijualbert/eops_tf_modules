@@ -123,3 +123,6 @@ variable "alarm_action_arn" {
 variable "enable_cloudwatch_alarms" {
   default = 1
 }
+variable "reserved_concurrent_executions" {
+  default = -1
+}
