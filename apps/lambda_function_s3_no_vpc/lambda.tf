@@ -67,11 +67,11 @@ resource "aws_lambda_permission" "allow_bucket" {
   action        = "lambda:InvokeFunction"
   function_name = "${aws_lambda_function.app.arn}"
   principal     = "s3.amazonaws.com"
-  source_arn    = var.s3_bucket_arn
+  source_arn    = "${var.s3_bucket_arn}"
 }
 
 resource "aws_s3_bucket_notification" "bucket_notification" {
-  bucket = var.s3_bucket_name
+  bucket = "${var.s3_bucket_name}"
 
   lambda_function {
     lambda_function_arn = "${aws_lambda_function.app.arn}"
