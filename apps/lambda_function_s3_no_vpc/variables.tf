@@ -129,15 +129,19 @@ variable "receive_wait_time_seconds" {
 variable "message_retention_seconds" {
   default = "1209600"
 }
-variable "sqs_name" {
-}
 variable "enable_cloudwatch_alarms" {
   default = 1
-}
-variable "sqs_policy_statement" {
-  default = ""
 }
 
 variable "tracing_config" {
   default = "PassThrough"
 }
+
+variable "s3_bucket_arn" {
+  default = ""
+}
+
+variable "s3_bucket_name" {
+  default = ""
+}
+
