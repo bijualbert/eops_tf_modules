@@ -24,6 +24,9 @@ resource "aws_lambda_function" "app" {
   tracing_config {
     mode = "${var.tracing_config}"
   }
+  dead_letter_config {
+    target_arn = "${aws_sqs_queue.sqs_error_queue.arn}"
+  }
   count                          = "${var.enabled}"
   tags                           = "${local.tags}"
   reserved_concurrent_executions = "${var.reserved_concurrent_executions}"
