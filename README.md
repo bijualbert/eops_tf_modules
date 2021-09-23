@@ -58,6 +58,7 @@ module "scheduled_lambda_app_vpc" {
 ```
 
 
+
 To get access to the core-infrastructure data (vpc's, subnets, regions, tags):
 ```hcl-terraform
 module "aws_account_core_data" {
