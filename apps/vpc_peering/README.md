@@ -14,4 +14,4 @@ Terraform is unable to modify the requester perring connection before it is acce
 
 *NOTE* ensure that you setup your credentials and profile before attempting to run code.
 
-aws ec2 modify-vpc-peering-connection-options --vpc-peering-connection-id <pcx-aaaabbbb> --requester-peering-connection-options AllowDnsResolutionFromRemoteVpc=true
+aws ec2 modify-vpc-peering-connection-options --vpc-peering-connection-id pcx-aaaabbbb --requester-peering-connection-options AllowDnsResolutionFromRemoteVpc=true
