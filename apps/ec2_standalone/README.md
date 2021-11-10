@@ -33,8 +33,8 @@ Set in your stack, should be something like "${module.aws_account_core_data.priv
 you may wish to override the *ami* to a newer or AP release.
 - variable "ami_id" {}
 
-you may also want to override the instance_type.  This is best done in your stack definition in the <env>.tfvars so that you can size to the environment.
+you may also want to override the instance_type.  This is best done in your stack definition in the env.tfvars so that you can size to the environment.
 - variable "instance_type" {}
 
-Want more servers?  Override this setting in your stack.  Again, this should be done in your <env>.tfvars so that the stack is sized correctly.
+Want more servers?  Override this setting in your stack.  Again, this should be done in your env.tfvars so that the stack is sized correctly.
 - variable "number_servers" {}
