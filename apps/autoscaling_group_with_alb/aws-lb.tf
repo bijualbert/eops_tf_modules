@@ -15,6 +15,7 @@ resource "aws_lb_target_group" "asg_alb_tg" {
   port     = "${var.tg_port}"
   protocol = "${var.tg_protocol}"
   vpc_id   = "${var.vpc_id}"
+  deregistration_delay = "${var.deregistration_delay}" 
 
   health_check {
     healthy_threshold   = "${var.healthy_threshold}"

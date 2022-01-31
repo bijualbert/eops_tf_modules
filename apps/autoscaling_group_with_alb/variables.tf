@@ -110,3 +110,7 @@ variable "interval" {
   default = 10
 }
 
+variable "deregistration_delay" {
+  default = 300
+}
+
